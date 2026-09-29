@@ -65,7 +65,7 @@
   },
   "effectivePeriod": {
     "extension": [],
-    "end": "2026-09-25T05:54:00.000Z",
+    "end": "2026-09-25T05:45:00.000Z",
     "start": "2026-09-25T03:27:00.000Z"
   },
   "resourceType": "Observation"

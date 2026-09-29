@@ -1,5 +1,5 @@
 {
-  "id": "wf-bc17244389cc9a6a25f71499a140487f",
+  "id": "wf-23e75012e679e9338bad724d2d1a0416",
   "contained": [],
   "extension": [],
   "modifierExtension": [],
@@ -65,8 +65,8 @@
   },
   "effectivePeriod": {
     "extension": [],
-    "end": "2026-09-16T09:07:00.000Z",
-    "start": "2026-09-16T07:38:00.000Z"
+    "end": "2026-09-18T10:51:00.000Z",
+    "start": "2026-09-18T09:13:00.000Z"
   },
   "resourceType": "Observation"
 }

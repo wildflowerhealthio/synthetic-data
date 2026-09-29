@@ -1,5 +1,5 @@
 {
-  "id": "wf-d42c33f00f9062b0f72cfe5147d28e29",
+  "id": "wf-f9bd6afdaa6a1277840df039a5f05090",
   "contained": [],
   "extension": [],
   "modifierExtension": [],
@@ -57,16 +57,16 @@
     "coding": [
       {
         "extension": [],
-        "code": "HealthActivitySleep",
-        "display": "Sleeping",
+        "code": "HealthActivityRestfulSleep",
+        "display": "Restful Sleeping",
         "system": "https://developer.repebble.com/docs/c/Foundation/Event_Service/HealthService/"
       }
     ]
   },
   "effectivePeriod": {
     "extension": [],
-    "end": "2026-09-17T09:02:00.000Z",
-    "start": "2026-09-17T07:27:00.000Z"
+    "end": "2026-09-20T08:36:00.000Z",
+    "start": "2026-09-20T07:47:00.000Z"
   },
   "resourceType": "Observation"
 }
