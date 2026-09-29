@@ -18,12 +18,12 @@ output. See Wildflower epic #787 and ticket #794.
 
 ## The family
 
-| Gen | Person | Name cue | Story | Sources |
-| --- | --- | --- | --- | --- |
-| 1 | **Warren Ashford**, 78, Tyra's father | **War**ren → **war**farin | Atrial fibrillation on warfarin, and type 2 diabetes on metformin. | Rexall HAR, labs, chest X-ray (DICOM) |
-| 2 | **Tyra Ashford**, 46, the centre | **Ty**ra → **thy**roid | Hypothyroidism, with a levothyroxine overshoot. | Shoppers HAR (account holder), labs, Pebble (28 days) |
-| 2 | **Beau Hartman**, 48, Tyra's spouse | **Beau** → **b**eta blocker, **Hart** → heart | Hypertension and a high LDL. | Shoppers HAR, labs |
-| 3 | **Fern Ashford**, 16, their daughter | **Fe**rn → Fe, iron | Iron-deficiency anemia. | Shoppers HAR, labs |
+| Gen | Person                                | Name cue                                      | Story                                                              | Sources                                               |
+| --- | ------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------- |
+| 1   | **Warren Ashford**, 78, Tyra's father | **War**ren → **war**farin                     | Atrial fibrillation on warfarin, and type 2 diabetes on metformin. | Rexall HAR, labs, chest X-ray (DICOM)                 |
+| 2   | **Tyra Ashford**, 46, the centre      | **Ty**ra → **thy**roid                        | Hypothyroidism, with a levothyroxine overshoot.                    | Shoppers HAR (account holder), labs, Pebble (28 days) |
+| 2   | **Beau Hartman**, 48, Tyra's spouse   | **Beau** → **b**eta blocker, **Hart** → heart | Hypertension and a high LDL.                                       | Shoppers HAR, labs                                    |
+| 3   | **Fern Ashford**, 16, their daughter  | **Fe**rn → Fe, iron                           | Iron-deficiency anemia.                                            | Shoppers HAR, labs                                    |
 
 Every date is a day counted back from one fixed as-of date,
 **2026-09-28** (`src/family/as-of.ts`). To move the data set forward in time,
@@ -92,26 +92,26 @@ keyed by the account's `pcid` and linked by `seealso`, so Tyra has two.
 
 ## What's here
 
-| Path | What it is |
-| --- | --- |
-| `wildflower/` | The Wildflower repository as a git submodule, pinned to the commit whose tools render this data set. |
-| `src/family/as-of.ts` | The as-of date. |
-| `src/family/people.ts` | The four people's demographics. |
+| Path                                                    | What it is                                                                                                  |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `wildflower/`                                           | The Wildflower repository as a git submodule, pinned to the commit whose tools render this data set.        |
+| `src/family/as-of.ts`                                   | The as-of date.                                                                                             |
+| `src/family/people.ts`                                  | The four people's demographics.                                                                             |
 | `src/family/warren.ts`, `tyra.ts`, `beau.ts`, `fern.ts` | Each story: prescriptions, fills, lab draws and lab requisition. `warren.ts` also holds his Rexall account. |
-| `src/family/tyra-shoppers-account.ts` | The Shoppers family account Tyra holds. |
-| `src/family/products.ts` | The product catalogue: every DIN, with how it was verified. |
-| `src/family/lifelabs-toronto.ts` | The laboratory, and how it prints each test (names, ranges, sections). |
-| `src/family/tyra-physiology.ts` | What Tyra's Pebble measured, day by day. |
-| `src/family/warren-chest-x-ray.ts` | Who and when Warren's X-ray is re-identified as. |
-| `src/generate.ts` | Renders the family. Each HAR goes through the real HAR importer, and the output is grouped per person. |
-| `src/sources.ts` | Reads `sources/`. |
-| `sources/dicom/` | The TCIA chest radiograph Warren's X-ray is made from (CC BY 3.0, see `NOTICE`). |
-| `test/` | The content checks (see below). |
-| `scripts/emit.ts` | Writes the data set into `site/`. It is a stub until Wildflower #793 (see "Status"). |
-| `scripts/register-ts.ts` | Lets `node` run the TypeScript scripts without a build (see "Setup"). |
-| `site/` | The published data set, deployed to GitHub Pages. |
-| `.github/workflows/ci.yml` | Checks and tests on every push and PR, with the submodule checked out. |
-| `.github/workflows/pages.yml` | Deploys `site/` to Pages on every push to `main`. |
+| `src/family/tyra-shoppers-account.ts`                   | The Shoppers family account Tyra holds.                                                                     |
+| `src/family/products.ts`                                | The product catalogue: every DIN, with how it was verified.                                                 |
+| `src/family/lifelabs-toronto.ts`                        | The laboratory, and how it prints each test (names, ranges, sections).                                      |
+| `src/family/tyra-physiology.ts`                         | What Tyra's Pebble measured, day by day.                                                                    |
+| `src/family/warren-chest-x-ray.ts`                      | Who and when Warren's X-ray is re-identified as.                                                            |
+| `src/generate.ts`                                       | Renders the family. Each HAR goes through the real HAR importer, and the output is grouped per person.      |
+| `src/sources.ts`                                        | Reads `sources/`.                                                                                           |
+| `sources/dicom/`                                        | The TCIA chest radiograph Warren's X-ray is made from (CC BY 3.0, see `NOTICE`).                            |
+| `test/`                                                 | The content checks (see below).                                                                             |
+| `scripts/emit.ts`                                       | Writes the data set into `site/`. It is a stub until Wildflower #793 (see "Status").                        |
+| `scripts/register-ts.ts`                                | Lets `node` run the TypeScript scripts without a build (see "Setup").                                       |
+| `site/`                                                 | The published data set, deployed to GitHub Pages.                                                           |
+| `.github/workflows/ci.yml`                              | Checks and tests on every push and PR, with the submodule checked out.                                      |
+| `.github/workflows/pages.yml`                           | Deploys `site/` to Pages on every push to `main`.                                                           |
 
 ### Products
 
@@ -120,33 +120,33 @@ Every DIN is checked against Health Canada's Drug Product Database (DPD), using
 Fern's ferrous sulfate is checked against the Licensed Natural Health Products
 Database instead. The full table is in `src/family/products.ts`.
 
-| Product | DIN |
-| --- | --- |
-| Taro-Warfarin 5 mg | 02242685 |
-| Taro-Warfarin 4 mg | 02242684 |
-| Teva-Metformin 500 mg | 02257726 |
-| Sandoz Metformin FC 500 mg | 02246820 |
-| Apo-Clarithromycin 500 mg | 02274752 |
-| Synthroid 50 mcg | 02172070 |
-| Synthroid 75 mcg | 02172089 |
-| Apo-Levothyroxine 75 mcg | 02550725 |
-| Apo-Levothyroxine 88 mcg | 02550733 |
-| Apo-Levothyroxine 112 mcg | 02550741 |
-| Teva-Atorvastatin 20 mg | 02310902 |
-| Teva-Atorvastatin 40 mg | 02310910 |
-| Apo-Bisoprolol 5 mg | 02256134 |
+| Product                          | DIN      |
+| -------------------------------- | -------- |
+| Taro-Warfarin 5 mg               | 02242685 |
+| Taro-Warfarin 4 mg               | 02242684 |
+| Teva-Metformin 500 mg            | 02257726 |
+| Sandoz Metformin FC 500 mg       | 02246820 |
+| Apo-Clarithromycin 500 mg        | 02274752 |
+| Synthroid 50 mcg                 | 02172070 |
+| Synthroid 75 mcg                 | 02172089 |
+| Apo-Levothyroxine 75 mcg         | 02550725 |
+| Apo-Levothyroxine 88 mcg         | 02550733 |
+| Apo-Levothyroxine 112 mcg        | 02550741 |
+| Teva-Atorvastatin 20 mg          | 02310902 |
+| Teva-Atorvastatin 40 mg          | 02310910 |
+| Apo-Bisoprolol 5 mg              | 02256134 |
 | pms-Ferrous Sulfate 300 mg (NPN) | 00586323 |
 
 ### What `generate` produces
 
 As of 2026-09-28:
 
-| Person | Pharmacy | Labs | Pebble | Imaging | Files |
-| --- | --- | --- | --- | --- | --- |
-| Warren | 18 | 57 | — | 3 | Rexall HAR, chest X-ray DICOM |
-| Tyra | 15 | 16 | 2,123 | — | Shoppers HAR |
-| Beau | 17 | 41 | — | — | Shoppers HAR |
-| Fern | 7 | 57 | — | — | Shoppers HAR |
+| Person | Pharmacy | Labs | Pebble | Imaging | Files                         |
+| ------ | -------- | ---- | ------ | ------- | ----------------------------- |
+| Warren | 18       | 57   | —      | 3       | Rexall HAR, chest X-ray DICOM |
+| Tyra   | 15       | 16   | 2,123  | —       | Shoppers HAR                  |
+| Beau   | 17       | 41   | —      | —       | Shoppers HAR                  |
+| Fern   | 7        | 57   | —      | —       | Shoppers HAR                  |
 
 Two resources are shared between people. Tyra, Beau and Fern share the Shoppers
 HAR's source-file DocumentReference. They also share the Practitioner for Dr
