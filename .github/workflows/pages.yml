@@ -1,0 +1,50 @@
+name: Deploy GitHub Pages
+
+# Publishes the committed data set in site/ to GitHub Pages on every push to
+# main. The site is generated (`vp run emit`) and committed, so this only
+# uploads it: no install, no submodule.
+#
+# Prerequisite (one-time, in repo Settings → Pages): Source "GitHub Actions".
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One live site: let an in-flight deploy finish instead of cancelling it, so a
+# half-published artifact never goes live.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Upload site/
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

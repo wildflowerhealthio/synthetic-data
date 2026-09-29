@@ -1,0 +1,52 @@
+name: CI
+
+# Format, lint, typecheck and the content checks, against the pinned
+# Wildflower submodule.
+#
+# The submodule is a private repository while Wildflower is: if it is, give
+# the checkout a token that can read it (a fine-grained PAT or deploy key with
+# read access to wildflowerhealthio/Wildflower, stored as the
+# WILDFLOWER_READ_TOKEN secret).
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Check + Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code and the Wildflower submodule
+        uses: actions/checkout@v7
+        with:
+          submodules: true
+          token: ${{ secrets.WILDFLOWER_READ_TOKEN || github.token }}
+
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1.21.0
+        with:
+          cache: true
+
+      # The Wildflower packages are linked from the submodule (see
+      # package.json), and resolve their own dependencies from its install.
+      - name: Install the Wildflower submodule's dependencies
+        run: vp install
+        working-directory: wildflower
+
+      - name: Install dependencies
+        run: vp install
+
+      - name: Run vp check (format, lint, typecheck)
+        run: vp check
+
+      - name: Run the content checks
+        run: vp test
