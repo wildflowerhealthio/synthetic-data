@@ -1,0 +1,219 @@
+import {
+  type LabDraw,
+  type LifeLabs,
+  Prescription,
+  type RexallHar,
+  type Story,
+  type StoryDay,
+} from 'synthetic-data-core'
+
+import { warren } from './people.ts'
+import { catalogue } from './products.ts'
+
+/**
+ * Warren Ashford's story, 78, Tyra's father: atrial fibrillation on warfarin
+ * and type 2 diabetes on metformin, filled at Rexall.
+ *
+ * @remarks
+ * Day numbers are relative to the as-of date (see `StoryDay`).
+ *
+ * **Warfarin.** Started at 5 mg daily (day −480). INR climbs to 3.8 (−385) and
+ * the dose is cut to 4 mg (−384); INR settles at 2.6. The 4 mg prescription runs
+ * out of repeats and is renewed (−201). A cough brings a 7-day clarithromycin
+ * course (−101) — an interaction the checker should catch — and INR is 3.3
+ * four days in (−97) and 4.1 two days later (−95): warfarin is held for four
+ * days and resumed at 4 mg (−91, INR 2.4) on a new prescription, and INR
+ * recovers. INR is drawn about monthly, weekly around the dose cut and the
+ * course.
+ *
+ * **Metformin.** 500 mg twice daily (−510); HbA1c 8.1 (−390) and 8.4 (−300)
+ * move it to 1000 mg twice daily — two 500 mg tablets — (−296), and HbA1c
+ * falls to 7.0 (−120) and holds there. HbA1c is drawn quarterly with a fasting
+ * glucose, which falls from 9.4 to about 7 mmol/L.
+ * At the most recent refill the pharmacy switches generics from Teva to Sandoz
+ * (−23), same dose.
+ *
+ * Refills are on a 30-day (warfarin) and 90-day (metformin) cadence, a few of
+ * them picked up a day or several late.
+ */
+
+/** Warren's family physician, who writes his chronic prescriptions. */
+const familyPhysician: Prescription.Prescriber = { key: 'okafor', display: 'DR N OKAFOR' }
+
+/** The walk-in clinic physician who treats the cough. */
+const walkInPhysician: Prescription.Prescriber = { key: 'tremblay', display: 'DR M TREMBLAY' }
+
+const onceDaily: Prescription.Dosing = { tabletsPerDose: 1, dosesPerDay: 1, direction: null }
+
+const warfarin5mg: Prescription.Prescription = {
+  key: 'warfarin-1',
+  product: catalogue.taroWarfarin5mg,
+  dosing: onceDaily,
+  supplyDaysPerFill: 30,
+  repeatsAllowed: 5,
+  prescriber: familyPhysician,
+  written: { day: -480, reason: 'start' },
+  ended: { day: -384, reason: 'dose-change' },
+  fillDays: Prescription.fillDaysOnCadence(-480, 30, [0, 2, 1]),
+}
+
+const warfarin4mg: Prescription.Prescription = {
+  key: 'warfarin-2',
+  product: catalogue.taroWarfarin4mg,
+  dosing: onceDaily,
+  supplyDaysPerFill: 30,
+  repeatsAllowed: 5,
+  prescriber: familyPhysician,
+  written: { day: -384, reason: 'dose-change' },
+  ended: null,
+  fillDays: Prescription.fillDaysOnCadence(-384, 30, [0, 1, 0, 3, 0]),
+}
+
+const warfarin4mgRenewed: Prescription.Prescription = {
+  ...warfarin4mg,
+  key: 'warfarin-3',
+  written: { day: -201, reason: 'renewal' },
+  ended: { day: -95, reason: 'hold' },
+  fillDays: Prescription.fillDaysOnCadence(-201, 30, [0, 2, 0]),
+}
+
+const clarithromycin: Prescription.Prescription = {
+  key: 'clarithromycin-1',
+  product: catalogue.apoClarithromycin500mg,
+  dosing: { tabletsPerDose: 1, dosesPerDay: 2, direction: 'FOR 7 DAYS' },
+  supplyDaysPerFill: 7,
+  repeatsAllowed: 0,
+  prescriber: walkInPhysician,
+  written: { day: -101, reason: 'start' },
+  ended: null,
+  fillDays: [-101],
+}
+
+/** Resumed after the hold; first filled when the tablets left from the last 4 mg fill run out. */
+const warfarin4mgResumed: Prescription.Prescription = {
+  ...warfarin4mg,
+  key: 'warfarin-4',
+  written: { day: -91, reason: 'resume' },
+  ended: null,
+  fillDays: Prescription.fillDaysOnCadence(-77, 30, [0, 1]),
+}
+
+const withMeals = 'WITH MEALS'
+
+const metformin500mg: Prescription.Prescription = {
+  key: 'metformin-1',
+  product: catalogue.tevaMetformin500mg,
+  dosing: { tabletsPerDose: 1, dosesPerDay: 2, direction: withMeals },
+  supplyDaysPerFill: 90,
+  repeatsAllowed: 3,
+  prescriber: familyPhysician,
+  written: { day: -510, reason: 'start' },
+  ended: { day: -296, reason: 'dose-change' },
+  fillDays: Prescription.fillDaysOnCadence(-510, 90, [4, 2]),
+}
+
+const metformin1000mg: Prescription.Prescription = {
+  key: 'metformin-2',
+  product: catalogue.tevaMetformin500mg,
+  dosing: { tabletsPerDose: 2, dosesPerDay: 2, direction: withMeals },
+  supplyDaysPerFill: 90,
+  repeatsAllowed: 3,
+  prescriber: familyPhysician,
+  written: { day: -296, reason: 'dose-change' },
+  ended: { day: -23, reason: 'generic-switch' },
+  fillDays: Prescription.fillDaysOnCadence(-296, 90, [0, 3]),
+}
+
+const metformin1000mgSandoz: Prescription.Prescription = {
+  ...metformin1000mg,
+  key: 'metformin-3',
+  product: catalogue.sandozMetformin500mg,
+  repeatsAllowed: 1,
+  written: { day: -23, reason: 'generic-switch' },
+  ended: null,
+  fillDays: [-23],
+}
+
+/** INR (unitless), HbA1c (%) and fasting glucose (mmol/L) results the dose changes answer to. */
+const inr = (day: StoryDay.StoryDay, value: number): LabDraw.LabDraw => ({
+  day,
+  test: 'INR',
+  value,
+  unit: null,
+})
+const hba1c = (day: StoryDay.StoryDay, value: number): LabDraw.LabDraw => ({
+  day,
+  test: 'Hemoglobin A1c',
+  value,
+  unit: '%',
+})
+const fastingGlucose = (day: StoryDay.StoryDay, value: number): LabDraw.LabDraw => ({
+  day,
+  test: 'Fasting Glucose',
+  value,
+  unit: 'mmol/L',
+})
+
+/** Warren's story: see the module summary. */
+const warrenStory: Story.Story = {
+  person: warren,
+  prescriptions: [
+    metformin500mg,
+    warfarin5mg,
+    warfarin4mg,
+    metformin1000mg,
+    warfarin4mgRenewed,
+    clarithromycin,
+    warfarin4mgResumed,
+    metformin1000mgSandoz,
+  ],
+  labDraws: [
+    inr(-466, 2.3),
+    inr(-438, 2.8),
+    inr(-410, 3.2),
+    hba1c(-390, 8.1),
+    fastingGlucose(-390, 8.6),
+    inr(-385, 3.8),
+    inr(-377, 3.4),
+    inr(-370, 3.1),
+    inr(-363, 2.8),
+    inr(-356, 2.6),
+    inr(-330, 2.4),
+    hba1c(-300, 8.4),
+    fastingGlucose(-300, 9.4),
+    inr(-300, 2.5),
+    inr(-270, 2.6),
+    inr(-240, 2.5),
+    hba1c(-210, 7.6),
+    fastingGlucose(-210, 8.1),
+    inr(-200, 2.7),
+    inr(-160, 2.8),
+    hba1c(-120, 7.0),
+    fastingGlucose(-120, 7.3),
+    inr(-120, 2.6),
+    inr(-97, 3.3),
+    inr(-95, 4.1),
+    inr(-91, 2.4),
+    inr(-88, 2.9),
+    inr(-81, 2.7),
+    inr(-60, 2.5),
+    hba1c(-30, 7.0),
+    fastingGlucose(-30, 7.1),
+    inr(-30, 2.6),
+  ],
+}
+
+/** The family physician orders Warren's lab work; nobody is copied. */
+const warrenLabRequisition: LifeLabs.LabRequisition = { orderedBy: 'OKAFOR DR. NKECHI', copyTo: [] }
+
+/** Warren's Rexall Be Well account, at a fictional store. */
+const warrenRexallAccount: RexallHar.RexallAccount = {
+  uid: '3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816',
+  reportingGuid: '0b7e4c9a-52d3-4f1e-9a86-c2d4e1f07b35',
+  storeId: '7128',
+  pharmacyLocationId: 'pharmacy-7128',
+  createdDay: -1460,
+  updatedDay: -540,
+}
+
+export { warrenLabRequisition, warrenRexallAccount, warrenStory }
