@@ -1,0 +1,47 @@
+Wildflower synthetic data — the Ashford family
+===============================================
+
+This repository's code and its synthetic records are the Wildflower project's
+(see README.md, "Licensing"). Every person, account, address and identifier in
+the data set is fictional.
+
+It also carries one third-party file, under its own licence:
+
+sources/dicom/lidc-idri-0002-chest-pa-ds4.dcm
+(and every file derived from it, including dicom/warren-ashford-chest-x-ray.dcm
+in the published data set)
+
+  A posteroanterior (PA) chest radiograph (DX) of subject LIDC-IDRI-0002 from
+  The Cancer Imaging Archive (TCIA) LIDC-IDRI collection:
+
+    Armato III, S. G., McLennan, G., Bidaut, L., McNitt-Gray, M. F., Meyer,
+    C. R., Reeves, A. P., Zhao, B., Aberle, D. R., Henschke, C. I., Hoffman,
+    E. A., Kazerooni, E. A., MacMahon, H., van Beek, E. J. R., Yankelevitz, D.,
+    et al. (2015). Data From LIDC-IDRI [Data set]. The Cancer Imaging Archive.
+    https://doi.org/10.7937/K9/TCIA.2015.LO9QL9SX
+
+  Licensed under the Creative Commons Attribution 3.0 Unported License
+  (CC BY 3.0): http://creativecommons.org/licenses/by/3.0/
+
+  Modified: downsampled 4x (to 501x430), and its header re-identified with
+  synthetic values — the patient's name, sex, birth date and ID, the study
+  dates and times, and every instance UID are rewritten for the fictional
+  Warren Ashford, and private tags are removed (see Wildflower's
+  synthetic-data-core `DicomImage.reidentify`). The source file itself is the
+  downsampled image with TCIA's de-identified header.
+
+  Per TCIA's data usage policy, no attempt may be made to re-identify the
+  person this image was taken of. The synthetic identity it carries is not
+  theirs.
+
+  Please also cite:
+
+    Armato SG 3rd, McLennan G, Bidaut L, et al. The Lung Image Database
+    Consortium (LIDC) and Image Database Resource Initiative (IDRI): a
+    completed reference database of lung nodules on CT scans. Medical Physics
+    38(2):915–931, 2011. https://doi.org/10.1118/1.3528204
+
+    Clark K, Vendt B, Smith K, et al. The Cancer Imaging Archive (TCIA):
+    maintaining and operating a public information repository. Journal of
+    Digital Imaging 26(6):1045–1057, 2013.
+    https://doi.org/10.1007/s10278-013-9622-7
