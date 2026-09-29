@@ -104,10 +104,12 @@ keyed by the account's `pcid` and linked by `seealso`, so Tyra has two.
 | `src/family/tyra-physiology.ts`                         | What Tyra's Pebble measured, day by day.                                                                    |
 | `src/family/warren-chest-x-ray.ts`                      | Who and when Warren's X-ray is re-identified as.                                                            |
 | `src/generate.ts`                                       | Renders the family. Each HAR goes through the real HAR importer, and the output is grouped per person.      |
+| `src/site.ts`                                           | Assembles the data set and writes `site/`.                                                                  |
+| `src/family/introductions.ts`                           | Each person's name and summary in `index.json`.                                                             |
 | `src/sources.ts`                                        | Reads `sources/`.                                                                                           |
 | `sources/dicom/`                                        | The TCIA chest radiograph Warren's X-ray is made from (CC BY 3.0, see `NOTICE`).                            |
 | `test/`                                                 | The content checks (see below).                                                                             |
-| `scripts/emit.ts`                                       | Writes the data set into `site/`. It is a stub until Wildflower #793 (see "Status").                        |
+| `scripts/emit.ts`                                       | Writes the data set into `site/` (see "The published data set").                                            |
 | `scripts/register-ts.ts`                                | Lets `node` run the TypeScript scripts without a build (see "Setup").                                       |
 | `site/`                                                 | The published data set, deployed to GitHub Pages.                                                           |
 | `.github/workflows/ci.yml`                              | Checks and tests on every push and PR, with the submodule checked out.                                      |
@@ -193,7 +195,7 @@ git -C wildflower fetch && git -C wildflower checkout <commit>
 ```sh
 vp check        # format, lint, typecheck
 vp test         # the content checks
-vp run emit     # regenerate site/ (a stub for now; see "Status")
+vp run emit     # regenerate site/
 ```
 
 The content checks, in `test/`, are:
@@ -221,19 +223,20 @@ The content checks, in `test/`, are:
 - **Products** (`products`): the catalogue lists exactly what is dispensed, and
   each DIN is unique.
 
-## Status
+## The published data set
 
-The **emit step** waits on Wildflower #793. That change adds the data-set
-layout to `synthetic-data-core`, which the loader app shares:
+`vp run emit` replaces `site/` with the data set, laid out by
+synthetic-data-core's `DataSet.assemble` (Wildflower #793):
 
-- `fhir/<Type>/<id>.json`: one resource per file.
-- `har/` and `dicom/`: static files, linked from each source-file
-  DocumentReference's relative `attachment.url`.
-- The `index.json` manifest and its `assemble` step.
+- `index.json`: the manifest — each person's key, name, summary, Patient ids
+  and files, the as-of date and the Wildflower commit it was generated at.
+- `fhir/<Type>/<id>.json`: one importer-output resource per file.
+- `har/` and `dicom/`: the files the records were imported from, linked from
+  their source-file DocumentReferences' relative `attachment.url`.
+- `NOTICE` (also in `dicom/`) and a minimal `index.html`.
 
-Until then, `generate` holds each person's resources and files in memory, and
-`scripts/emit.ts` only reports them. Once #793 lands, bump the submodule, have
-`emit` assemble and write `site/`, and commit the generated tree.
+Emitting twice gives byte-identical files (`test/site.test.ts`). Commit the
+regenerated `site/`; the Pages workflow publishes it.
 
 ## Licensing
 

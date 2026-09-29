@@ -2,6 +2,7 @@ import { type DateTime, Effect, Either, Schema } from 'effect'
 import { Observation, type FhirResource } from 'fhir-r4/resources'
 import { defaultHarSettings, harImporter } from 'har-importer-core'
 import {
+  type DataSet,
   DicomImage,
   LifeLabs,
   PebbleObservations,
@@ -19,6 +20,7 @@ import {
   beauLabRequisition,
   CHEST_X_RAY_FILE_NAME,
   fernLabRequisition,
+  introductions,
   lifeLabsToronto,
   tyraLabRequisition,
   tyraPhysiology,
@@ -357,5 +359,17 @@ const generate = (
     return { asOf: StoryDay.toIsoDate(asOf, 0), people: [warren, ...shoppersPeople] }
   })
 
-export { generate, GenerateError, lastWriteWins, personResourcesOf, referencesOf }
+/**
+ * The family as `DataSet.assemble` takes it: each person's introduction and
+ * every resource of theirs, pharmacy first.
+ */
+const dataSetPeopleOf = (family: Family): readonly DataSet.PersonRecords[] =>
+  family.people.map((records) => {
+    const person = introductions.find((introduction) => introduction.key === records.person.key)
+    if (person === undefined) throw new Error(`no introduction for ${records.person.key}`)
+    const { pharmacy, labs, pebble, imaging } = records.resources
+    return { person, resources: [...pharmacy, ...labs, ...pebble, ...imaging] }
+  })
+
+export { dataSetPeopleOf, generate, GenerateError, lastWriteWins, personResourcesOf, referencesOf }
 export type { Family, PersonRecords, Source, Sources, StaticFile }
