@@ -1,0 +1,75 @@
+{
+  "id": "wf-17802ac0361d5f1ec3ff7e4f6c22ddc9",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "activity",
+          "display": "Activity",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "HealthMinuteData.vmc",
+        "display": "Pebble vector magnitude counts",
+        "system": "https://developer.repebble.com/docs/c/Foundation/Event_Service/HealthService/"
+      }
+    ]
+  },
+  "component": [],
+  "derivedFrom": [],
+  "device": {
+    "extension": [],
+    "display": "pebble_time_2_black (emery, firmware 4.9.1)",
+    "identifier": {
+      "extension": [],
+      "system": "https://developer.repebble.com/docs/pebblekit-js/Pebble/#getWatchToken",
+      "value": "c7540afb0ed24bd4a9793aead9cf7438"
+    }
+  },
+  "focus": [],
+  "hasMember": [],
+  "identifier": [],
+  "interpretation": [],
+  "note": [],
+  "partOf": [],
+  "performer": [],
+  "referenceRange": [],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "reference": "Patient/wf-cbd053168e1ed97ef6de87dc48f45d19"
+  },
+  "valueSampledData": {
+    "extension": [],
+    "period": 60000,
+    "dimensions": 1,
+    "origin": {
+      "extension": [],
+      "code": "{counts}/min",
+      "system": "http://unitsofmeasure.org",
+      "unit": "counts/minute",
+      "value": 0
+    },
+    "factor": 1,
+    "data": "12 27 16 59 24 18 18 30 28 4 42 7 59 33 47 29 14 32 29 17 49 55 38 11 56 22 5 5 6 54 20 50 39 51 55 13 60 14 37 22 19 52 28 10 47 15 22 17 48 18 40 10 40 418 233 372 254 320 279 201"
+  },
+  "effectivePeriod": {
+    "extension": [],
+    "end": "2026-09-24T11:00:00.000Z",
+    "start": "2026-09-24T10:00:00.000Z"
+  },
+  "resourceType": "Observation"
+}

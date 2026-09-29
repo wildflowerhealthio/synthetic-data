@@ -1,0 +1,108 @@
+{
+  "id": "wf-8f9460ecb0e5543726e97bf953f1df0e",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "a197cb68-c3d1-404a-a773-f9342d0ef333"
+    },
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
+      "value": "2120594"
+    }
+  ],
+  "status": "stopped",
+  "statusReason": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "UNABLE_TO_RENEW_ONLINE",
+        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/CodeSystem/prescription-status-type"
+      }
+    ],
+    "text": "Unable to renew online"
+  },
+  "intent": "order",
+  "category": [],
+  "medicationCodeableConcept": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "02256134",
+        "display": "Bisoprolol 5mg",
+        "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
+      }
+    ],
+    "text": "Apo-Bisoprolol"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+    },
+    "reference": "Patient/wf-f60751b1dfbfc108147097e0994acceb"
+  },
+  "supportingInformation": [],
+  "authoredOn": "2025-12-13T00:00:00.000Z",
+  "requester": {
+    "extension": [],
+    "display": "DR S BHATT"
+  },
+  "reasonCode": [],
+  "reasonReference": [],
+  "instantiatesCanonical": [],
+  "instantiatesUri": [],
+  "basedOn": [],
+  "insurance": [],
+  "note": [
+    {
+      "extension": [],
+      "text": "Contact your Pharmacy Team for more details"
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "text": "TAKE 1/2 TABLET (=2.5MG) BY MOUTH ONCE DAILY",
+      "additionalInstruction": [],
+      "doseAndRate": []
+    }
+  ],
+  "dispenseRequest": {
+    "extension": [],
+    "modifierExtension": [],
+    "validityPeriod": {
+      "extension": [],
+      "end": "2026-09-13T00:00:00.000Z",
+      "start": "2025-12-13T00:00:00.000Z"
+    },
+    "numberOfRepeatsAllowed": 0,
+    "quantity": {
+      "extension": [],
+      "value": 45
+    },
+    "performer": {
+      "extension": [],
+      "display": "Shoppers Drug Mart (store 1238)",
+      "reference": "https://www.shoppersdrugmart.ca/store-locator/store/1238"
+    }
+  },
+  "detectedIssue": [],
+  "eventHistory": [],
+  "resourceType": "MedicationRequest"
+}

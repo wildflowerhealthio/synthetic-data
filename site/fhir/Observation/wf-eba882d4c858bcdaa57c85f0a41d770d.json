@@ -1,0 +1,75 @@
+{
+  "id": "wf-eba882d4c858bcdaa57c85f0a41d770d",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "activity",
+          "display": "Activity",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "HealthMinuteData.vmc",
+        "display": "Pebble vector magnitude counts",
+        "system": "https://developer.repebble.com/docs/c/Foundation/Event_Service/HealthService/"
+      }
+    ]
+  },
+  "component": [],
+  "derivedFrom": [],
+  "device": {
+    "extension": [],
+    "display": "pebble_time_2_black (emery, firmware 4.9.1)",
+    "identifier": {
+      "extension": [],
+      "system": "https://developer.repebble.com/docs/pebblekit-js/Pebble/#getWatchToken",
+      "value": "c7540afb0ed24bd4a9793aead9cf7438"
+    }
+  },
+  "focus": [],
+  "hasMember": [],
+  "identifier": [],
+  "interpretation": [],
+  "note": [],
+  "partOf": [],
+  "performer": [],
+  "referenceRange": [],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "reference": "Patient/wf-cbd053168e1ed97ef6de87dc48f45d19"
+  },
+  "valueSampledData": {
+    "extension": [],
+    "period": 60000,
+    "dimensions": 1,
+    "origin": {
+      "extension": [],
+      "code": "{counts}/min",
+      "system": "http://unitsofmeasure.org",
+      "unit": "counts/minute",
+      "value": 0
+    },
+    "factor": 1,
+    "data": "276 329 438 1162 545 175 289 376 1229 396 173 176 398 411 355 153 777 753 962 189 222 387 189 255 450 334 212 200 348 291 236 407 358 431 227 238 387 364 231 337 1041 446 243 197 1344 176 386 166 247 774 1250 168 424 175 351 166 295 229 270 172"
+  },
+  "effectivePeriod": {
+    "extension": [],
+    "end": "2026-09-27T13:00:00.000Z",
+    "start": "2026-09-27T12:00:00.000Z"
+  },
+  "resourceType": "Observation"
+}

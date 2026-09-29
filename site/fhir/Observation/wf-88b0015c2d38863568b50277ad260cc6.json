@@ -1,0 +1,101 @@
+{
+  "id": "wf-88b0015c2d38863568b50277ad260cc6",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "laboratory",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ],
+      "text": "Hematology"
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [],
+    "text": "MCH"
+  },
+  "component": [],
+  "derivedFrom": [],
+  "focus": [],
+  "hasMember": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+      "value": "83f6c20f6351c976"
+    }
+  ],
+  "interpretation": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "L",
+          "display": "Low",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+        }
+      ],
+      "text": "LO"
+    }
+  ],
+  "issued": "2026-09-06T21:42:00.000Z",
+  "note": [],
+  "partOf": [],
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "referenceRange": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "appliesTo": [],
+      "high": {
+        "extension": [],
+        "code": "pg",
+        "system": "http://unitsofmeasure.org",
+        "unit": "pg",
+        "value": 33
+      },
+      "low": {
+        "extension": [],
+        "code": "pg",
+        "system": "http://unitsofmeasure.org",
+        "unit": "pg",
+        "value": 27.5
+      },
+      "text": "27.5 - 33.0"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
+    },
+    "reference": "Patient/wf-a35baf43239c45d87318bd8be5271153"
+  },
+  "valueQuantity": {
+    "extension": [],
+    "code": "pg",
+    "system": "http://unitsofmeasure.org",
+    "unit": "pg",
+    "value": 26.3
+  },
+  "effectiveDateTime": "2026-09-06T12:37:00.000Z",
+  "resourceType": "Observation"
+}

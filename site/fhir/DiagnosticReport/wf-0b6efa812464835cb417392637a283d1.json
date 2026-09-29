@@ -1,0 +1,180 @@
+{
+  "id": "wf-0b6efa812464835cb417392637a283d1",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+      "value": "350e455f93f21ba6"
+    },
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/lab-number",
+      "value": "2026-LM8800559"
+    }
+  ],
+  "basedOn": [],
+  "status": "final",
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "LAB",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "11502-2",
+        "display": "Laboratory report",
+        "system": "http://loinc.org/"
+      }
+    ],
+    "text": "Hematology, Chemistry"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
+    },
+    "reference": "Patient/wf-a35baf43239c45d87318bd8be5271153"
+  },
+  "effectiveDateTime": "2026-09-06T12:37:00.000Z",
+  "issued": "2026-09-06T21:42:00.000Z",
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "resultsInterpreter": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+        "value": "e16a516943f7d837"
+      },
+      "reference": "Practitioner/wf-47846a2e610d3a7cc3c5792279929f01"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+        "value": "8894bf85b119bb16"
+      },
+      "reference": "Practitioner/wf-998c5127f8c2162a3a4a184f5131ebe7"
+    }
+  ],
+  "specimen": [],
+  "result": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+        "value": "2efa1ecc94351a0b"
+      },
+      "reference": "Observation/wf-88d315483a0b924657ee5a6005906da5"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+        "value": "04492460f1430691"
+      },
+      "reference": "Observation/wf-577d2f323c7fafd8a52308848fd88b03"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+        "value": "4b525ddb7782a55f"
+      },
+      "reference": "Observation/wf-45cfcc56bd834bd04f774b53f49cc90b"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+        "value": "12cd040431b1d58a"
+      },
+      "reference": "Observation/wf-62747c20ea9ded92ee86d66f17e6e54d"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+        "value": "18f9e3c591cd7893"
+      },
+      "reference": "Observation/wf-d59e27587ae8ec61a45882078dd3075a"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+        "value": "83f6c20f6351c976"
+      },
+      "reference": "Observation/wf-88b0015c2d38863568b50277ad260cc6"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+        "value": "fd934ddbceea18f9"
+      },
+      "reference": "Observation/wf-c12919b2cab9a0851e5e211e994061b6"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+        "value": "d7c12022f00c39a9"
+      },
+      "reference": "Observation/wf-0fd6b4105fad68f5a24e4bd7ed95047a"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+        "value": "c9b12b3d1d0a677d"
+      },
+      "reference": "Observation/wf-0dd9e185dbc8a34f8390befb475957d4"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+        "value": "1a918cb9a47d024f"
+      },
+      "reference": "Observation/wf-8c6a7a78635e85493eafe94e257310f6"
+    }
+  ],
+  "imagingStudy": [],
+  "media": [],
+  "conclusionCode": [],
+  "presentedForm": [],
+  "resourceType": "DiagnosticReport"
+}

@@ -1,0 +1,60 @@
+{
+  "id": "wf-f60751b1dfbfc108147097e0994acceb",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "address": [
+    {
+      "extension": [],
+      "city": "Kingston",
+      "line": [
+        "48 Sydenham St"
+      ],
+      "postalCode": "K7M 5B1",
+      "state": "ON"
+    }
+  ],
+  "communication": [],
+  "contact": [],
+  "generalPractitioner": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+    },
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+    }
+  ],
+  "link": [],
+  "name": [
+    {
+      "extension": [],
+      "family": "Hartman",
+      "given": [
+        "Beau"
+      ],
+      "prefix": [],
+      "suffix": [],
+      "text": "Beau Hartman"
+    }
+  ],
+  "photo": [],
+  "telecom": [
+    {
+      "extension": [],
+      "system": "phone",
+      "value": "6135550143"
+    }
+  ],
+  "resourceType": "Patient"
+}

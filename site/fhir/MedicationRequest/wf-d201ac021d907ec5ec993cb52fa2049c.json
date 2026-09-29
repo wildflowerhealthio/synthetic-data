@@ -1,0 +1,116 @@
+{
+  "id": "wf-d201ac021d907ec5ec993cb52fa2049c",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "3cd20dd0-af69-42db-aa87-c6f6a813588c"
+    },
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
+      "value": "4981999"
+    }
+  ],
+  "status": "stopped",
+  "statusReason": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "UNABLE_TO_RENEW_ONLINE",
+        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/CodeSystem/prescription-status-type"
+      }
+    ],
+    "text": "Unable to renew online"
+  },
+  "intent": "order",
+  "category": [],
+  "medicationCodeableConcept": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "02550725",
+        "display": "Levothyroxine 75mcg",
+        "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
+      }
+    ],
+    "text": "Apo-Levothyroxine"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "a3e8d1f0-7c52-4b96-8e0d-5f14c9a72b38"
+    },
+    "reference": "Patient/wf-cbd053168e1ed97ef6de87dc48f45d19"
+  },
+  "supportingInformation": [],
+  "authoredOn": "2026-06-02T00:00:00.000Z",
+  "requester": {
+    "extension": [],
+    "display": "DR S BHATT"
+  },
+  "reasonCode": [],
+  "reasonReference": [],
+  "instantiatesCanonical": [],
+  "instantiatesUri": [],
+  "basedOn": [],
+  "insurance": [],
+  "note": [
+    {
+      "extension": [],
+      "text": "Contact your Pharmacy Team for more details"
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "text": "TAKE 1 TABLET (=75MCG) BY MOUTH ONCE DAILY BEFORE BREAKFAST",
+      "additionalInstruction": [],
+      "doseAndRate": []
+    }
+  ],
+  "dispenseRequest": {
+    "extension": [],
+    "modifierExtension": [],
+    "validityPeriod": {
+      "extension": [],
+      "end": "2027-03-04T00:00:00.000Z",
+      "start": "2026-06-02T00:00:00.000Z"
+    },
+    "numberOfRepeatsAllowed": 2,
+    "quantity": {
+      "extension": [],
+      "value": 90
+    },
+    "performer": {
+      "extension": [],
+      "display": "Shoppers Drug Mart (store 1238)",
+      "reference": "https://www.shoppersdrugmart.ca/store-locator/store/1238"
+    }
+  },
+  "priorPrescription": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
+      "value": "1687980"
+    }
+  },
+  "detectedIssue": [],
+  "eventHistory": [],
+  "resourceType": "MedicationRequest"
+}

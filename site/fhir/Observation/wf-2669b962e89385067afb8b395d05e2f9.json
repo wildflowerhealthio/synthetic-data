@@ -1,0 +1,101 @@
+{
+  "id": "wf-2669b962e89385067afb8b395d05e2f9",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "laboratory",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ],
+      "text": "Chemistry · Endocrinology"
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [],
+    "text": "TSH"
+  },
+  "component": [],
+  "derivedFrom": [],
+  "focus": [],
+  "hasMember": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+      "value": "05663fe2212195e5"
+    }
+  ],
+  "interpretation": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "L",
+          "display": "Low",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+        }
+      ],
+      "text": "LO"
+    }
+  ],
+  "issued": "2026-09-15T22:44:00.000Z",
+  "note": [],
+  "partOf": [],
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "referenceRange": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "appliesTo": [],
+      "high": {
+        "extension": [],
+        "code": "m[IU]/L",
+        "system": "http://unitsofmeasure.org",
+        "unit": "mIU/L",
+        "value": 4
+      },
+      "low": {
+        "extension": [],
+        "code": "m[IU]/L",
+        "system": "http://unitsofmeasure.org",
+        "unit": "mIU/L",
+        "value": 0.32
+      },
+      "text": "0.32 - 4.00"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "a3e8d1f0-7c52-4b96-8e0d-5f14c9a72b38"
+    },
+    "reference": "Patient/wf-cbd053168e1ed97ef6de87dc48f45d19"
+  },
+  "valueQuantity": {
+    "extension": [],
+    "code": "m[IU]/L",
+    "system": "http://unitsofmeasure.org",
+    "unit": "mIU/L",
+    "value": 0.08
+  },
+  "effectiveDateTime": "2026-09-15T14:34:00.000Z",
+  "resourceType": "Observation"
+}

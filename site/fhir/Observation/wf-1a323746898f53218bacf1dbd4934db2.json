@@ -1,0 +1,81 @@
+{
+  "id": "wf-1a323746898f53218bacf1dbd4934db2",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "laboratory",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ],
+      "text": "Chemistry · Lipid Assessment"
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [],
+    "text": "Non-HDL Cholesterol"
+  },
+  "component": [],
+  "derivedFrom": [],
+  "focus": [],
+  "hasMember": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+      "value": "d8e8c50a32f378be"
+    }
+  ],
+  "interpretation": [],
+  "issued": "2026-08-09T18:58:00.000Z",
+  "note": [],
+  "partOf": [],
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "referenceRange": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "appliesTo": [],
+      "high": {
+        "extension": [],
+        "code": "mmol/L",
+        "system": "http://unitsofmeasure.org",
+        "unit": "mmol/L",
+        "value": 4.2
+      },
+      "text": "<4.20"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+    },
+    "reference": "Patient/wf-f60751b1dfbfc108147097e0994acceb"
+  },
+  "valueQuantity": {
+    "extension": [],
+    "code": "mmol/L",
+    "system": "http://unitsofmeasure.org",
+    "unit": "mmol/L",
+    "value": 2.87
+  },
+  "effectiveDateTime": "2026-08-09T11:33:00.000Z",
+  "resourceType": "Observation"
+}

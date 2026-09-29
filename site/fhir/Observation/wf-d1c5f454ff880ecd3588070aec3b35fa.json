@@ -1,0 +1,106 @@
+{
+  "id": "wf-d1c5f454ff880ecd3588070aec3b35fa",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "laboratory",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ],
+      "text": "Chemistry"
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [],
+    "text": "Hemoglobin A1C"
+  },
+  "component": [],
+  "derivedFrom": [],
+  "focus": [],
+  "hasMember": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+      "value": "0592650a4bd14f85"
+    }
+  ],
+  "interpretation": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "H",
+          "display": "High",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+        }
+      ],
+      "text": "HI"
+    }
+  ],
+  "issued": "2026-08-29T21:56:00.000Z",
+  "note": [
+    {
+      "extension": [],
+      "text": "Target for most people with diabetes: <=7.0%"
+    }
+  ],
+  "partOf": [],
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "referenceRange": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "appliesTo": [],
+      "high": {
+        "extension": [],
+        "code": "%",
+        "system": "http://unitsofmeasure.org",
+        "unit": "%",
+        "value": 6
+      },
+      "low": {
+        "extension": [],
+        "code": "%",
+        "system": "http://unitsofmeasure.org",
+        "unit": "%",
+        "value": 4
+      },
+      "text": "4.0 - 6.0"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "value": "3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816"
+    },
+    "reference": "Patient/wf-b712d81c664593dea9cb10a6275aad79"
+  },
+  "valueQuantity": {
+    "extension": [],
+    "code": "%",
+    "system": "http://unitsofmeasure.org",
+    "unit": "%",
+    "value": 7
+  },
+  "effectiveDateTime": "2026-08-29T13:42:00.000Z",
+  "resourceType": "Observation"
+}

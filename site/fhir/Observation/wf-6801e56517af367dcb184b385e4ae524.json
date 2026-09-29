@@ -1,0 +1,75 @@
+{
+  "id": "wf-6801e56517af367dcb184b385e4ae524",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "activity",
+          "display": "Activity",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "55423-8",
+        "display": "Number of steps in unspecified time Pedometer",
+        "system": "http://loinc.org/"
+      }
+    ]
+  },
+  "component": [],
+  "derivedFrom": [],
+  "device": {
+    "extension": [],
+    "display": "pebble_time_2_black (emery, firmware 4.9.1)",
+    "identifier": {
+      "extension": [],
+      "system": "https://developer.repebble.com/docs/pebblekit-js/Pebble/#getWatchToken",
+      "value": "c7540afb0ed24bd4a9793aead9cf7438"
+    }
+  },
+  "focus": [],
+  "hasMember": [],
+  "identifier": [],
+  "interpretation": [],
+  "note": [],
+  "partOf": [],
+  "performer": [],
+  "referenceRange": [],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "reference": "Patient/wf-cbd053168e1ed97ef6de87dc48f45d19"
+  },
+  "valueSampledData": {
+    "extension": [],
+    "period": 60000,
+    "dimensions": 1,
+    "origin": {
+      "extension": [],
+      "code": "{steps}",
+      "system": "http://unitsofmeasure.org",
+      "unit": "steps",
+      "value": 0
+    },
+    "factor": 1,
+    "data": "0 0 0 0 0 0 0 0 0 0 0 14 0 0 0 0 0 0 111 107 108 108 112 106 106 107 111 108 110 107 106 112 108 109 112 109 111 110 108 106 111 112 109 110 111 109 111 108 112 111 106 110 111 109 109 110 110 110 108 111"
+  },
+  "effectivePeriod": {
+    "extension": [],
+    "end": "2026-09-04T17:00:00.000Z",
+    "start": "2026-09-04T16:00:00.000Z"
+  },
+  "resourceType": "Observation"
+}

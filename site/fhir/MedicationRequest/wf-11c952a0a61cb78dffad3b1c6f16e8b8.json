@@ -1,0 +1,231 @@
+{
+  "id": "wf-11c952a0a61cb78dffad3b1c6f16e8b8",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "lastUpdated": "2026-09-12T19:29:35.000Z",
+    "source": "DocumentReference/wf-28211000f1dd61be16ed9e0bc7730d5b",
+    "versionId": "4"
+  },
+  "contained": [
+    {
+      "resourceType": "Medication",
+      "id": "03526a46-b482-4c3d-9ea8-b7386b38a51f",
+      "code": {
+        "text": "Warfarin 4 mg tablet",
+        "coding": [
+          {
+            "system": "http://schema.carebook.com/v1/fhir/coding/medication-din-code",
+            "code": "02242684"
+          },
+          {
+            "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din",
+            "code": "02242684"
+          }
+        ]
+      },
+      "text": {
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">4 mg - Taro-Warfarin</div>",
+        "status": "generated"
+      },
+      "extension": [],
+      "ingredient": [
+        {
+          "itemCodeableConcept": {
+            "text": "Warfarin 4 mg tablet",
+            "coding": [
+              {
+                "system": "http://schema.carebook.com/v1/fhir/coding/medication-din-code",
+                "code": "02242684"
+              },
+              {
+                "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din",
+                "code": "02242684"
+              }
+            ]
+          },
+          "strength": {
+            "numerator": {
+              "unit": "mg",
+              "value": 4
+            },
+            "denominator": {
+              "value": 1
+            }
+          }
+        }
+      ],
+      "meta": {
+        "versionId": "4",
+        "lastUpdated": "2026-09-12T19:29:35+00:00"
+      },
+      "status": "active",
+      "manufacturer": {
+        "display": "Taro Pharmaceuticals Inc"
+      },
+      "form": {
+        "coding": [
+          {
+            "system": "http://schema.carebook.com/v1/fhir/coding/medication-form-code",
+            "code": "tablet"
+          }
+        ]
+      }
+    }
+  ],
+  "extension": [
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationrequest/extension/estimated-pick-up",
+      "valueDateTime": "2026-09-12T19:29:35.000Z"
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/common/extension/input-source",
+      "valueString": "Sync"
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationrequest/extension/medicationrecord-processor",
+      "valueReference": {
+        "extension": [],
+        "identifier": {
+          "extension": [],
+          "value": "pharmacy-7128"
+        },
+        "reference": "rexall-pharmacy-location/pharmacy-7128"
+      }
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationrequest/extension/renewable",
+      "valueBoolean": true
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationrequest/extension/sort-order",
+      "valuePositiveInt": 7
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationrequest/extension/prescription-order",
+      "valueReference": {
+        "extension": [],
+        "display": "todo",
+        "identifier": {
+          "extension": [],
+          "value": "null"
+        },
+        "reference": "PrescriptionOrder/null"
+      }
+    }
+  ],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "value": "7857c64e-11ef-4401-8872-9e9876563beb"
+    },
+    {
+      "extension": [],
+      "system": "http://schema.carebook.com/v1/fhir/identifier/medicationrequest-external-id",
+      "value": "7102960"
+    },
+    {
+      "extension": [],
+      "system": "http://schema.carebook.com/v1/fhir/identifier/medicationrequest-external-authorizing-id",
+      "value": "591810622"
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "refill",
+          "system": "http://schemas.carebook.com/v1/fhir/coding/medicationrequest-request-type-code"
+        }
+      ]
+    }
+  ],
+  "doNotPerform": false,
+  "medicationReference": {
+    "extension": [],
+    "display": "Warfarin 4 mg tablet",
+    "reference": "#03526a46-b482-4c3d-9ea8-b7386b38a51f"
+  },
+  "subject": {
+    "extension": [],
+    "display": "",
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "value": "3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816"
+    },
+    "reference": "Patient/wf-b712d81c664593dea9cb10a6275aad79"
+  },
+  "supportingInformation": [],
+  "authoredOn": "2026-06-29T14:27:16.000Z",
+  "requester": {
+    "extension": [],
+    "display": "DR N OKAFOR",
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "value": "2b03a4d3-319b-47a0-89ed-dc9dc9611f6f"
+    },
+    "reference": "Practitioner/wf-5e01e5ef20ff81254f8aeaa5bb4dea46"
+  },
+  "reasonCode": [],
+  "reasonReference": [],
+  "instantiatesCanonical": [],
+  "instantiatesUri": [],
+  "basedOn": [],
+  "insurance": [],
+  "note": [
+    {
+      "extension": [],
+      "text": "TAKE 1 TABLET (=4MG) BY MOUTH ONCE DAILY"
+    }
+  ],
+  "dosageInstruction": [],
+  "dispenseRequest": {
+    "modifierExtension": [],
+    "extension": [
+      {
+        "extension": [],
+        "url": "https://wildflowerhealth.io/fhir/StructureDefinition/repeats-available",
+        "valueInteger": 3
+      }
+    ],
+    "numberOfRepeatsAllowed": 5,
+    "quantity": {
+      "extension": [],
+      "value": 30
+    },
+    "expectedSupplyDuration": {
+      "extension": [],
+      "code": "d",
+      "system": "http://unitsofmeasure.org",
+      "unit": "day",
+      "value": 30
+    },
+    "performer": {
+      "extension": [],
+      "display": "Rexall (store 7128)",
+      "identifier": {
+        "extension": [],
+        "value": "pharmacy-7128"
+      },
+      "reference": "https://www.rexall.ca/storelocator/store/7128"
+    }
+  },
+  "detectedIssue": [],
+  "eventHistory": [],
+  "resourceType": "MedicationRequest"
+}

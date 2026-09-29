@@ -1,0 +1,28 @@
+{
+  "id": "wf-47846a2e610d3a7cc3c5792279929f01",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+      "value": "e16a516943f7d837"
+    }
+  ],
+  "name": [
+    {
+      "extension": [],
+      "given": [],
+      "prefix": [],
+      "suffix": [],
+      "text": "MORIN DR. LUCIE"
+    }
+  ],
+  "telecom": [],
+  "address": [],
+  "photo": [],
+  "qualification": [],
+  "communication": [],
+  "resourceType": "Practitioner"
+}

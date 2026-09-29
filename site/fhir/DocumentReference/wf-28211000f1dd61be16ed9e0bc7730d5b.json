@@ -1,0 +1,60 @@
+{
+  "id": "wf-28211000f1dd61be16ed9e0bc7730d5b",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [],
+  "status": "current",
+  "type": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "har-archive",
+        "system": "https://wildflowerhealth.io/fhir/CodeSystem/web-trace"
+      }
+    ]
+  },
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "har-archive",
+          "system": "https://wildflowerhealth.io/fhir/CodeSystem/web-trace"
+        }
+      ]
+    }
+  ],
+  "author": [],
+  "relatesTo": [],
+  "description": "HAR archive: warren-ashford-rexall.har",
+  "securityLabel": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "raw",
+          "system": "https://wildflowerhealth.io/fhir/CodeSystem/web-trace-redaction"
+        }
+      ]
+    }
+  ],
+  "content": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "attachment": {
+        "extension": [],
+        "contentType": "application/json",
+        "url": "har/warren-ashford-rexall.har",
+        "hash": "B9BePSk6lOUz7xeP3Mtbgb+KScA6XOYRd6EC7RPJSWI=",
+        "size": 66176,
+        "title": "warren-ashford-rexall.har"
+      }
+    }
+  ],
+  "resourceType": "DocumentReference"
+}

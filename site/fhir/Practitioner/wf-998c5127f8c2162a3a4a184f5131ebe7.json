@@ -1,0 +1,28 @@
+{
+  "id": "wf-998c5127f8c2162a3a4a184f5131ebe7",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+      "value": "8894bf85b119bb16"
+    }
+  ],
+  "name": [
+    {
+      "extension": [],
+      "given": [],
+      "prefix": [],
+      "suffix": [],
+      "text": "BHATT DR. SUNITA"
+    }
+  ],
+  "telecom": [],
+  "address": [],
+  "photo": [],
+  "qualification": [],
+  "communication": [],
+  "resourceType": "Practitioner"
+}

@@ -1,0 +1,97 @@
+{
+  "id": "wf-5ca6c8ee56c4faea9c441e6a5cd2a43d",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "laboratory",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ],
+      "text": "Hematology · Coagulation"
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [],
+    "text": "INR"
+  },
+  "component": [],
+  "derivedFrom": [],
+  "focus": [],
+  "hasMember": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+      "value": "424410bf6c55575f"
+    }
+  ],
+  "interpretation": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "H",
+          "display": "High",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+        }
+      ],
+      "text": "HI"
+    }
+  ],
+  "issued": "2026-06-23T21:37:00.000Z",
+  "note": [
+    {
+      "extension": [],
+      "text": "Therapeutic range for most indications\non warfarin: 2.0 - 3.0"
+    }
+  ],
+  "partOf": [],
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "referenceRange": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "appliesTo": [],
+      "high": {
+        "extension": [],
+        "value": 1.2
+      },
+      "low": {
+        "extension": [],
+        "value": 0.8
+      },
+      "text": "0.8 - 1.2"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "value": "3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816"
+    },
+    "reference": "Patient/wf-b712d81c664593dea9cb10a6275aad79"
+  },
+  "valueQuantity": {
+    "extension": [],
+    "value": 3.3
+  },
+  "effectiveDateTime": "2026-06-23T12:44:00.000Z",
+  "resourceType": "Observation"
+}

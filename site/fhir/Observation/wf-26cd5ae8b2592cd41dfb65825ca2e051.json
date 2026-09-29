@@ -1,0 +1,75 @@
+{
+  "id": "wf-26cd5ae8b2592cd41dfb65825ca2e051",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "vital-signs",
+          "display": "Vital Signs",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "8867-4",
+        "display": "Heart rate",
+        "system": "http://loinc.org/"
+      }
+    ]
+  },
+  "component": [],
+  "derivedFrom": [],
+  "device": {
+    "extension": [],
+    "display": "pebble_time_2_black (emery, firmware 4.9.1)",
+    "identifier": {
+      "extension": [],
+      "system": "https://developer.repebble.com/docs/pebblekit-js/Pebble/#getWatchToken",
+      "value": "c7540afb0ed24bd4a9793aead9cf7438"
+    }
+  },
+  "focus": [],
+  "hasMember": [],
+  "identifier": [],
+  "interpretation": [],
+  "note": [],
+  "partOf": [],
+  "performer": [],
+  "referenceRange": [],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "reference": "Patient/wf-cbd053168e1ed97ef6de87dc48f45d19"
+  },
+  "valueSampledData": {
+    "extension": [],
+    "period": 60000,
+    "dimensions": 1,
+    "origin": {
+      "extension": [],
+      "code": "/min",
+      "system": "http://unitsofmeasure.org",
+      "unit": "beats/minute",
+      "value": 0
+    },
+    "factor": 1,
+    "data": "66 65 68 69 67 66 68 67 67 65 66 66 68 69 65 66 68 69 69 66 68 66 67 69 69 72 73 70 73 71 73 72 69 73 69 69 72 72 71 70 72 72 70 72 69 71 74 73 70 72 72 70 70 73 70 71 70 72 70 70"
+  },
+  "effectivePeriod": {
+    "extension": [],
+    "end": "2026-09-20T11:00:00.000Z",
+    "start": "2026-09-20T10:00:00.000Z"
+  },
+  "resourceType": "Observation"
+}

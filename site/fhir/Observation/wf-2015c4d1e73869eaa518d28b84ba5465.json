@@ -1,0 +1,88 @@
+{
+  "id": "wf-2015c4d1e73869eaa518d28b84ba5465",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "laboratory",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ],
+      "text": "Chemistry"
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [],
+    "text": "Creatinine"
+  },
+  "component": [],
+  "derivedFrom": [],
+  "focus": [],
+  "hasMember": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+      "value": "4de3350da9b63da7"
+    }
+  ],
+  "interpretation": [],
+  "issued": "2026-08-09T18:58:00.000Z",
+  "note": [],
+  "partOf": [],
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "referenceRange": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "appliesTo": [],
+      "high": {
+        "extension": [],
+        "code": "umol/L",
+        "system": "http://unitsofmeasure.org",
+        "unit": "umol/L",
+        "value": 115
+      },
+      "low": {
+        "extension": [],
+        "code": "umol/L",
+        "system": "http://unitsofmeasure.org",
+        "unit": "umol/L",
+        "value": 60
+      },
+      "text": "60 - 115"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+    },
+    "reference": "Patient/wf-f60751b1dfbfc108147097e0994acceb"
+  },
+  "valueQuantity": {
+    "extension": [],
+    "code": "umol/L",
+    "system": "http://unitsofmeasure.org",
+    "unit": "umol/L",
+    "value": 88
+  },
+  "effectiveDateTime": "2026-08-09T11:33:00.000Z",
+  "resourceType": "Observation"
+}

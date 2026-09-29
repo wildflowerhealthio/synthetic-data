@@ -1,0 +1,51 @@
+{
+  "id": "wf-b712d81c664593dea9cb10a6275aad79",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-28211000f1dd61be16ed9e0bc7730d5b"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "address": [
+    {
+      "extension": [],
+      "line": [],
+      "postalCode": "K7L 2V4"
+    }
+  ],
+  "birthDate": "1948-05-08",
+  "communication": [],
+  "contact": [],
+  "generalPractitioner": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "value": "3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816"
+    }
+  ],
+  "link": [],
+  "name": [
+    {
+      "extension": [],
+      "family": "Ashford",
+      "given": [
+        "Warren"
+      ],
+      "prefix": [],
+      "suffix": []
+    }
+  ],
+  "photo": [],
+  "telecom": [
+    {
+      "extension": [],
+      "system": "email",
+      "value": "warren.ashford@example.com"
+    }
+  ],
+  "resourceType": "Patient"
+}

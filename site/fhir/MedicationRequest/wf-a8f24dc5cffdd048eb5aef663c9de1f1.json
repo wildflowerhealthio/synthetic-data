@@ -1,0 +1,108 @@
+{
+  "id": "wf-a8f24dc5cffdd048eb5aef663c9de1f1",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "57dc6a75-ccb5-4efb-be6d-2cfe1be36688"
+    },
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
+      "value": "8154414"
+    }
+  ],
+  "status": "stopped",
+  "statusReason": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "UNABLE_TO_RENEW_ONLINE",
+        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/CodeSystem/prescription-status-type"
+      }
+    ],
+    "text": "Unable to renew online"
+  },
+  "intent": "order",
+  "category": [],
+  "medicationCodeableConcept": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "02310902",
+        "display": "Atorvastatin 20mg",
+        "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
+      }
+    ],
+    "text": "Teva-Atorvastatin"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+    },
+    "reference": "Patient/wf-f60751b1dfbfc108147097e0994acceb"
+  },
+  "supportingInformation": [],
+  "authoredOn": "2025-11-22T00:00:00.000Z",
+  "requester": {
+    "extension": [],
+    "display": "DR S BHATT"
+  },
+  "reasonCode": [],
+  "reasonReference": [],
+  "instantiatesCanonical": [],
+  "instantiatesUri": [],
+  "basedOn": [],
+  "insurance": [],
+  "note": [
+    {
+      "extension": [],
+      "text": "Contact your Pharmacy Team for more details"
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "text": "TAKE 1 TABLET (=20MG) BY MOUTH ONCE DAILY AT BEDTIME",
+      "additionalInstruction": [],
+      "doseAndRate": []
+    }
+  ],
+  "dispenseRequest": {
+    "extension": [],
+    "modifierExtension": [],
+    "validityPeriod": {
+      "extension": [],
+      "end": "2026-08-24T00:00:00.000Z",
+      "start": "2025-11-22T00:00:00.000Z"
+    },
+    "numberOfRepeatsAllowed": 2,
+    "quantity": {
+      "extension": [],
+      "value": 90
+    },
+    "performer": {
+      "extension": [],
+      "display": "Shoppers Drug Mart (store 1238)",
+      "reference": "https://www.shoppersdrugmart.ca/store-locator/store/1238"
+    }
+  },
+  "detectedIssue": [],
+  "eventHistory": [],
+  "resourceType": "MedicationRequest"
+}

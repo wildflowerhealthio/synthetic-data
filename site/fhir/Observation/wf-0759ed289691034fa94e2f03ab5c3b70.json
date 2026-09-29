@@ -1,0 +1,101 @@
+{
+  "id": "wf-0759ed289691034fa94e2f03ab5c3b70",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "laboratory",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ],
+      "text": "Hematology"
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [],
+    "text": "Hemoglobin"
+  },
+  "component": [],
+  "derivedFrom": [],
+  "focus": [],
+  "hasMember": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+      "value": "c3393946d2819909"
+    }
+  ],
+  "interpretation": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "L",
+          "display": "Low",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+        }
+      ],
+      "text": "LO"
+    }
+  ],
+  "issued": "2026-07-20T18:50:00.000Z",
+  "note": [],
+  "partOf": [],
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "referenceRange": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "appliesTo": [],
+      "high": {
+        "extension": [],
+        "code": "g/L",
+        "system": "http://unitsofmeasure.org",
+        "unit": "g/L",
+        "value": 160
+      },
+      "low": {
+        "extension": [],
+        "code": "g/L",
+        "system": "http://unitsofmeasure.org",
+        "unit": "g/L",
+        "value": 120
+      },
+      "text": "120 - 160"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
+    },
+    "reference": "Patient/wf-a35baf43239c45d87318bd8be5271153"
+  },
+  "valueQuantity": {
+    "extension": [],
+    "code": "g/L",
+    "system": "http://unitsofmeasure.org",
+    "unit": "g/L",
+    "value": 112
+  },
+  "effectiveDateTime": "2026-07-20T13:02:00.000Z",
+  "resourceType": "Observation"
+}

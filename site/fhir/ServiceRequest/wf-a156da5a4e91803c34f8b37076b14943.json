@@ -1,0 +1,52 @@
+{
+  "id": "wf-a156da5a4e91803c34f8b37076b14943",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-d839e8a41a9813efd871f04c7a6572fe"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/dicom",
+      "value": "38259566be8e168b"
+    },
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/dicom",
+      "value": "XR26-0104417"
+    }
+  ],
+  "instantiatesCanonical": [],
+  "instantiatesUri": [],
+  "basedOn": [],
+  "replaces": [],
+  "status": "completed",
+  "intent": "order",
+  "category": [],
+  "orderDetail": [],
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "value": "3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816"
+    },
+    "reference": "Patient/wf-b712d81c664593dea9cb10a6275aad79"
+  },
+  "performer": [],
+  "locationCode": [],
+  "locationReference": [],
+  "reasonCode": [],
+  "reasonReference": [],
+  "insurance": [],
+  "supportingInfo": [],
+  "bodySite": [],
+  "note": [],
+  "relevantHistory": [],
+  "resourceType": "ServiceRequest"
+}

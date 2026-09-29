@@ -1,0 +1,60 @@
+{
+  "id": "wf-cbd053168e1ed97ef6de87dc48f45d19",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "address": [
+    {
+      "extension": [],
+      "city": "Kingston",
+      "line": [
+        "48 Sydenham St"
+      ],
+      "postalCode": "K7M 5B1",
+      "state": "ON"
+    }
+  ],
+  "communication": [],
+  "contact": [],
+  "generalPractitioner": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "a3e8d1f0-7c52-4b96-8e0d-5f14c9a72b38"
+    },
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "a3e8d1f0-7c52-4b96-8e0d-5f14c9a72b38"
+    }
+  ],
+  "link": [],
+  "name": [
+    {
+      "extension": [],
+      "family": "Ashford",
+      "given": [
+        "Tyra"
+      ],
+      "prefix": [],
+      "suffix": [],
+      "text": "Tyra Ashford"
+    }
+  ],
+  "photo": [],
+  "telecom": [
+    {
+      "extension": [],
+      "system": "phone",
+      "value": "6135550142"
+    }
+  ],
+  "resourceType": "Patient"
+}

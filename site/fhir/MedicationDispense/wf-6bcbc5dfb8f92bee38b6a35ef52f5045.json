@@ -1,0 +1,142 @@
+{
+  "id": "wf-6bcbc5dfb8f92bee38b6a35ef52f5045",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "lastUpdated": "2026-09-05T17:55:41.000Z",
+    "source": "DocumentReference/wf-28211000f1dd61be16ed9e0bc7730d5b",
+    "versionId": "2"
+  },
+  "contained": [],
+  "extension": [
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationdispense/extension/when-requested",
+      "valueDateTime": "2026-09-05T15:39:36.000Z"
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationdispense/extension/estimated-pick-up",
+      "valueDateTime": "2026-09-05T17:55:41.000Z"
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationdispense/extension/dispensed-in-app",
+      "valueBoolean": false
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationdispense/extension/medication-processor-timezone",
+      "valueString": "America/Toronto"
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationdispense/extension/medicationrecord-processor",
+      "valueReference": {
+        "extension": [],
+        "identifier": {
+          "extension": [],
+          "value": "pharmacy-7128"
+        },
+        "reference": "rexall-pharmacy-location/pharmacy-7128"
+      }
+    }
+  ],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "value": "03b71def-5900-4dc4-8510-13975b42a90c"
+    },
+    {
+      "extension": [],
+      "system": "http://schema.carebook.com/v1/fhir/identifier/medicationrequest-external-id",
+      "value": "9817014"
+    },
+    {
+      "extension": [],
+      "system": "http://schema.carebook.com/v1/fhir/identifier/medicationrequest-external-authorizing-id",
+      "value": "643549572"
+    }
+  ],
+  "partOf": [],
+  "status": "completed",
+  "medicationCodeableConcept": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "02246820",
+        "system": "http://schema.carebook.com/v1/fhir/coding/medication-din-code"
+      },
+      {
+        "extension": [],
+        "code": "02246820",
+        "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
+      }
+    ],
+    "text": "Metformin 500 mg tablet"
+  },
+  "subject": {
+    "extension": [],
+    "display": "",
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "value": "3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816"
+    },
+    "reference": "Patient/wf-b712d81c664593dea9cb10a6275aad79"
+  },
+  "supportingInformation": [],
+  "performer": [],
+  "location": {
+    "extension": [],
+    "display": "Rexall (store 7128)",
+    "identifier": {
+      "extension": [],
+      "value": "pharmacy-7128"
+    },
+    "reference": "https://www.rexall.ca/storelocator/store/7128"
+  },
+  "authorizingPrescription": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "http://schema.carebook.com/v1/fhir/identifier/medication-request-type-order",
+        "value": "03b71def-5900-4dc4-8510-13975b42a90c"
+      },
+      "reference": "PrescriptionOrder/wf-cf20098d730af6556115e5fe5f4fdff4"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "http://schema.carebook.com/v1/fhir/identifier/medication-request-type-refill",
+        "value": "03b71def-5900-4dc4-8510-13975b42a90c"
+      },
+      "reference": "PrescriptionOrder/wf-cf20098d730af6556115e5fe5f4fdff4"
+    }
+  ],
+  "quantity": {
+    "extension": [],
+    "value": 360
+  },
+  "daysSupply": {
+    "extension": [],
+    "code": "d",
+    "system": "http://unitsofmeasure.org",
+    "unit": "day",
+    "value": 90
+  },
+  "whenPrepared": "2026-09-05T15:39:36.000Z",
+  "whenHandedOver": "2026-09-05T17:55:41.000Z",
+  "receiver": [],
+  "note": [],
+  "dosageInstruction": [],
+  "detectedIssue": [],
+  "eventHistory": [],
+  "resourceType": "MedicationDispense"
+}

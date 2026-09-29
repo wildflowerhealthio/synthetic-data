@@ -1,0 +1,60 @@
+{
+  "id": "wf-a35baf43239c45d87318bd8be5271153",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "address": [
+    {
+      "extension": [],
+      "city": "Kingston",
+      "line": [
+        "48 Sydenham St"
+      ],
+      "postalCode": "K7M 5B1",
+      "state": "ON"
+    }
+  ],
+  "communication": [],
+  "contact": [],
+  "generalPractitioner": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
+    },
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
+    }
+  ],
+  "link": [],
+  "name": [
+    {
+      "extension": [],
+      "family": "Ashford",
+      "given": [
+        "Fern"
+      ],
+      "prefix": [],
+      "suffix": [],
+      "text": "Fern Ashford"
+    }
+  ],
+  "photo": [],
+  "telecom": [
+    {
+      "extension": [],
+      "system": "phone",
+      "value": "6135550142"
+    }
+  ],
+  "resourceType": "Patient"
+}

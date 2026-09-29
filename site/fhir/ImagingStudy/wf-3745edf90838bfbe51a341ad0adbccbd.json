@@ -1,0 +1,102 @@
+{
+  "id": "wf-3745edf90838bfbe51a341ad0adbccbd",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-d839e8a41a9813efd871f04c7a6572fe"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/dicom",
+      "value": "448d10009ddd91bb"
+    },
+    {
+      "extension": [],
+      "system": "urn:dicom:uid",
+      "value": "urn:oid:2.25.136257321533522887283482111752379978059.273654599827905"
+    }
+  ],
+  "status": "available",
+  "modality": [
+    {
+      "extension": [],
+      "code": "DX",
+      "system": "http://dicom.nema.org/resources/ontology/DCM"
+    }
+  ],
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "value": "3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816"
+    },
+    "reference": "Patient/wf-b712d81c664593dea9cb10a6275aad79"
+  },
+  "started": "2026-06-19T15:23:49.000Z",
+  "basedOn": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/dicom",
+        "value": "38259566be8e168b"
+      },
+      "reference": "ServiceRequest/wf-a156da5a4e91803c34f8b37076b14943"
+    }
+  ],
+  "interpreter": [],
+  "endpoint": [],
+  "numberOfSeries": 1,
+  "numberOfInstances": 1,
+  "procedureCode": [],
+  "reasonCode": [],
+  "reasonReference": [],
+  "note": [],
+  "series": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "uid": "2.25.136257321533522887283482111752379978059.490671299451347",
+      "number": 3000972,
+      "modality": {
+        "extension": [],
+        "code": "DX",
+        "system": "http://dicom.nema.org/resources/ontology/DCM"
+      },
+      "numberOfInstances": 1,
+      "endpoint": [],
+      "bodySite": {
+        "extension": [],
+        "display": "CHEST"
+      },
+      "specimen": [],
+      "performer": [],
+      "instance": [
+        {
+          "extension": [
+            {
+              "extension": [],
+              "url": "gridfsFileId",
+              "valueString": "wf-d839e8a41a9813efd871f04c7a6572fe"
+            }
+          ],
+          "modifierExtension": [],
+          "uid": "2.25.136257321533522887283482111752379978059.694842700602863",
+          "sopClass": {
+            "extension": [],
+            "code": "1.2.840.10008.5.1.4.1.1.1.1",
+            "system": "urn:dicom:uid"
+          },
+          "number": 1
+        }
+      ]
+    }
+  ],
+  "resourceType": "ImagingStudy"
+}

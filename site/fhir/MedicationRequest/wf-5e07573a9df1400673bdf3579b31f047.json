@@ -1,0 +1,231 @@
+{
+  "id": "wf-5e07573a9df1400673bdf3579b31f047",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "lastUpdated": "2026-06-19T18:42:32.000Z",
+    "source": "DocumentReference/wf-28211000f1dd61be16ed9e0bc7730d5b",
+    "versionId": "2"
+  },
+  "contained": [
+    {
+      "resourceType": "Medication",
+      "id": "f79ba94f-e9ec-434c-9824-14012863ca21",
+      "code": {
+        "text": "Clarithromycin 500 mg tablet",
+        "coding": [
+          {
+            "system": "http://schema.carebook.com/v1/fhir/coding/medication-din-code",
+            "code": "02274752"
+          },
+          {
+            "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din",
+            "code": "02274752"
+          }
+        ]
+      },
+      "text": {
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">500 mg - Apo-Clarithromycin</div>",
+        "status": "generated"
+      },
+      "extension": [],
+      "ingredient": [
+        {
+          "itemCodeableConcept": {
+            "text": "Clarithromycin 500 mg tablet",
+            "coding": [
+              {
+                "system": "http://schema.carebook.com/v1/fhir/coding/medication-din-code",
+                "code": "02274752"
+              },
+              {
+                "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din",
+                "code": "02274752"
+              }
+            ]
+          },
+          "strength": {
+            "numerator": {
+              "unit": "mg",
+              "value": 500
+            },
+            "denominator": {
+              "value": 1
+            }
+          }
+        }
+      ],
+      "meta": {
+        "versionId": "2",
+        "lastUpdated": "2026-06-19T18:42:32+00:00"
+      },
+      "status": "active",
+      "manufacturer": {
+        "display": "Apotex Inc"
+      },
+      "form": {
+        "coding": [
+          {
+            "system": "http://schema.carebook.com/v1/fhir/coding/medication-form-code",
+            "code": "tablet"
+          }
+        ]
+      }
+    }
+  ],
+  "extension": [
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationrequest/extension/estimated-pick-up",
+      "valueDateTime": "2026-06-19T18:42:32.000Z"
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/common/extension/input-source",
+      "valueString": "Sync"
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationrequest/extension/medicationrecord-processor",
+      "valueReference": {
+        "extension": [],
+        "identifier": {
+          "extension": [],
+          "value": "pharmacy-7128"
+        },
+        "reference": "rexall-pharmacy-location/pharmacy-7128"
+      }
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationrequest/extension/renewable",
+      "valueBoolean": false
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationrequest/extension/sort-order",
+      "valuePositiveInt": 6
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationrequest/extension/prescription-order",
+      "valueReference": {
+        "extension": [],
+        "display": "todo",
+        "identifier": {
+          "extension": [],
+          "value": "null"
+        },
+        "reference": "PrescriptionOrder/null"
+      }
+    }
+  ],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "value": "0d34eef0-df3b-474f-ba90-bff5e8426629"
+    },
+    {
+      "extension": [],
+      "system": "http://schema.carebook.com/v1/fhir/identifier/medicationrequest-external-id",
+      "value": "9067872"
+    },
+    {
+      "extension": [],
+      "system": "http://schema.carebook.com/v1/fhir/identifier/medicationrequest-external-authorizing-id",
+      "value": "290050562"
+    }
+  ],
+  "status": "completed",
+  "intent": "order",
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "fill",
+          "system": "http://schemas.carebook.com/v1/fhir/coding/medicationrequest-request-type-code"
+        }
+      ]
+    }
+  ],
+  "doNotPerform": false,
+  "medicationReference": {
+    "extension": [],
+    "display": "Clarithromycin 500 mg tablet",
+    "reference": "#f79ba94f-e9ec-434c-9824-14012863ca21"
+  },
+  "subject": {
+    "extension": [],
+    "display": "",
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "value": "3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816"
+    },
+    "reference": "Patient/wf-b712d81c664593dea9cb10a6275aad79"
+  },
+  "supportingInformation": [],
+  "authoredOn": "2026-06-19T14:19:08.000Z",
+  "requester": {
+    "extension": [],
+    "display": "DR M TREMBLAY",
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "value": "b9999489-0975-4a13-a030-f49dd4b7492e"
+    },
+    "reference": "Practitioner/wf-74fe5940b580909eac70d0357e5a538d"
+  },
+  "reasonCode": [],
+  "reasonReference": [],
+  "instantiatesCanonical": [],
+  "instantiatesUri": [],
+  "basedOn": [],
+  "insurance": [],
+  "note": [
+    {
+      "extension": [],
+      "text": "TAKE 1 TABLET (=500MG) BY MOUTH TWICE DAILY FOR 7 DAYS"
+    }
+  ],
+  "dosageInstruction": [],
+  "dispenseRequest": {
+    "modifierExtension": [],
+    "extension": [
+      {
+        "extension": [],
+        "url": "https://wildflowerhealth.io/fhir/StructureDefinition/repeats-available",
+        "valueInteger": 0
+      }
+    ],
+    "numberOfRepeatsAllowed": 0,
+    "quantity": {
+      "extension": [],
+      "value": 14
+    },
+    "expectedSupplyDuration": {
+      "extension": [],
+      "code": "d",
+      "system": "http://unitsofmeasure.org",
+      "unit": "day",
+      "value": 7
+    },
+    "performer": {
+      "extension": [],
+      "display": "Rexall (store 7128)",
+      "identifier": {
+        "extension": [],
+        "value": "pharmacy-7128"
+      },
+      "reference": "https://www.rexall.ca/storelocator/store/7128"
+    }
+  },
+  "detectedIssue": [],
+  "eventHistory": [],
+  "resourceType": "MedicationRequest"
+}

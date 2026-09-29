@@ -1,0 +1,88 @@
+{
+  "id": "wf-0dd9e185dbc8a34f8390befb475957d4",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "laboratory",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ],
+      "text": "Hematology"
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [],
+    "text": "Platelet Count"
+  },
+  "component": [],
+  "derivedFrom": [],
+  "focus": [],
+  "hasMember": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs",
+      "value": "c9b12b3d1d0a677d"
+    }
+  ],
+  "interpretation": [],
+  "issued": "2026-09-06T21:42:00.000Z",
+  "note": [],
+  "partOf": [],
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "referenceRange": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "appliesTo": [],
+      "high": {
+        "extension": [],
+        "code": "10*9/L",
+        "system": "http://unitsofmeasure.org",
+        "unit": "x E9/L",
+        "value": 400
+      },
+      "low": {
+        "extension": [],
+        "code": "10*9/L",
+        "system": "http://unitsofmeasure.org",
+        "unit": "x E9/L",
+        "value": 150
+      },
+      "text": "150 - 400"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
+    },
+    "reference": "Patient/wf-a35baf43239c45d87318bd8be5271153"
+  },
+  "valueQuantity": {
+    "extension": [],
+    "code": "10*9/L",
+    "system": "http://unitsofmeasure.org",
+    "unit": "x E9/L",
+    "value": 322
+  },
+  "effectiveDateTime": "2026-09-06T12:37:00.000Z",
+  "resourceType": "Observation"
+}
