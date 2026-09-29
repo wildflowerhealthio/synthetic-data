@@ -1,0 +1,30 @@
+{
+  "name": "wildflower-synthetic-data",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The Ashford family: a synthetic health data set rendered with Wildflower's synthetic-data tooling and its real importers, published to GitHub Pages.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "check": "vp check",
+    "emit": "node --conditions=source --import ./scripts/register-ts.ts scripts/emit.ts",
+    "test": "vp test"
+  },
+  "devDependencies": {
+    "@types/node": "link:wildflower/node_modules/@types/node",
+    "@typescript/native-preview": "link:wildflower/node_modules/@typescript/native-preview",
+    "effect": "link:wildflower/node_modules/effect",
+    "fhir-r4": "link:wildflower/slices/emr/fhir-r4",
+    "fhir-sync-pebble-core": "link:wildflower/slices/fhir-sync-pebble/fhir-sync-pebble-core",
+    "har-importer-core": "link:wildflower/slices/importer/har-importer-core",
+    "importer-fundamentals": "link:wildflower/slices/importer/importer-fundamentals",
+    "rolldown": "link:wildflower/node_modules/rolldown",
+    "synthetic-data-core": "link:wildflower/slices/synthetic-data/synthetic-data-core",
+    "vite": "link:wildflower/node_modules/vite",
+    "vite-plus": "link:wildflower/node_modules/vite-plus"
+  },
+  "engines": {
+    "node": ">=26.0.0"
+  },
+  "packageManager": "pnpm@10.33.0"
+}

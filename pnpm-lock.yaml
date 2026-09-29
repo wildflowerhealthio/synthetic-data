@@ -1,0 +1,43 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@types/node':
+        specifier: link:wildflower/node_modules/@types/node
+        version: link:wildflower/node_modules/@types/node
+      '@typescript/native-preview':
+        specifier: link:wildflower/node_modules/@typescript/native-preview
+        version: link:wildflower/node_modules/@typescript/native-preview
+      effect:
+        specifier: link:wildflower/node_modules/effect
+        version: link:wildflower/node_modules/effect
+      fhir-r4:
+        specifier: link:wildflower/slices/emr/fhir-r4
+        version: link:wildflower/slices/emr/fhir-r4
+      fhir-sync-pebble-core:
+        specifier: link:wildflower/slices/fhir-sync-pebble/fhir-sync-pebble-core
+        version: link:wildflower/slices/fhir-sync-pebble/fhir-sync-pebble-core
+      har-importer-core:
+        specifier: link:wildflower/slices/importer/har-importer-core
+        version: link:wildflower/slices/importer/har-importer-core
+      importer-fundamentals:
+        specifier: link:wildflower/slices/importer/importer-fundamentals
+        version: link:wildflower/slices/importer/importer-fundamentals
+      rolldown:
+        specifier: link:wildflower/node_modules/rolldown
+        version: link:wildflower/node_modules/rolldown
+      synthetic-data-core:
+        specifier: link:wildflower/slices/synthetic-data/synthetic-data-core
+        version: link:wildflower/slices/synthetic-data/synthetic-data-core
+      vite:
+        specifier: link:wildflower/node_modules/vite
+        version: link:wildflower/node_modules/vite
+      vite-plus:
+        specifier: link:wildflower/node_modules/vite-plus
+        version: link:wildflower/node_modules/vite-plus
