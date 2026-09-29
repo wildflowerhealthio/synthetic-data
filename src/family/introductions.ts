@@ -20,7 +20,7 @@ const introductions: readonly DataSetManifest.Person[] = [
   ),
   introductionOf(
     tyra,
-    "The centre of the family, 46, with hypothyroidism; she holds the family's Shoppers Drug Mart account. Levothyroxine goes from 50 to 75 to 112 mcg and her TSH falls from 8.9 to 0.08, an overshoot her Pebble shows as a resting heart rate climbing toward 92 and broken sleep. Twelve days before the as-of date the dose is cut to 88 mcg: her heart rate and sleep recover and her TSH comes back at 1.9."
+    "The centre of the family, 46, with hypothyroidism; she holds the family's Shoppers Drug Mart account. Levothyroxine goes from 50 to 75 to 112 mcg and her TSH falls from 8.9 to 0.08, an overshoot her Pebble shows as a resting heart rate climbing toward 92 and broken sleep. Twelve days before the as-of date the dose is cut to 88 mcg: over the following days her heart rate and sleep recover and her free T4 settles back into range, while her TSH is still climbing back."
   ),
   introductionOf(
     beau,

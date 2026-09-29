@@ -15,8 +15,9 @@ import { tyraStory } from './tyra.ts'
  * - **Resting heart rate.** About 68 bpm before 112 mcg. From the day 112 mcg
  *   starts (−45) it climbs, slowly at first as the dose reaches steady state,
  *   toward 92 on the last day before the cut (−13) — so the window opens at
- *   about 77 and rises. After the cut (−12) it falls back toward 70 over about
- *   a week, as the excess clears.
+ *   about 77 and rises. After the cut (−12) it eases back day by day as free
+ *   T4 clears (a half-life of about a week): about 89 the first day, 78 a
+ *   week on, 73 by the last day.
  * - **Sleep.** Bed around 22:45, up around 06:40. While the overshoot builds
  *   she wakes around 3:00 and gets up — for longer, and a second time around
  *   5:00, as it peaks — and deep (restful) sleep takes a smaller share of each
@@ -52,8 +53,11 @@ const UTC_OFFSET_HOURS = -4
 const BASELINE_HEART_RATE_BPM = 68
 const OVERSHOOT_HEART_RATE_BPM = 92
 const RECOVERED_HEART_RATE_BPM = 70
-/** Days for the post-cut excess to fall by a factor of e. */
-const RECOVERY_DAYS = 4
+/**
+ * Days for the post-cut excess to fall by a factor of e: the heart rate tracks
+ * free T4, whose half-life is about a week.
+ */
+const RECOVERY_DAYS = 6
 
 /**
  * How far into the overshoot a day is, from `0` (none) to `1` (its peak on the
@@ -108,7 +112,7 @@ const nightOf = (day: StoryDay.StoryDay): PebbleObservations.Night => {
   const asleepMinute = -75 + jitterOf(day, 'asleep', -20, 20)
   const awakeMinute = 400 + jitterOf(day, 'awake', -15, 15)
   const wakeUps: PebbleObservations.Span[] = []
-  if (severity > 0.2) {
+  if (severity > 0.3) {
     wakeUps.push({
       startMinute: 180 + jitterOf(day, 'three-am', -20, 20),
       durationMinutes: Math.round(20 + 40 * severity),

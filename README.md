@@ -51,13 +51,15 @@ change that date and regenerate: the intervals between events stay the same.
 - **Generic interchange.** One 75 mcg refill is dispensed as Apo-Levothyroxine
   instead of Synthroid. It is the same prescription with a new DIN on the label.
 - **The cut.** Twelve days before the as-of date, the dose is cut to 88 mcg.
-  Her TSH comes back at 1.9.
+  Ten days later her free T4 has settled back into range, while her TSH is
+  still low but climbing back (0.29 mIU/L): a suppressed TSH takes weeks to
+  recover.
 - **Pebble.** The watch covers the last 28 days.
   - While she is on 112 mcg, her resting heart rate climbs from about 77 to 92
     (it was about 68 before the overshoot). Her nights break at about 3 a.m.,
     and at the peak again at about 5 a.m.
-  - After the cut, her heart rate falls back toward 70 and her nights
-    consolidate.
+  - After the cut, her heart rate eases back day by day as free T4 clears
+    (about 89 the first day, 73 by the last), and her nights consolidate.
   - The watch also records a lunchtime walk about every third day, and a
     charge each evening.
 - **Pharmacy.** Tyra holds the family's Shoppers Drug Mart account, and she

@@ -221,11 +221,18 @@ describe("Tyra's TSH and free T4", () => {
     expect(suppressed?.day).toBeLessThan(overshoot.ended?.day ?? 0)
   })
 
-  test('comes back in range, TSH 1.9, after the cut to 88 mcg', () => {
+  test('after the cut to 88 mcg, free T4 settles into range while TSH is still climbing back', () => {
     const afterCut = (results: readonly Result[]): readonly Result[] =>
       results.filter((result) => result.day > (overshoot.ended?.day ?? 0))
-    expect(afterCut(tsh)).toEqual([expect.objectContaining({ value: 1.9, flag: null })])
-    expect(afterCut(freeT4)).toEqual([expect.objectContaining({ flag: null })])
+    const [freeT4AfterCut] = afterCut(freeT4)
+    expect(afterCut(freeT4)).toHaveLength(1)
+    expect(freeT4AfterCut).toMatchObject({ flag: null })
+    expect(freeT4AfterCut?.value).toBeGreaterThanOrEqual(17)
+    expect(freeT4AfterCut?.value).toBeLessThanOrEqual(18)
+    const [tshAfterCut] = afterCut(tsh)
+    expect(afterCut(tsh)).toHaveLength(1)
+    expect(tshAfterCut).toMatchObject({ value: 0.29, flag: 'L' })
+    expect(tshAfterCut?.value).toBeGreaterThan(0.08)
   })
 })
 

@@ -22,7 +22,10 @@ import { catalogue } from './products.ts'
  * dispenses Apotex's interchangeable generic instead of Synthroid, on the same
  * prescription — the DIN on that fill changes. TSH 4.4 (−52) takes the dose to
  * 112 mcg (−45), which overshoots: TSH falls to 0.08 and free T4 rises above
- * range (−13), and the dose is cut to 88 mcg (−12). TSH comes back at 1.9 (−2).
+ * range (−13), and the dose is cut to 88 mcg (−12). Ten days later (−2) free T4
+ * is back in range (17.6), about one and a half half-lives on, while TSH —
+ * which a suppressed pituitary takes weeks to release — is still low but
+ * climbing (0.29, just under the lab's 0.32).
  *
  * The 112 mcg period runs from −45 to −12, so of the 28 days before the as-of
  * day, the first 16 (−28 to −13) are all on 112 mcg — the stretch Tyra's Pebble
@@ -117,8 +120,8 @@ const tyraStory: Story.Story = {
     freeT4(-52, 12.6),
     tsh(-13, 0.08),
     freeT4(-13, 27.9),
-    tsh(-2, 1.9),
-    freeT4(-2, 17.4),
+    tsh(-2, 0.29),
+    freeT4(-2, 17.6),
   ],
 }
 

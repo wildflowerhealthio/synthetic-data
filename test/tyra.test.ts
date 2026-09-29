@@ -41,7 +41,10 @@ describe("Tyra's story", () => {
     expect(writtenDays.map((day) => lastDrawBefore(tyraStory, 'TSH', day))).toEqual([
       8.9, 6.1, 4.4, 0.08,
     ])
-    expect(labValuesOf(tyraStory, 'TSH').at(-1)?.[1]).toBe(1.9)
+    // Ten days after the cut TSH is still low, but climbing off its suppression.
+    const [suppressed, afterCut] = labValuesOf(tyraStory, 'TSH').slice(-2)
+    expect(afterCut?.[1]).toBeGreaterThan(suppressed?.[1] ?? 0)
+    expect(afterCut?.[1]).toBeLessThan(0.5)
   })
 
   test('cuts 112 mcg to 88 mcg 12 days before the as-of day', () => {
