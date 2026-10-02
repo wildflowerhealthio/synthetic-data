@@ -1,7 +1,8 @@
 import { DateTime, Option, Schema } from 'effect'
 import { Quantity, type ReferenceType } from 'fhir-r4/data-types'
 import type { FhirResource, Observation, Patient } from 'fhir-r4/resources'
-import { LifeLabsLaboratory, Person, type Story, StoryDay } from 'synthetic-data-core'
+import { Person, type Story, StoryDay } from 'synthetic-data-fundamentals/story'
+import { Laboratory } from 'synthetic-data-lifelabs/story'
 import { describe, expect, test } from 'vite-plus/test'
 
 import {
@@ -94,7 +95,7 @@ describe.each(members)("%s's lab results", (_name, member) => {
     const observations = observationsOf(member)
     expect(observations).toHaveLength(member.story.labDraws.length)
     for (const draw of member.story.labDraws) {
-      const labTest = LifeLabsLaboratory.testOf(lifeLabsToronto, draw.test)
+      const labTest = Laboratory.testOf(lifeLabsToronto, draw.test)
       expect(labTest, draw.test).toBeDefined()
       const observation = observations.find(
         (candidate) => candidate.code.text === labTest?.name && storyDayOf(candidate) === draw.day

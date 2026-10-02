@@ -4,7 +4,7 @@
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
   },
   "contained": [],
   "extension": [],
@@ -35,6 +35,15 @@
     ],
     "text": "Apo-Levothyroxine"
   },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "a3e8d1f0-7c52-4b96-8e0d-5f14c9a72b38"
+    },
+    "reference": "Patient/wf-cbd053168e1ed97ef6de87dc48f45d19"
+  },
   "supportingInformation": [],
   "performer": [],
   "location": {
@@ -47,8 +56,8 @@
       "extension": [],
       "identifier": {
         "extension": [],
-        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-        "value": "4582438"
+        "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+        "value": "c8ef9016-6c89-46ac-9cc6-73de55cc610c"
       },
       "reference": "MedicationRequest/wf-ae508d251a691c740a6ada89321016ed"
     }

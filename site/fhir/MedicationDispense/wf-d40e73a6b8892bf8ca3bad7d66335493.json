@@ -4,7 +4,7 @@
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
   },
   "contained": [],
   "extension": [],
@@ -34,6 +34,15 @@
       }
     ],
     "text": "Teva-Atorvastatin"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/pc-id",
+      "value": "6f1c2a9e-4b7d-4e38-9a15-d2c8e0b37f64"
+    },
+    "reference": "Patient/wf-3c46d0e1a578f858716965f59eea683b"
   },
   "supportingInformation": [],
   "performer": [],

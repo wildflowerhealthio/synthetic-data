@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vite-plus/test'
 
-import { Prescription } from 'synthetic-data-core'
+import { Prescription } from 'synthetic-data-fundamentals/story'
 
 import { beauStory } from '../src/family/index.ts'
 import { dailyDosesOf, prescriptionsOf } from './story.test-helpers.ts'
@@ -30,14 +30,15 @@ describe("Beau's story", () => {
     expect(ldlValues.at(-1)).toBe(2.2)
   })
 
-  test('takes bisoprolol 2.5 mg as half a 5 mg tablet, then 5 mg, renewed', () => {
+  test('takes bisoprolol 2.5 mg as one 2.5 mg tablet, then 5 mg, renewed', () => {
     expect(dailyDosesOf(bisoprolol)).toEqual(['2.5 mg', '5 mg', '5 mg'])
     expect(bisoprolol.map((prescription) => prescription.written.reason)).toEqual([
       'start',
       'dose-change',
       'renewal',
     ])
-    expect(bisoprolol[0]?.dosing.tabletsPerDose).toBe(0.5)
+    expect(bisoprolol[0]?.dosing.tabletsPerDose).toBe(1)
+    expect(bisoprolol[0]?.product.strength).toEqual({ value: 2.5, unit: 'mg' })
     expect(bisoprolol.map(Prescription.statusOf)).toEqual(['completed', 'completed', 'active'])
   })
 

@@ -1,4 +1,6 @@
-import { type PebbleObservations, Seeded, type StoryDay } from 'synthetic-data-core'
+import type { Night, Physiology, Span, Walk } from 'synthetic-data-fhir-sync-pebble'
+import * as Seeding from 'synthetic-data-fundamentals/seeding'
+import type { StoryDay } from 'synthetic-data-fundamentals/story'
 
 import { tyraStory } from './tyra.ts'
 
@@ -29,7 +31,7 @@ import { tyraStory } from './tyra.ts'
  *   dinner and well before bed.
  *
  * Small day-to-day jitter (bedtime, walk length, charge length) is hashed from
- * the day (`Seeded`), so the physiology is the same on every regeneration.
+ * the day (`Seeding`), so the physiology is the same on every regeneration.
  */
 
 const levothyroxineOf = (key: string): (typeof tyraStory.prescriptions)[number] => {
@@ -84,12 +86,12 @@ const restingHeartRateOf = (day: StoryDay.StoryDay): number =>
 
 /** A jitter in `[min, max]` for `day`, hashed from what it is for. */
 const jitterOf = (day: StoryDay.StoryDay, what: string, min: number, max: number): number =>
-  Seeded.integerOf(['tyra', 'pebble', what, String(day)], min, max)
+  Seeding.integerOf(['tyra', 'pebble', what, String(day)], min, max)
 
 /** The stretches of sleep between falling asleep, the wake-ups and waking. */
 const stretchesOf = (
   asleepMinute: number,
-  wakeUps: readonly PebbleObservations.Span[],
+  wakeUps: readonly Span[],
   awakeMinute: number
 ): readonly { readonly start: number; readonly end: number }[] => {
   const bounds = [
@@ -107,11 +109,11 @@ const stretchesOf = (
 }
 
 /** The night that ends on `day`. */
-const nightOf = (day: StoryDay.StoryDay): PebbleObservations.Night => {
+const nightOf = (day: StoryDay.StoryDay): Night => {
   const severity = overshootOf(day)
   const asleepMinute = -75 + jitterOf(day, 'asleep', -20, 20)
   const awakeMinute = 400 + jitterOf(day, 'awake', -15, 15)
-  const wakeUps: PebbleObservations.Span[] = []
+  const wakeUps: Span[] = []
   if (severity > 0.3) {
     wakeUps.push({
       startMinute: 180 + jitterOf(day, 'three-am', -20, 20),
@@ -127,7 +129,7 @@ const nightOf = (day: StoryDay.StoryDay): PebbleObservations.Night => {
   /** Deep sleep's share of a stretch: about a third, less as the overshoot builds. */
   const restfulShare = 0.34 - 0.18 * severity
   const restfulSleeps = stretchesOf(asleepMinute, wakeUps, awakeMinute).flatMap(
-    ({ start, end }): readonly PebbleObservations.Span[] => {
+    ({ start, end }): readonly Span[] => {
       const durationMinutes = Math.round((end - start) * restfulShare)
       return end - start >= 90 && durationMinutes > 0
         ? [
@@ -143,7 +145,7 @@ const nightOf = (day: StoryDay.StoryDay): PebbleObservations.Night => {
 }
 
 /** A lunchtime walk about every third day. */
-const walksOf = (day: StoryDay.StoryDay): readonly PebbleObservations.Walk[] =>
+const walksOf = (day: StoryDay.StoryDay): readonly Walk[] =>
   (day - FIRST_DAY) % 3 === 1
     ? [
         {
@@ -156,7 +158,7 @@ const walksOf = (day: StoryDay.StoryDay): readonly PebbleObservations.Walk[] =>
     : []
 
 /** The evening charge, after dinner. */
-const chargingOf = (day: StoryDay.StoryDay): readonly PebbleObservations.Span[] => [
+const chargingOf = (day: StoryDay.StoryDay): readonly Span[] => [
   {
     startMinute: 19 * 60 + 30 + jitterOf(day, 'charge-start', -10, 10),
     durationMinutes: jitterOf(day, 'charge-length', 50, 70),
@@ -164,7 +166,7 @@ const chargingOf = (day: StoryDay.StoryDay): readonly PebbleObservations.Span[] 
 ]
 
 /** See the module summary. */
-const tyraPhysiology: PebbleObservations.Physiology = {
+const tyraPhysiology: Physiology = {
   utcOffsetHours: UTC_OFFSET_HOURS,
   circadian: { amplitudeBpm: 6, nadirMinute: 4 * 60 },
   days: Array.from({ length: LAST_DAY - FIRST_DAY + 1 }, (_, index) => {

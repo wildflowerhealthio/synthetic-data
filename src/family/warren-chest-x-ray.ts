@@ -1,4 +1,4 @@
-import type { DicomImage } from 'synthetic-data-core'
+import type { DicomImage } from 'synthetic-data-dicom'
 
 import { warren } from './people.ts'
 import { warrenStory } from './warren.ts'

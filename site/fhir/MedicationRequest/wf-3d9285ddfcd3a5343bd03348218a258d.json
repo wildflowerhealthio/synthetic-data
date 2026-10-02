@@ -4,7 +4,7 @@
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
   },
   "contained": [],
   "extension": [],
@@ -21,7 +21,7 @@
       "value": "6426017"
     }
   ],
-  "status": "unknown",
+  "status": "active",
   "statusReason": {
     "extension": [],
     "coding": [
@@ -94,6 +94,13 @@
     "numberOfRepeatsAllowed": 1,
     "quantity": {
       "extension": [],
+      "value": 90
+    },
+    "expectedSupplyDuration": {
+      "extension": [],
+      "code": "d",
+      "system": "http://unitsofmeasure.org",
+      "unit": "day",
       "value": 90
     },
     "performer": {

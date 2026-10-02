@@ -1,4 +1,4 @@
-import type { DataSetManifest } from 'synthetic-data-core'
+import type { Snapshot } from 'synthetic-data-core'
 
 import { beau, fern, tyra, warren } from './people.ts'
 
@@ -7,13 +7,13 @@ import { beau, fern, tyra, warren } from './people.ts'
  * paragraph on what their records show.
  */
 
-const introductionOf = (person: typeof warren, summary: string): DataSetManifest.Person => ({
+const introductionOf = (person: typeof warren, summary: string): Snapshot.Header.Member => ({
   key: person.key,
   displayName: `${person.givenName} ${person.familyName}`,
   summary,
 })
 
-const introductions: readonly DataSetManifest.Person[] = [
+const introductions: readonly Snapshot.Header.Member[] = [
   introductionOf(
     warren,
     "Tyra's father, 78, with atrial fibrillation and type 2 diabetes, filled at Rexall. His warfarin is cut from 5 to 4 mg when his INR reaches 3.8. A clarithromycin course for a cough pushes the INR to 4.1, so warfarin is held and resumed, and the INR recovers. Metformin goes from 500 to 1000 mg twice daily and his HbA1c falls from 8.4 to 7.0. A chest X-ray is taken at the cough visit."

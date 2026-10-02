@@ -1,11 +1,11 @@
 import {
   type LabDraw,
-  type LifeLabs,
   Prescription,
-  type RexallHar,
   type Story,
   type StoryDay,
-} from 'synthetic-data-core'
+} from 'synthetic-data-fundamentals/story'
+import type { LabRequisition } from 'synthetic-data-lifelabs/story'
+import type { RexallAccount } from 'synthetic-data-rexall-be-well'
 
 import { warren } from './people.ts'
 import { catalogue } from './products.ts'
@@ -204,10 +204,13 @@ const warrenStory: Story.Story = {
 }
 
 /** The family physician orders Warren's lab work; nobody is copied. */
-const warrenLabRequisition: LifeLabs.LabRequisition = { orderedBy: 'OKAFOR DR. NKECHI', copyTo: [] }
+const warrenLabRequisition: LabRequisition.LabRequisition = {
+  orderedBy: 'OKAFOR DR. NKECHI',
+  copyTo: [],
+}
 
 /** Warren's Rexall Be Well account, at a fictional store. */
-const warrenRexallAccount: RexallHar.RexallAccount = {
+const warrenRexallAccount: RexallAccount = {
   uid: '3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816',
   reportingGuid: '0b7e4c9a-52d3-4f1e-9a86-c2d4e1f07b35',
   storeId: '7128',

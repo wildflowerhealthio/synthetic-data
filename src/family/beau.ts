@@ -1,10 +1,10 @@
 import {
   type LabDraw,
-  type LifeLabs,
   Prescription,
   type Story,
   type StoryDay,
-} from 'synthetic-data-core'
+} from 'synthetic-data-fundamentals/story'
+import type { LabRequisition } from 'synthetic-data-lifelabs/story'
 
 import { beau } from './people.ts'
 import { catalogue } from './products.ts'
@@ -20,8 +20,7 @@ import { catalogue } from './products.ts'
  * LDL is 3.2 (−230), so the dose goes to 40 mg (−226), and LDL falls to 2.6
  * (−140) and 2.2 (−50).
  *
- * **Bisoprolol.** 2.5 mg daily — half a 5 mg tablet, since no 2.5 mg tablet is
- * marketed — from −380. Its one repeat used and its supply run out, it is
+ * **Bisoprolol.** 2.5 mg daily, one Sandoz 2.5 mg tablet, from −380. Its one repeat used and its supply run out, it is
  * rewritten at 5 mg (−198); that prescription's repeat runs out too and it is
  * renewed at the same dose (−15). Potassium, creatinine and the eGFR are
  * drawn with each fasting lipid panel; total cholesterol falls from 6.14 to
@@ -61,8 +60,8 @@ const atorvastatin40mg: Prescription.Prescription = {
 
 const bisoprolol2point5mg: Prescription.Prescription = {
   key: 'bisoprolol-1',
-  product: catalogue.apoBisoprolol5mg,
-  dosing: { ...onceDaily, tabletsPerDose: 0.5 },
+  product: catalogue.sandozBisoprolol2point5mg,
+  dosing: onceDaily,
   supplyDaysPerFill: 90,
   repeatsAllowed: 1,
   prescriber: familyPhysician,
@@ -185,6 +184,9 @@ const beauStory: Story.Story = {
 }
 
 /** The family physician orders Beau's lab work; nobody is copied. */
-const beauLabRequisition: LifeLabs.LabRequisition = { orderedBy: 'BHATT DR. SUNITA', copyTo: [] }
+const beauLabRequisition: LabRequisition.LabRequisition = {
+  orderedBy: 'BHATT DR. SUNITA',
+  copyTo: [],
+}
 
 export { beauLabRequisition, beauStory }

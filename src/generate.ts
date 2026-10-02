@@ -1,19 +1,15 @@
 import { type DateTime, Effect, Either, Schema } from 'effect'
+import type { ReferenceType } from 'fhir-r4/data-types'
 import { Observation, type FhirResource } from 'fhir-r4/resources'
 import { defaultHarSettings, harImporter } from 'har-importer-core'
-import {
-  type DataSet,
-  DicomImage,
-  LifeLabs,
-  PebbleObservations,
-  PebbleWatch,
-  type Person,
-  RexallHar,
-  ShoppersHar,
-  SourcePatient,
-  type Story,
-  StoryDay,
-} from 'synthetic-data-core'
+import type { Snapshot } from 'synthetic-data-core'
+import { DicomImage } from 'synthetic-data-dicom'
+import { PebbleObservations, PebbleWatch } from 'synthetic-data-fhir-sync-pebble'
+import { type Person, type Story, StoryDay } from 'synthetic-data-fundamentals/story'
+import { LifeLabs } from 'synthetic-data-lifelabs'
+import type { LabRequisition } from 'synthetic-data-lifelabs/story'
+import { RexallHar, rexallPatientReferenceOf } from 'synthetic-data-rexall-be-well'
+import { ShoppersHar, shoppersPatientReferenceOf } from 'synthetic-data-shoppers-drugmart'
 
 import {
   AS_OF,
@@ -44,8 +40,8 @@ import {
  * same bytes and as-of date. Writing it out as a data set is the emit step's
  * (`scripts/emit.ts`).
  *
- * **Pharmacy.** Each HAR is rendered by `synthetic-data-core` and decoded by
- * `har-importer-core` exactly as the importer app decodes a picked file,
+ * **Pharmacy.** Each HAR is rendered by its source's `synthetic-data-*`
+ * generator and decoded by `har-importer-core` exactly as the importer app decodes a picked file,
  * source-file `DocumentReference` included. A decode can list one resource
  * twice — the Shoppers status feed and history feed both write each
  * dispense — and the app submits every entry as a `PUT`, so the one kept is
@@ -74,7 +70,7 @@ type Source = 'pharmacy' | 'labs' | 'pebble' | 'imaging'
 interface PersonRecords {
   readonly person: Person.Person
   /** The Patient every one of their results is filed on: the one their pharmacy import makes. */
-  readonly pharmacyPatient: SourcePatient.SourcePatient
+  readonly pharmacyPatient: ReferenceType
   /** Each source's resources, in the order it produced them; a shared resource appears under every person it belongs to. */
   readonly resources: Readonly<Record<Source, readonly FhirResource[]>>
   readonly files: readonly StaticFile[]
@@ -109,6 +105,10 @@ const textEncoder = new TextEncoder()
 
 /** `Type/id` of a resource: the key the server stores it under. */
 const keyOf = (resource: FhirResource): string => `${resource.resourceType}/${resource.id ?? ''}`
+
+/** The id of the Patient `patient` refers to (`Patient/<id>`). */
+const patientIdOf = (patient: ReferenceType): string =>
+  (patient.reference ?? '').replace(/^Patient\//, '')
 
 /** The resources in order, keeping each `Type/id`'s last occurrence where its first stood. */
 const lastWriteWins = (resources: readonly FhirResource[]): readonly FhirResource[] => {
@@ -149,12 +149,16 @@ const referencesOf = (resource: FhirResource): ReadonlySet<string> => {
  * One person's share of a pharmacy import that may hold several people: their
  * own Patients, everything that refers to them (directly or through another of
  * theirs), then everything those refer to. A Patient joins only as one of
- * `patientIds`, never by reference — the Shoppers account Patient links to the
- * people it manages, and belongs to its holder alone.
+ * `patientIds` or `accountPatientIds`, never by reference — the Shoppers
+ * account Patient links to the people it manages, and belongs to its holder
+ * alone. Nothing joins through an account Patient: the Shoppers history feed
+ * files every fill on the account, and a fill is the person's whose
+ * prescription it fills.
  */
 const personResourcesOf = (
   imported: readonly FhirResource[],
-  patientIds: readonly string[]
+  patientIds: readonly string[],
+  accountPatientIds: readonly string[] = []
 ): readonly FhirResource[] => {
   const byKey = new Map(imported.map((resource) => [keyOf(resource), resource]))
   const owned = new Set(patientIds.map((id) => `Patient/${id}`))
@@ -169,6 +173,7 @@ const personResourcesOf = (
       }
     }
   }
+  for (const id of accountPatientIds) owned.add(`Patient/${id}`)
   const pending = [...owned]
   while (pending.length > 0) {
     const resource = byKey.get(pending.pop() ?? '')
@@ -206,8 +211,8 @@ const importHar = (
 const labsOf = (
   asOf: DateTime.Utc,
   story: Story.Story,
-  requisition: LifeLabs.LabRequisition,
-  pharmacyPatient: SourcePatient.SourcePatient
+  requisition: LabRequisition.LabRequisition,
+  pharmacyPatient: ReferenceType
 ): Effect.Effect<readonly FhirResource[], GenerateError> =>
   LifeLabs.render(asOf, story, lifeLabsToronto, requisition, pharmacyPatient).pipe(
     Effect.mapError((cause) => new GenerateError({ step: `labs for ${story.person.key}`, cause }))
@@ -218,13 +223,13 @@ const decodeObservation = Schema.decodeUnknown(Observation.Schema)
 /** Tyra's 28 days of watch data, as FHIR Sync for Pebble writes them, on her Shoppers Patient. */
 const pebbleOf = (
   asOf: DateTime.Utc,
-  pharmacyPatient: SourcePatient.SourcePatient
+  pharmacyPatient: ReferenceType
 ): Effect.Effect<readonly FhirResource[], GenerateError> =>
   Effect.forEach(
     PebbleObservations.render(
       asOf,
       PebbleWatch.watchOf(['tyra']),
-      SourcePatient.adoptedIdOf(pharmacyPatient),
+      patientIdOf(pharmacyPatient),
       tyraPhysiology
     ),
     (observation) => decodeObservation(observation)
@@ -234,7 +239,7 @@ const pebbleOf = (
 const chestXRayOf = (
   asOf: DateTime.Utc,
   source: Uint8Array,
-  pharmacyPatient: SourcePatient.SourcePatient
+  pharmacyPatient: ReferenceType
 ): Effect.Effect<
   { readonly resources: readonly FhirResource[]; readonly file: StaticFile },
   GenerateError
@@ -244,13 +249,10 @@ const chestXRayOf = (
       DicomImage.reidentify(asOf, source, warrenChestXRay),
       (cause) => new GenerateError({ step: "re-identify Warren's X-ray", cause })
     )
-    const subject = yield* SourcePatient.referenceOf(pharmacyPatient).pipe(
-      Effect.mapError((cause) => new GenerateError({ step: "Warren's Patient", cause }))
-    )
     const resources = yield* DicomImage.importWithSubject(
       bytes,
       CHEST_X_RAY_FILE_NAME,
-      subject
+      pharmacyPatient
     ).pipe(Effect.mapError((cause) => new GenerateError({ step: "import Warren's X-ray", cause })))
     return {
       resources,
@@ -277,9 +279,11 @@ const generate = (
 ): Effect.Effect<Family, GenerateError> =>
   Effect.gen(function* () {
     // Warren: Rexall, labs, the chest X-ray.
-    const warrenPatient = RexallHar.sourcePatientOf(warrenRexallAccount)
-    const rexallHar = RexallHar.render(asOf, warrenStory, warrenRexallAccount)
+    const warrenPatient = rexallPatientReferenceOf(warrenRexallAccount)
     const rexallFileName = 'warren-ashford-rexall.har'
+    const rexallHar = yield* RexallHar.render(asOf, warrenStory, warrenRexallAccount).pipe(
+      Effect.mapError((cause) => new GenerateError({ step: `render ${rexallFileName}`, cause }))
+    )
     const rexall = yield* importHar(rexallFileName, rexallHar)
     const chestXRay = yield* chestXRayOf(asOf, sources.chestXRay, warrenPatient)
     const warren: PersonRecords = {
@@ -302,8 +306,10 @@ const generate = (
     }
 
     // Tyra, Beau and Fern: one Shoppers account HAR, split per person.
-    const shoppersHar = ShoppersHar.render(asOf, tyraShoppersAccount)
     const shoppersFileName = 'tyra-ashford-shoppers.har'
+    const shoppersHar = yield* ShoppersHar.render(asOf, tyraShoppersAccount).pipe(
+      Effect.mapError((cause) => new GenerateError({ step: `render ${shoppersFileName}`, cause }))
+    )
     const shoppers = yield* importHar(shoppersFileName, shoppersHar)
     const shoppersFile: StaticFile = {
       path: `har/${shoppersFileName}`,
@@ -312,7 +318,7 @@ const generate = (
     }
     const managedPatientIds = new Set(
       tyraShoppersAccount.patients.map((patient) =>
-        SourcePatient.adoptedIdOf(ShoppersHar.sourcePatientOf(patient))
+        patientIdOf(shoppersPatientReferenceOf(patient))
       )
     )
     const accountPatientIds = shoppers.flatMap((resource) =>
@@ -325,15 +331,13 @@ const generate = (
       ['beau', beauLabRequisition],
       ['fern', fernLabRequisition],
     ])
+    const [holder] = tyraShoppersAccount.patients
     const shoppersPeople = yield* Effect.forEach(tyraShoppersAccount.patients, (patient) =>
       Effect.gen(function* () {
         const { story } = patient
-        const pharmacyPatient = ShoppersHar.sourcePatientOf(patient)
-        const isHolder = story.person.key === tyraShoppersAccount.holder.key
-        const patientIds = [
-          SourcePatient.adoptedIdOf(pharmacyPatient),
-          ...(isHolder ? accountPatientIds : []),
-        ]
+        const pharmacyPatient = shoppersPatientReferenceOf(patient)
+        const isHolder = patient === holder
+        const patientIds = [patientIdOf(pharmacyPatient)]
         const requisition = requisitions.get(story.person.key)
         if (requisition === undefined) {
           return yield* new GenerateError({
@@ -346,7 +350,7 @@ const generate = (
           pharmacyPatient,
           resources: {
             ...NO_RESOURCES,
-            pharmacy: personResourcesOf(shoppers, patientIds),
+            pharmacy: personResourcesOf(shoppers, patientIds, isHolder ? accountPatientIds : []),
             labs: yield* labsOf(asOf, story, requisition, pharmacyPatient),
             pebble: isHolder ? yield* pebbleOf(asOf, pharmacyPatient) : [],
           },
@@ -360,16 +364,23 @@ const generate = (
   })
 
 /**
- * The family as `DataSet.assemble` takes it: each person's introduction and
+ * The family as `Snapshot.assemble` takes it: each person's introduction and
  * every resource of theirs, pharmacy first.
  */
-const dataSetPeopleOf = (family: Family): readonly DataSet.PersonRecords[] =>
+const snapshotMembersOf = (family: Family): readonly Snapshot.MemberRecords[] =>
   family.people.map((records) => {
-    const person = introductions.find((introduction) => introduction.key === records.person.key)
-    if (person === undefined) throw new Error(`no introduction for ${records.person.key}`)
+    const member = introductions.find((introduction) => introduction.key === records.person.key)
+    if (member === undefined) throw new Error(`no introduction for ${records.person.key}`)
     const { pharmacy, labs, pebble, imaging } = records.resources
-    return { person, resources: [...pharmacy, ...labs, ...pebble, ...imaging] }
+    return { member, resources: [...pharmacy, ...labs, ...pebble, ...imaging] }
   })
 
-export { dataSetPeopleOf, generate, GenerateError, lastWriteWins, personResourcesOf, referencesOf }
+export {
+  generate,
+  GenerateError,
+  lastWriteWins,
+  personResourcesOf,
+  referencesOf,
+  snapshotMembersOf,
+}
 export type { Family, PersonRecords, Source, Sources, StaticFile }

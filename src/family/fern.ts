@@ -1,10 +1,10 @@
 import {
   type LabDraw,
-  type LifeLabs,
   Prescription,
   type Story,
   type StoryDay,
-} from 'synthetic-data-core'
+} from 'synthetic-data-fundamentals/story'
+import type { LabRequisition } from 'synthetic-data-lifelabs/story'
 
 import { fern } from './people.ts'
 import { catalogue } from './products.ts'
@@ -34,7 +34,7 @@ const MISSED_FILL_DAYS_LATE = 14
 
 const ferrousSulfate300mg: Prescription.Prescription = {
   key: 'ferrous-sulfate-1',
-  product: catalogue.pmsFerrousSulfate300mg,
+  product: catalogue.pharmadexFerrousSulfate300mg,
   dosing: { tabletsPerDose: 1, dosesPerDay: 1, direction: 'WITH FOOD' },
   supplyDaysPerFill: 30,
   repeatsAllowed: 5,
@@ -149,7 +149,7 @@ const fernStory: Story.Story = {
 }
 
 /** Fern's pediatrician orders her lab work and copies the family physician. */
-const fernLabRequisition: LifeLabs.LabRequisition = {
+const fernLabRequisition: LabRequisition.LabRequisition = {
   orderedBy: 'MORIN DR. LUCIE',
   copyTo: ['BHATT DR. SUNITA'],
 }

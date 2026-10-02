@@ -4,7 +4,7 @@
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
   },
   "contained": [],
   "extension": [],
@@ -21,7 +21,7 @@
       "value": "9873136"
     }
   ],
-  "status": "unknown",
+  "status": "active",
   "statusReason": {
     "extension": [],
     "coding": [
@@ -40,12 +40,12 @@
     "coding": [
       {
         "extension": [],
-        "code": "00586323",
+        "code": "01987135",
         "display": "Ferrous Sulfate 300mg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
-    "text": "pms-Ferrous Sulfate"
+    "text": "Ferrous Sulfate"
   },
   "subject": {
     "extension": [],
@@ -94,6 +94,13 @@
     "numberOfRepeatsAllowed": 2,
     "quantity": {
       "extension": [],
+      "value": 30
+    },
+    "expectedSupplyDuration": {
+      "extension": [],
+      "code": "d",
+      "system": "http://unitsofmeasure.org",
+      "unit": "day",
       "value": 30
     },
     "performer": {
