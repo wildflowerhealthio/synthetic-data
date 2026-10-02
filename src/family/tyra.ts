@@ -18,9 +18,8 @@ import { catalogue } from './products.ts'
  *
  * **Levothyroxine.** TSH 8.9 mIU/L with a low free T4 (−306) starts Synthroid
  * 50 mcg daily (−300) on a 30-day supply. TSH is still 6.1 (−214), so the dose
- * goes to 75 mcg (−208) on a 90-day supply; at its refill (−118) the pharmacy
- * dispenses Apotex's interchangeable generic instead of Synthroid, on the same
- * prescription — the DIN on that fill changes. TSH 4.4 (−52) takes the dose to
+ * goes to 75 mcg (−208) on a 90-day supply, still Synthroid, filled twice. TSH
+ * 4.4 (−52) takes the dose to
  * 112 mcg (−45), which overshoots: TSH falls to 0.08 and free T4 rises above
  * range (−13), and the dose is cut to 88 mcg (−12). Ten days later (−2) free T4
  * is back in range (17.6), about one and a half half-lives on, while TSH —
@@ -55,7 +54,6 @@ const levothyroxine50mcg: Prescription.Prescription = {
   fillDays: Prescription.fillDaysOnCadence(-300, 30, [0, 2]),
 }
 
-/** Filled as Synthroid, then — from its refill on — as Apo-Levothyroxine. */
 const levothyroxine75mcg: Prescription.Prescription = {
   key: 'levothyroxine-2',
   product: catalogue.synthroid75mcg,
@@ -66,7 +64,6 @@ const levothyroxine75mcg: Prescription.Prescription = {
   written: { day: -208, reason: 'dose-change' },
   ended: { day: -45, reason: 'dose-change' },
   fillDays: Prescription.fillDaysOnCadence(-208, 90, [0]),
-  interchange: { fromFillDay: -118, product: catalogue.apoLevothyroxine75mcg },
 }
 
 const levothyroxine112mcg: Prescription.Prescription = {

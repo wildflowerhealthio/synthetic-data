@@ -34,7 +34,7 @@ const MISSED_FILL_DAYS_LATE = 14
 
 const ferrousSulfate300mg: Prescription.Prescription = {
   key: 'ferrous-sulfate-1',
-  product: catalogue.pmsFerrousSulfate300mg,
+  product: catalogue.pharmadexFerrousSulfate300mg,
   dosing: { tabletsPerDose: 1, dosesPerDay: 1, direction: 'WITH FOOD' },
   supplyDaysPerFill: 30,
   repeatsAllowed: 5,

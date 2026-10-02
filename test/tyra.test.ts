@@ -7,7 +7,7 @@ import { dailyDosesOf, labValuesOf, lastDrawBefore } from './story.test-helpers.
 
 /**
  * Pins Tyra's story to the epic (#787): levothyroxine 50 → 75 → 112 → 88 mcg,
- * the generic interchange on one fill, the TSH values that drive each change,
+ * the TSH values that drive each change,
  * and the 112 mcg overshoot filling the first 16 days of the Pebble's 28-day
  * window, up to the cut.
  * The expectations are the epic's, written out rather than read back.
@@ -59,18 +59,6 @@ describe("Tyra's story", () => {
     const cutDay = overshoot?.ended?.day ?? 0
     expect(startDay).toBeLessThanOrEqual(-28)
     expect(cutDay - Math.max(startDay, -28)).toBeGreaterThanOrEqual(14)
-  })
-
-  test('switches one 75 mcg refill from Synthroid to a generic, changing the DIN', () => {
-    const [, seventyFive] = levothyroxine
-    if (seventyFive === undefined) throw new Error('no 75 mcg prescription')
-    const [firstFill, refill] = seventyFive.fillDays
-    const firstProduct = Prescription.productOnFillOf(seventyFive, firstFill ?? 0)
-    const refillProduct = Prescription.productOnFillOf(seventyFive, refill ?? 0)
-    expect(firstProduct.brandName).toBe('Synthroid')
-    expect(refillProduct.brandName).toBe('Apo-Levothyroxine')
-    expect(refillProduct.din).not.toBe(firstProduct.din)
-    expect(refillProduct.strength).toEqual(firstProduct.strength)
   })
 
   test('is filled from the day each prescription is written, before it ends, in order', () => {

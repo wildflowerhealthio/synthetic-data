@@ -1,10 +1,8 @@
 import type { DrugProduct } from 'synthetic-data-core'
 
 /**
- * The marketed Canadian products the family's stories prescribe, each
- * identified by a DIN verified against Health Canada's Drug Product Database
- * (DPD) — or, for an oral iron that Canada licenses as a natural health
- * product, against the Licensed Natural Health Products Database (LNHPD).
+ * The Canadian products the family's stories prescribe, each identified by a
+ * DIN verified against Health Canada's Drug Product Database (DPD).
  *
  * @remarks
  * `synthetic-data-core` carries only the `DrugProduct` type; the choice of
@@ -14,8 +12,9 @@ import type { DrugProduct } from 'synthetic-data-core'
 /**
  * The products the stories prescribe, every one verified against the DPD API
  * (`https://health-products.canada.ca/api/drug/drugproduct/?din=<DIN>&type=json`,
- * then `activeingredient`, `form` and `status` by `drug_code`) as **Marketed**,
- * with the ingredient, strength and form below.
+ * then `activeingredient`, `form` and `status` by `drug_code`) with the
+ * ingredient, strength and form below — all **Marketed** but Fern's ferrous
+ * sulfate (see below).
  *
  * | DIN        | DPD drug code | Brand                     | Company                  | Active ingredient              | Form   |
  * | ---------- | ------------- | ------------------------- | ------------------------ | ------------------------------ | ------ |
@@ -26,31 +25,23 @@ import type { DrugProduct } from 'synthetic-data-core'
  * | `02274752` | 76022         | APO-CLARITHROMYCIN        | Apotex Inc               | clarithromycin 500 mg          | Tablet |
  * | `02172070` | 19587         | SYNTHROID                 | BGP Pharma ULC           | levothyroxine sodium 50 mcg    | Tablet |
  * | `02172089` | 19595         | SYNTHROID                 | BGP Pharma ULC           | levothyroxine sodium 75 mcg    | Tablet |
- * | `02550725` | 103951        | APO-LEVOTHYROXINE         | Apotex Inc               | levothyroxine sodium 75 mcg    | Tablet |
  * | `02550741` | 103953        | APO-LEVOTHYROXINE         | Apotex Inc               | levothyroxine sodium 112 mcg   | Tablet |
  * | `02550733` | 103952        | APO-LEVOTHYROXINE         | Apotex Inc               | levothyroxine sodium 88 mcg    | Tablet |
  * | `02310902` | 79652         | TEVA-ATORVASTATIN         | Teva Canada Limited      | atorvastatin 20 mg             | Tablet |
  * | `02310910` | 79653         | TEVA-ATORVASTATIN         | Teva Canada Limited      | atorvastatin 40 mg             | Tablet |
+ * | `02544253` | 103279        | SANDOZ BISOPROLOL TABLETS | Sandoz Canada Inc        | bisoprolol fumarate 2.5 mg     | Tablet |
  * | `02256134` | 74136         | APO-BISOPROLOL            | Apotex Inc               | bisoprolol fumarate 5 mg       | Tablet |
+ * | `01987135` | 13993         | FERROUS SULFATE TABLETS 300MG | Pharmadex Laboratories Inc | ferrous sulfate 300 mg | Tablet |
  *
- * Oral ferrous sulfate is a natural health product in Canada: the DPD lists no
- * marketed human ferrous sulfate tablet, so Fern's is verified against the
- * LNHPD instead
- * (`https://health-products.canada.ca/api/natural-licences/productlicence/?lang=en&type=json`,
- * then `medicinalingredient` by `lnhpd_id`) as an **active** licence:
- *
- * | Licence (DIN) | LNHPD id | Product                                            | Company           | Medicinal ingredient              | Form   |
- * | ------------- | -------- | -------------------------------------------------- | ----------------- | --------------------------------- | ------ |
- * | `00586323`    | 4814823  | pms-FERROUS SULFATE (Ferrous Sulfate Tablets BP) 300 mg | Pharmascience Inc | anhydrous ferrous sulfate 187 mg | Tablet |
- *
- * It is a Transitional DIN: the product's old DIN, kept as its licence number,
- * which is the number a pharmacy dispenses it under.
+ * Oral ferrous sulfate is a natural health product in Canada today, licensed
+ * in the Licensed Natural Health Products Database rather than the DPD, so no
+ * ferrous sulfate tablet in the DPD is marketed. Fern's is the DPD's most
+ * recently marketed plain 300 mg tablet: its DIN, drug code, ingredient and
+ * form verify, but its status is **Cancelled Post Market** (since 1999).
  *
  * @remarks
  * Metformin has no 1000 mg immediate-release tablet on the Canadian market, so
- * a 1000 mg dose is two 500 mg tablets, as a pharmacy would fill it. Likewise
- * bisoprolol has no 2.5 mg tablet (only 5 and 10 mg are marketed), so a 2.5 mg
- * dose is half a 5 mg tablet.
+ * a 1000 mg dose is two 500 mg tablets, as a pharmacy would fill it.
  */
 const catalogue = {
   taroWarfarin5mg: {
@@ -116,15 +107,6 @@ const catalogue = {
     form: 'tablet',
     company: 'BGP Pharma ULC',
   },
-  apoLevothyroxine75mcg: {
-    din: '02550725',
-    drugCode: 103951,
-    brandName: 'Apo-Levothyroxine',
-    genericName: 'Levothyroxine',
-    strength: { value: 75, unit: 'mcg' },
-    form: 'tablet',
-    company: 'Apotex Inc',
-  },
   apoLevothyroxine112mcg: {
     din: '02550741',
     drugCode: 103953,
@@ -161,6 +143,15 @@ const catalogue = {
     form: 'tablet',
     company: 'Teva Canada Limited',
   },
+  sandozBisoprolol2point5mg: {
+    din: '02544253',
+    drugCode: 103279,
+    brandName: 'Sandoz Bisoprolol',
+    genericName: 'Bisoprolol',
+    strength: { value: 2.5, unit: 'mg' },
+    form: 'tablet',
+    company: 'Sandoz Canada Inc',
+  },
   apoBisoprolol5mg: {
     din: '02256134',
     drugCode: 74136,
@@ -170,15 +161,14 @@ const catalogue = {
     form: 'tablet',
     company: 'Apotex Inc',
   },
-  pmsFerrousSulfate300mg: {
-    din: '00586323',
-    drugCode: null,
-    lnhpdId: 4814823,
-    brandName: 'pms-Ferrous Sulfate',
+  pharmadexFerrousSulfate300mg: {
+    din: '01987135',
+    drugCode: 13993,
+    brandName: 'Ferrous Sulfate',
     genericName: 'Ferrous Sulfate',
     strength: { value: 300, unit: 'mg' },
     form: 'tablet',
-    company: 'Pharmascience Inc',
+    company: 'Pharmadex Laboratories Inc',
   },
 } as const satisfies Record<string, DrugProduct.DrugProduct>
 

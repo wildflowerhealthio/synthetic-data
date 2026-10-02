@@ -46,10 +46,9 @@ change that date and regenerate: the intervals between events stay the same.
 
 ### Tyra
 
-- **Levothyroxine.** The dose goes 50 → 75 → 112 mcg. Her TSH falls from 8.9
-  through 6.1 and 4.4 to 0.08, and her free T4 rises above range.
-- **Generic interchange.** One 75 mcg refill is dispensed as Apo-Levothyroxine
-  instead of Synthroid. It is the same prescription with a new DIN on the label.
+- **Levothyroxine.** The dose goes 50 → 75 → 112 mcg, Synthroid at 50 and 75
+  mcg and Apo-Levothyroxine from 112 mcg. Her TSH falls from 8.9 through 6.1
+  and 4.4 to 0.08, and her free T4 rises above range.
 - **The cut.** Twelve days before the as-of date, the dose is cut to 88 mcg.
   Ten days later her free T4 has settled back into range, while her TSH is
   still low but climbing back (0.29 mIU/L): a suppressed TSH takes weeks to
@@ -70,15 +69,14 @@ change that date and regenerate: the intervals between events stay the same.
 - **Atorvastatin.** Atorvastatin goes from 20 mg to 40 mg, and his LDL falls
   from 4.1 to 2.2 mmol/L. Each draw is a full lipid panel that is consistent
   under Friedewald.
-- **Bisoprolol.** Bisoprolol goes from 2.5 mg (half a 5 mg tablet) to 5 mg, and
-  is then renewed.
+- **Bisoprolol.** Bisoprolol goes from 2.5 mg (one Sandoz 2.5 mg tablet) to
+  5 mg, and is then renewed.
 - **Monitoring.** His potassium, creatinine and eGFR (CKD-EPI 2021) are drawn
   with every lipid panel, and all stay in range.
 
 ### Fern
 
-- **Ferrous sulfate.** Fern takes ferrous sulfate 300 mg daily. It is a natural
-  health product, dispensed under its Transitional DIN.
+- **Ferrous sulfate.** Fern takes ferrous sulfate 300 mg daily.
 - **Results.** Over about four months, her hemoglobin rises from 98 to 128 g/L
   and her ferritin from 6 to 45 µg/L. Her microcytic indices correct as she
   recovers.
@@ -121,25 +119,28 @@ keyed by the account's `pcid` and linked by `seealso`, so Tyra has two.
 
 Every DIN is checked against Health Canada's Drug Product Database (DPD), using
 `https://health-products.canada.ca/api/drug/drugproduct/?din=<DIN>&type=json`.
-Fern's ferrous sulfate is checked against the Licensed Natural Health Products
-Database instead. The full table is in `src/family/products.ts`.
+Every product is marketed except Fern's ferrous sulfate. Oral ferrous sulfate
+is now licensed as a natural health product, so no ferrous sulfate tablet in
+the DPD is marketed. Hers is the DPD's most recently marketed plain 300 mg
+tablet, which is **Cancelled Post Market** (since 1999). The full table is in
+`src/family/products.ts`.
 
-| Product                          | DIN      |
-| -------------------------------- | -------- |
-| Taro-Warfarin 5 mg               | 02242685 |
-| Taro-Warfarin 4 mg               | 02242684 |
-| Teva-Metformin 500 mg            | 02257726 |
-| Sandoz Metformin FC 500 mg       | 02246820 |
-| Apo-Clarithromycin 500 mg        | 02274752 |
-| Synthroid 50 mcg                 | 02172070 |
-| Synthroid 75 mcg                 | 02172089 |
-| Apo-Levothyroxine 75 mcg         | 02550725 |
-| Apo-Levothyroxine 88 mcg         | 02550733 |
-| Apo-Levothyroxine 112 mcg        | 02550741 |
-| Teva-Atorvastatin 20 mg          | 02310902 |
-| Teva-Atorvastatin 40 mg          | 02310910 |
-| Apo-Bisoprolol 5 mg              | 02256134 |
-| pms-Ferrous Sulfate 300 mg (NPN) | 00586323 |
+| Product                            | DIN      |
+| ---------------------------------- | -------- |
+| Taro-Warfarin 5 mg                 | 02242685 |
+| Taro-Warfarin 4 mg                 | 02242684 |
+| Teva-Metformin 500 mg              | 02257726 |
+| Sandoz Metformin FC 500 mg         | 02246820 |
+| Apo-Clarithromycin 500 mg          | 02274752 |
+| Synthroid 50 mcg                   | 02172070 |
+| Synthroid 75 mcg                   | 02172089 |
+| Apo-Levothyroxine 88 mcg           | 02550733 |
+| Apo-Levothyroxine 112 mcg          | 02550741 |
+| Teva-Atorvastatin 20 mg            | 02310902 |
+| Teva-Atorvastatin 40 mg            | 02310910 |
+| Sandoz Bisoprolol 2.5 mg           | 02544253 |
+| Apo-Bisoprolol 5 mg                | 02256134 |
+| Ferrous Sulfate 300 mg (Pharmadex) | 01987135 |
 
 ### What `generate` produces
 
@@ -222,8 +223,8 @@ The content checks, in `test/`, are:
   - the Shoppers split gives each person exactly their own prescriptions and
     fills;
   - the X-ray was taken on the day of the cough visit.
-- **Products** (`products`): the catalogue lists exactly what is dispensed, and
-  each DIN is unique.
+- **Products** (`products`): the catalogue lists exactly what is dispensed,
+  each DIN is unique, and each has a DPD drug code.
 
 ## The published data set
 

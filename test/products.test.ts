@@ -1,18 +1,16 @@
-import { Prescription } from 'synthetic-data-core'
 import { describe, expect, test } from 'vite-plus/test'
 
 import { beauStory, catalogue, fernStory, tyraStory, warrenStory } from '../src/family/index.ts'
 
 /**
  * The product catalogue: every product a story dispenses is one of its
- * verified entries, and each is keyed as the database that verified it keys
- * it.
+ * verified entries, and each is keyed as the DPD keys it.
  */
 
 const products = Object.values(catalogue)
 const dispensed = [warrenStory, tyraStory, beauStory, fernStory].flatMap((story) =>
   story.prescriptions.flatMap((prescription) =>
-    prescription.fillDays.map((day) => Prescription.productOnFillOf(prescription, day))
+    prescription.fillDays.map(() => prescription.product)
   )
 )
 
@@ -26,9 +24,7 @@ describe('the product catalogue', () => {
     expect(new Set(products.map((product) => product.din)).size).toBe(products.length)
   })
 
-  test('verifies each against the DPD, or the one natural health product against the LNHPD', () => {
-    const naturalHealthProducts = products.filter((product) => product.drugCode === null)
-    expect(naturalHealthProducts.map((product) => product.genericName)).toEqual(['Ferrous Sulfate'])
-    expect(naturalHealthProducts[0]?.lnhpdId).toBeGreaterThan(0)
+  test('verifies each against the DPD, by its drug code', () => {
+    for (const product of products) expect(product.drugCode).toBeGreaterThan(0)
   })
 })
