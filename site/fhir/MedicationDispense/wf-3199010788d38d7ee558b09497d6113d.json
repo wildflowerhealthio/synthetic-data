@@ -4,7 +4,7 @@
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
   },
   "contained": [],
   "extension": [],
@@ -28,12 +28,21 @@
     "coding": [
       {
         "extension": [],
-        "code": "02550725",
+        "code": "02172089",
         "display": "Levothyroxine 75mcg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
-    "text": "Apo-Levothyroxine"
+    "text": "Synthroid"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "a3e8d1f0-7c52-4b96-8e0d-5f14c9a72b38"
+    },
+    "reference": "Patient/wf-cbd053168e1ed97ef6de87dc48f45d19"
   },
   "supportingInformation": [],
   "performer": [],
@@ -47,8 +56,8 @@
       "extension": [],
       "identifier": {
         "extension": [],
-        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-        "value": "4981999"
+        "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+        "value": "3cd20dd0-af69-42db-aa87-c6f6a813588c"
       },
       "reference": "MedicationRequest/wf-d201ac021d907ec5ec993cb52fa2049c"
     }

@@ -4,7 +4,7 @@
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
   },
   "contained": [],
   "extension": [],
@@ -28,12 +28,21 @@
     "coding": [
       {
         "extension": [],
-        "code": "00586323",
+        "code": "01987135",
         "display": "Ferrous Sulfate 300mg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
-    "text": "pms-Ferrous Sulfate"
+    "text": "Ferrous Sulfate"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
+    },
+    "reference": "Patient/wf-a35baf43239c45d87318bd8be5271153"
   },
   "supportingInformation": [],
   "performer": [],
@@ -47,8 +56,8 @@
       "extension": [],
       "identifier": {
         "extension": [],
-        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-        "value": "9873136"
+        "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+        "value": "614056fe-7091-4051-8c16-c2dfa86540ee"
       },
       "reference": "MedicationRequest/wf-d8c76f0e26585a1bd86be61ee8c71b62"
     }

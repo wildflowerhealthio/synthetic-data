@@ -4,7 +4,7 @@
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
   },
   "contained": [],
   "extension": [],
@@ -40,12 +40,12 @@
     "coding": [
       {
         "extension": [],
-        "code": "02550725",
+        "code": "02172089",
         "display": "Levothyroxine 75mcg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
-    "text": "Apo-Levothyroxine"
+    "text": "Synthroid"
   },
   "subject": {
     "extension": [],

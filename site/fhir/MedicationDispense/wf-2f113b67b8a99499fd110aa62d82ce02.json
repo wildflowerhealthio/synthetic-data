@@ -4,7 +4,7 @@
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-7a63e693aac27488b8e246f0bcdfe5e1"
+    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
   },
   "contained": [],
   "extension": [],
@@ -35,6 +35,15 @@
     ],
     "text": "Teva-Atorvastatin"
   },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+    },
+    "reference": "Patient/wf-f60751b1dfbfc108147097e0994acceb"
+  },
   "supportingInformation": [],
   "performer": [],
   "location": {
@@ -47,8 +56,8 @@
       "extension": [],
       "identifier": {
         "extension": [],
-        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-        "value": "8154414"
+        "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+        "value": "57dc6a75-ccb5-4efb-be6d-2cfe1be36688"
       },
       "reference": "MedicationRequest/wf-a8f24dc5cffdd048eb5aef663c9de1f1"
     }
