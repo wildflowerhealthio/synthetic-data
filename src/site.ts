@@ -1,16 +1,16 @@
 import { execFileSync } from 'node:child_process'
 import { copyFile, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 
-import { Effect } from 'effect'
-import { DataSet } from 'synthetic-data-core'
+import { Effect, Either } from 'effect'
+import { Snapshot, type SnapshotFile } from 'synthetic-data-core'
 
 import { AS_OF } from './family/index.ts'
-import { dataSetPeopleOf, generate, GenerateError } from './generate.ts'
+import { generate, GenerateError, snapshotMembersOf } from './generate.ts'
 import { readSources } from './sources.ts'
 
 /**
- * The published data set: the family generated and assembled into its files
- * (`DataSet.assemble`), and written into a directory beside the licence
+ * The published data set: the family generated and assembled into a snapshot
+ * (`Snapshot.assemble`) and its files (`Snapshot.filesOf`), and written into a directory beside the licence
  * notice and a small landing page.
  */
 
@@ -21,15 +21,16 @@ const wildflowerCommitOf = (root: URL): string =>
   }).trim()
 
 /** Every file of the data set, in path order, identical for identical sources and commit. */
-const dataSetFilesOf = (
+const snapshotFilesOf = (
   root: URL,
   wildflowerCommit: string
-): Effect.Effect<readonly DataSet.File[], GenerateError> =>
+): Effect.Effect<readonly SnapshotFile.Any[], GenerateError> =>
   Effect.gen(function* () {
     const sources = yield* Effect.promise(() => readSources(root))
     const family = yield* generate(sources)
-    return yield* DataSet.assemble(AS_OF, wildflowerCommit, dataSetPeopleOf(family)).pipe(
-      Effect.mapError((cause) => new GenerateError({ step: 'assemble', cause }))
+    return yield* Snapshot.assemble(AS_OF, wildflowerCommit, snapshotMembersOf(family)).pipe(
+      Either.flatMap(Snapshot.filesOf),
+      Either.mapLeft((cause) => new GenerateError({ step: 'assemble', cause }))
     )
   })
 
@@ -59,13 +60,13 @@ const LANDING_PAGE = `<!doctype html>
 const writeSite = async (
   root: URL,
   directory: URL,
-  files: readonly DataSet.File[]
+  files: readonly SnapshotFile.Any[]
 ): Promise<void> => {
   await rm(directory, { recursive: true, force: true })
   for (const file of files) {
     const target = new URL(file.path, directory)
     await mkdir(new URL('./', target), { recursive: true })
-    await writeFile(target, file.contents)
+    await writeFile(target, file._tag === 'Text' ? file.text : file.bytes)
   }
   const notice = new URL('NOTICE', root)
   await copyFile(notice, new URL('NOTICE', directory))
@@ -78,4 +79,4 @@ const writeSite = async (
 const readWritten = async (directory: URL, path: string): Promise<Uint8Array> =>
   new Uint8Array(await readFile(new URL(path, directory)))
 
-export { dataSetFilesOf, readWritten, wildflowerCommitOf, writeSite }
+export { readWritten, snapshotFilesOf, wildflowerCommitOf, writeSite }

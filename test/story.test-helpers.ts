@@ -1,4 +1,4 @@
-import { Prescription, type Story } from 'synthetic-data-core'
+import { Prescription, type Story } from 'synthetic-data-fundamentals/story'
 
 /**
  * Readers the family's story tests share: a story's prescriptions of one drug,

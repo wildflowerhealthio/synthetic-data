@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vite-plus/test'
 
-import { Prescription } from 'synthetic-data-core'
+import { Prescription } from 'synthetic-data-fundamentals/story'
 
 import { beauStory } from '../src/family/index.ts'
 import { dailyDosesOf, prescriptionsOf } from './story.test-helpers.ts'

@@ -35,6 +35,24 @@ importers:
       synthetic-data-core:
         specifier: link:wildflower/slices/synthetic-data/synthetic-data-core
         version: link:wildflower/slices/synthetic-data/synthetic-data-core
+      synthetic-data-dicom:
+        specifier: link:wildflower/slices/synthetic-data/synthetic-data-dicom
+        version: link:wildflower/slices/synthetic-data/synthetic-data-dicom
+      synthetic-data-fhir-sync-pebble:
+        specifier: link:wildflower/slices/synthetic-data/synthetic-data-fhir-sync-pebble
+        version: link:wildflower/slices/synthetic-data/synthetic-data-fhir-sync-pebble
+      synthetic-data-fundamentals:
+        specifier: link:wildflower/slices/synthetic-data/synthetic-data-fundamentals
+        version: link:wildflower/slices/synthetic-data/synthetic-data-fundamentals
+      synthetic-data-lifelabs:
+        specifier: link:wildflower/slices/synthetic-data/synthetic-data-lifelabs
+        version: link:wildflower/slices/synthetic-data/synthetic-data-lifelabs
+      synthetic-data-rexall-be-well:
+        specifier: link:wildflower/slices/synthetic-data/synthetic-data-rexall-be-well
+        version: link:wildflower/slices/synthetic-data/synthetic-data-rexall-be-well
+      synthetic-data-shoppers-drugmart:
+        specifier: link:wildflower/slices/synthetic-data/synthetic-data-shoppers-drugmart
+        version: link:wildflower/slices/synthetic-data/synthetic-data-shoppers-drugmart
       vite:
         specifier: link:wildflower/node_modules/vite
         version: link:wildflower/node_modules/vite

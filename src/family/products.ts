@@ -1,11 +1,11 @@
-import type { DrugProduct } from 'synthetic-data-core'
+import type { DrugProduct } from 'synthetic-data-fundamentals/story'
 
 /**
  * The Canadian products the family's stories prescribe, each identified by a
  * DIN verified against Health Canada's Drug Product Database (DPD).
  *
  * @remarks
- * `synthetic-data-core` carries only the `DrugProduct` type; the choice of
+ * `synthetic-data-fundamentals` carries only the `DrugProduct` type; the choice of
  * products, and their verification, is the data set's.
  */
 

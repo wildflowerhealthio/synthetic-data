@@ -1,6 +1,6 @@
-import { LifeLabsLaboratory } from 'synthetic-data-core'
+import { type Laboratory, PrintedRange } from 'synthetic-data-lifelabs/story'
 
-const { atLeast, below, between, eitherSex } = LifeLabsLaboratory
+const { atLeast, below, between, eitherSex } = PrintedRange
 
 /**
  * The LifeLabs laboratory the family's specimens go to — its Toronto site, as
@@ -21,10 +21,42 @@ const COAGULATION = 'Coagulation'
 const LIPIDS = 'Lipid Assessment'
 const ENDOCRINOLOGY = 'Endocrinology'
 
+/** The lower of two printed bounds, as printed. */
+const lowerOf = (left: string, right: string): string =>
+  Number(right) < Number(left) ? right : left
+
+/** The higher of two printed bounds, as printed. */
+const higherOf = (left: string, right: string): string =>
+  Number(right) > Number(left) ? right : left
+
+/**
+ * A range that differs by sex, printed for a person whose gender is `other` or
+ * `unknown` as the span of both: the lowest low and the highest high.
+ */
+const bySex = (
+  male: PrintedRange.PrintedRange,
+  female: PrintedRange.PrintedRange
+): Laboratory.LifeLabsTest['range'] => {
+  const span = ((): PrintedRange.PrintedRange => {
+    if (male._tag === 'between' && female._tag === 'between') {
+      return between(lowerOf(male.low, female.low), higherOf(male.high, female.high))
+    }
+    if (male._tag === 'atLeast' && female._tag === 'atLeast') {
+      return atLeast(lowerOf(male.low, female.low))
+    }
+    if (male._tag === 'below' && female._tag === 'below') {
+      return below(higherOf(male.high, female.high))
+    }
+    throw new Error('bySex spans two ranges of the same kind')
+  })()
+  return { male, female, other: span, unknown: span }
+}
+
 /** See the module summary. */
-const lifeLabsToronto: LifeLabsLaboratory.Laboratory = {
+const lifeLabsToronto: Laboratory.Laboratory = {
   addressLines: ['100 International Blvd.', 'Toronto, Ontario', 'Canada M9W 6J6'],
   licence: '#5687',
+  timeZone: 'America/Toronto',
   tests: [
     {
       storyTest: 'WBC',
@@ -41,7 +73,7 @@ const lifeLabsToronto: LifeLabsLaboratory.Laboratory = {
       section: HEMATOLOGY,
       group: '',
       decimals: 2,
-      range: { male: between('4.50', '6.00'), female: between('3.80', '5.20') },
+      range: bySex(between('4.50', '6.00'), between('3.80', '5.20')),
       comments: [],
     },
     {
@@ -50,7 +82,7 @@ const lifeLabsToronto: LifeLabsLaboratory.Laboratory = {
       section: HEMATOLOGY,
       group: '',
       decimals: 0,
-      range: { male: between('135', '175'), female: between('120', '160') },
+      range: bySex(between('135', '175'), between('120', '160')),
       comments: [],
     },
     {
@@ -59,7 +91,7 @@ const lifeLabsToronto: LifeLabsLaboratory.Laboratory = {
       section: HEMATOLOGY,
       group: '',
       decimals: 3,
-      range: { male: between('0.400', '0.520'), female: between('0.350', '0.460') },
+      range: bySex(between('0.400', '0.520'), between('0.350', '0.460')),
       comments: [],
     },
     {
@@ -140,7 +172,7 @@ const lifeLabsToronto: LifeLabsLaboratory.Laboratory = {
       section: CHEMISTRY,
       group: '',
       decimals: 0,
-      range: { male: between('60', '115'), female: between('45', '90') },
+      range: bySex(between('60', '115'), between('45', '90')),
       comments: [],
     },
     {
@@ -167,7 +199,7 @@ const lifeLabsToronto: LifeLabsLaboratory.Laboratory = {
       section: CHEMISTRY,
       group: '',
       decimals: 0,
-      range: { male: between('30', '400'), female: between('15', '247') },
+      range: bySex(between('30', '400'), between('15', '247')),
       comments: [],
     },
     {
@@ -194,7 +226,7 @@ const lifeLabsToronto: LifeLabsLaboratory.Laboratory = {
       section: CHEMISTRY,
       group: LIPIDS,
       decimals: 2,
-      range: { male: atLeast('1.00'), female: atLeast('1.30') },
+      range: bySex(atLeast('1.00'), atLeast('1.30')),
       comments: [],
     },
     {

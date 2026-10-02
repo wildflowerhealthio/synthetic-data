@@ -1,6 +1,6 @@
 import { DateTime } from 'effect'
 import type { FhirResource } from 'fhir-r4/resources'
-import { SourcePatient, StoryDay } from 'synthetic-data-core'
+import { StoryDay } from 'synthetic-data-fundamentals/story'
 import { describe, expect, test } from 'vite-plus/test'
 
 import {
@@ -42,7 +42,7 @@ const ofType = (
 describe.each(family.people.map((records) => [records.person.givenName, records] as const))(
   "%s's records",
   (_name, records) => {
-    const patientReference = `Patient/${SourcePatient.adoptedIdOf(records.pharmacyPatient)}`
+    const patientReference = records.pharmacyPatient.reference
     const patients = ofType(allResourcesOf(records), 'Patient')
 
     test('hold one Patient — Tyra also the Shoppers account holder’s', () => {

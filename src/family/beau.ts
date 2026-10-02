@@ -1,10 +1,10 @@
 import {
   type LabDraw,
-  type LifeLabs,
   Prescription,
   type Story,
   type StoryDay,
-} from 'synthetic-data-core'
+} from 'synthetic-data-fundamentals/story'
+import type { LabRequisition } from 'synthetic-data-lifelabs/story'
 
 import { beau } from './people.ts'
 import { catalogue } from './products.ts'
@@ -184,6 +184,9 @@ const beauStory: Story.Story = {
 }
 
 /** The family physician orders Beau's lab work; nobody is copied. */
-const beauLabRequisition: LifeLabs.LabRequisition = { orderedBy: 'BHATT DR. SUNITA', copyTo: [] }
+const beauLabRequisition: LabRequisition.LabRequisition = {
+  orderedBy: 'BHATT DR. SUNITA',
+  copyTo: [],
+}
 
 export { beauLabRequisition, beauStory }

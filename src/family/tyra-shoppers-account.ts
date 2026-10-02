@@ -1,4 +1,4 @@
-import type { ShoppersHar } from 'synthetic-data-core'
+import type { ShoppersAccount } from 'synthetic-data-shoppers-drugmart'
 
 import { beauStory } from './beau.ts'
 import { fernStory } from './fern.ts'
@@ -11,9 +11,8 @@ import { tyraStory } from './tyra.ts'
  * and number is fictional; the phone numbers use the `555-01xx` range reserved
  * for fiction.
  */
-const tyraShoppersAccount: ShoppersHar.ShoppersAccount = {
+const tyraShoppersAccount: ShoppersAccount = {
   pcid: '6f1c2a9e-4b7d-4e38-9a15-d2c8e0b37f64',
-  holder: tyra,
   phoneNumber: '6135550142',
   address: {
     line1: '48 Sydenham St',

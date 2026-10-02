@@ -20,6 +20,12 @@
     "importer-fundamentals": "link:wildflower/slices/importer/importer-fundamentals",
     "rolldown": "link:wildflower/node_modules/rolldown",
     "synthetic-data-core": "link:wildflower/slices/synthetic-data/synthetic-data-core",
+    "synthetic-data-dicom": "link:wildflower/slices/synthetic-data/synthetic-data-dicom",
+    "synthetic-data-fhir-sync-pebble": "link:wildflower/slices/synthetic-data/synthetic-data-fhir-sync-pebble",
+    "synthetic-data-fundamentals": "link:wildflower/slices/synthetic-data/synthetic-data-fundamentals",
+    "synthetic-data-lifelabs": "link:wildflower/slices/synthetic-data/synthetic-data-lifelabs",
+    "synthetic-data-rexall-be-well": "link:wildflower/slices/synthetic-data/synthetic-data-rexall-be-well",
+    "synthetic-data-shoppers-drugmart": "link:wildflower/slices/synthetic-data/synthetic-data-shoppers-drugmart",
     "vite": "link:wildflower/node_modules/vite",
     "vite-plus": "link:wildflower/node_modules/vite-plus"
   },

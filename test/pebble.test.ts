@@ -1,6 +1,6 @@
 import { Schema } from 'effect'
 import type { FhirResource } from 'fhir-r4/resources'
-import { SourcePatient, StoryDay } from 'synthetic-data-core'
+import { StoryDay } from 'synthetic-data-fundamentals/story'
 import { describe, expect, test } from 'vite-plus/test'
 
 import { AS_OF, TYRA_CUT_DAY, tyraPhysiology, tyraStory } from '../src/family/index.ts'
@@ -110,7 +110,7 @@ describe("Tyra's Pebble", () => {
     expect(Math.min(...days)).toBe(-28)
     expect(Math.max(...days)).toBe(-1)
     expect(days.size).toBe(28)
-    const subject = `Patient/${SourcePatient.adoptedIdOf(tyra.pharmacyPatient)}`
+    const subject = tyra.pharmacyPatient.reference
     expect(new Set(observations.map((observation) => observation.subject?.reference))).toEqual(
       new Set([subject])
     )

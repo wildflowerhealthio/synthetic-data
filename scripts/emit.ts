@@ -7,21 +7,18 @@
  */
 import { Effect } from 'effect'
 
-import { dataSetFilesOf, wildflowerCommitOf, writeSite } from '../src/site.ts'
+import { snapshotFilesOf, wildflowerCommitOf, writeSite } from '../src/site.ts'
 
 const ROOT = new URL('../', import.meta.url)
 const SITE = new URL('site/', ROOT)
 
 const wildflowerCommit = wildflowerCommitOf(ROOT)
-const files = await Effect.runPromise(dataSetFilesOf(ROOT, wildflowerCommit))
+const files = await Effect.runPromise(snapshotFilesOf(ROOT, wildflowerCommit))
 await writeSite(ROOT, SITE, files)
 
 const bytes = files.reduce(
   (total, file) =>
-    total +
-    (typeof file.contents === 'string'
-      ? Buffer.byteLength(file.contents)
-      : file.contents.byteLength),
+    total + (file._tag === 'Text' ? Buffer.byteLength(file.text) : file.bytes.byteLength),
   0
 )
 process.stdout.write(

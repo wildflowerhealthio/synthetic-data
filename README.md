@@ -11,7 +11,11 @@ The lab results go through the LifeLabs importer's own synthesis. The watch data
 is built with FHIR Sync for Pebble's builders. The X-ray goes through the DICOM
 importer. Every person, account, address and identifier is fictional.
 
-The tools live in Wildflower (`slices/synthetic-data/synthetic-data-core`).
+The tools live in Wildflower (`slices/synthetic-data/`): the story model in
+`synthetic-data-fundamentals`, one generator per source
+(`synthetic-data-rexall-be-well`, `synthetic-data-shoppers-drugmart`,
+`synthetic-data-lifelabs`, `synthetic-data-fhir-sync-pebble`,
+`synthetic-data-dicom`), and the snapshot assembler in `synthetic-data-core`.
 This repository holds the narrative: the people, their timelines, the products
 they are prescribed, the content checks, the emit script and the published
 output. See Wildflower epic #787 and ticket #794.
@@ -172,7 +176,8 @@ vp install                 # links the Wildflower packages this repo uses
 The workspace consumes the submodule without building anything:
 
 - **Linked packages.** `package.json` lists each Wildflower package it imports
-  (`synthetic-data-core`, `har-importer-core`, `fhir-r4`, …) as a `link:` to
+  (`synthetic-data-core`, `synthetic-data-fundamentals`, `har-importer-core`,
+  `fhir-r4`, …) as a `link:` to
   its directory in the submodule. It also links the submodule's own installed
   `effect`, `vite-plus` and TypeScript, so there is one copy of each.
 - **Dependencies.** A linked package resolves its own dependencies from the
@@ -221,18 +226,21 @@ The content checks, in `test/`, are:
   - each person has exactly one Patient, plus Tyra's account Patient;
   - every lab, Pebble and DICOM subject is the person's pharmacy Patient;
   - the Shoppers split gives each person exactly their own prescriptions and
-    fills;
+    fills (fills seen only in the history feed name the account Patient, and
+    go to the person whose prescription they fill);
   - the X-ray was taken on the day of the cough visit.
 - **Products** (`products`): the catalogue lists exactly what is dispensed,
   each DIN is unique, and each has a DPD drug code.
 
 ## The published data set
 
-`vp run emit` replaces `site/` with the data set, laid out by
-synthetic-data-core's `DataSet.assemble` (Wildflower #793):
+`vp run emit` replaces `site/` with the data set: a snapshot built by
+synthetic-data-core's `Snapshot.assemble` and written as `Snapshot.filesOf`
+lays it out:
 
-- `index.json`: the manifest — each person's key, name, summary, Patient ids
-  and files, the as-of date and the Wildflower commit it was generated at.
+- `index.json`: the header (`Snapshot.Header`) — each person's key, name,
+  summary, Patient ids and files, the as-of date and the Wildflower commit it
+  was generated at.
 - `fhir/<Type>/<id>.json`: one importer-output resource per file.
 - `har/` and `dicom/`: the files the records were imported from, linked from
   their source-file DocumentReferences' relative `attachment.url`.

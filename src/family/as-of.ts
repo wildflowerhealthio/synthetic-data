@@ -2,7 +2,7 @@ import { DateTime } from 'effect'
 
 /**
  * The data set's as-of date: the day every story is dated back from (see
- * `StoryDay` in `synthetic-data-core`), and the day the pharmacy sessions are
+ * `StoryDay` in `synthetic-data-fundamentals`), and the day the pharmacy sessions are
  * captured.
  *
  * @remarks

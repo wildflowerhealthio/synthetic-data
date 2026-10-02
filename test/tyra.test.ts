@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vite-plus/test'
 
-import { Prescription } from 'synthetic-data-core'
+import { Prescription } from 'synthetic-data-fundamentals/story'
 
 import { tyraStory } from '../src/family/index.ts'
 import { dailyDosesOf, labValuesOf, lastDrawBefore } from './story.test-helpers.ts'
