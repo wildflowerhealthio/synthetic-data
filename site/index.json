@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "asOf": "2026-09-28T12:00:00.000Z",
   "generator": {
-    "name": "synthetic-data-core",
-    "wildflowerCommit": "2f8fc94e4e373708611c9522dd5cdc725f58a2c1"
+    "name": "synthetic-data-core-js",
+    "wildflowerCommit": "3dd1c106e856d11a89147e9024bfb727a0bd32e4"
   },
   "people": [
     {
