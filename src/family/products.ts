@@ -1,4 +1,4 @@
-import type { DrugProduct } from 'synthetic-data-fundamentals/story'
+import type { DrugProduct } from '@wildflowerhealthio/synthetic-data-fundamentals/story'
 
 /**
  * The Canadian products the family's stories prescribe, each identified by a

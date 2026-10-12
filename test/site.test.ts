@@ -3,8 +3,8 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 
+import { Snapshot, type SnapshotFile } from '@wildflowerhealthio/synthetic-data-core-js'
 import { Effect, Schema } from 'effect'
-import { Snapshot, type SnapshotFile } from 'synthetic-data-core'
 import { afterAll, describe, expect, test } from 'vite-plus/test'
 
 import { readWritten, snapshotFilesOf, writeSite } from '../src/site.ts'

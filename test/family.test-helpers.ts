@@ -1,5 +1,5 @@
+import type { FhirResource } from '@wildflowerhealthio/fhir-r4/resources'
 import { Effect } from 'effect'
-import type { FhirResource } from 'fhir-r4/resources'
 
 import { type Family, generate, type PersonRecords } from '../src/generate.ts'
 import { readSources } from '../src/sources.ts'

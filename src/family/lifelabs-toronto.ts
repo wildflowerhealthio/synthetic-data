@@ -1,4 +1,4 @@
-import { type Laboratory, PrintedRange } from 'synthetic-data-lifelabs/story'
+import { type Laboratory, PrintedRange } from '@wildflowerhealthio/synthetic-data-lifelabs/story'
 
 const { atLeast, below, between, eitherSex } = PrintedRange
 

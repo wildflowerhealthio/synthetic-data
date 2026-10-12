@@ -1,8 +1,8 @@
+import { Quantity, type ReferenceType } from '@wildflowerhealthio/fhir-r4/data-types'
+import type { FhirResource, Observation, Patient } from '@wildflowerhealthio/fhir-r4/resources'
+import { Person, type Story, StoryDay } from '@wildflowerhealthio/synthetic-data-fundamentals/story'
+import { Laboratory } from '@wildflowerhealthio/synthetic-data-lifelabs/story'
 import { DateTime, Option, Schema } from 'effect'
-import { Quantity, type ReferenceType } from 'fhir-r4/data-types'
-import type { FhirResource, Observation, Patient } from 'fhir-r4/resources'
-import { Person, type Story, StoryDay } from 'synthetic-data-fundamentals/story'
-import { Laboratory } from 'synthetic-data-lifelabs/story'
 import { describe, expect, test } from 'vite-plus/test'
 
 import {

@@ -11,11 +11,11 @@ The lab results go through the LifeLabs importer's own synthesis. The watch data
 is built with FHIR Sync for Pebble's builders. The X-ray goes through the DICOM
 importer. Every person, account, address and identifier is fictional.
 
-The tools live in Wildflower (`slices/synthetic-data/`): the story model in
+The tools live in Wildflower (`apps/synthetic-data/`): the story model in
 `synthetic-data-fundamentals`, one generator per source
 (`synthetic-data-rexall-be-well`, `synthetic-data-shoppers-drugmart`,
 `synthetic-data-lifelabs`, `synthetic-data-fhir-sync-pebble`,
-`synthetic-data-dicom`), and the snapshot assembler in `synthetic-data-core`.
+`synthetic-data-dicom`), and the snapshot assembler in `synthetic-data-core-js`.
 This repository holds the narrative: the people, their timelines, the products
 they are prescribed, the content checks, the emit script and the published
 output. See Wildflower epic #787 and ticket #794.
@@ -176,7 +176,7 @@ vp install                 # links the Wildflower packages this repo uses
 The workspace consumes the submodule without building anything:
 
 - **Linked packages.** `package.json` lists each Wildflower package it imports
-  (`synthetic-data-core`, `synthetic-data-fundamentals`, `har-importer-core`,
+  (`synthetic-data-core-js`, `synthetic-data-fundamentals`, `har-importer-core`,
   `fhir-r4`, …) as a `link:` to
   its directory in the submodule. It also links the submodule's own installed
   `effect`, `vite-plus` and TypeScript, so there is one copy of each.
@@ -235,7 +235,7 @@ The content checks, in `test/`, are:
 ## The published data set
 
 `vp run emit` replaces `site/` with the data set: a snapshot built by
-synthetic-data-core's `Snapshot.assemble` and written as `Snapshot.filesOf`
+synthetic-data-core-js's `Snapshot.assemble` and written as `Snapshot.filesOf`
 lays it out:
 
 - `index.json`: the header (`Snapshot.Header`) — each person's key, name,

@@ -1,15 +1,28 @@
+import type { ReferenceType } from '@wildflowerhealthio/fhir-r4/data-types'
+import { Observation, type FhirResource } from '@wildflowerhealthio/fhir-r4/resources'
+import { defaultHarSettings, harImporter } from '@wildflowerhealthio/har-importer-core'
+import type { Snapshot } from '@wildflowerhealthio/synthetic-data-core-js'
+import { DicomImage } from '@wildflowerhealthio/synthetic-data-dicom'
+import {
+  PebbleObservations,
+  PebbleWatch,
+} from '@wildflowerhealthio/synthetic-data-fhir-sync-pebble'
+import {
+  type Person,
+  type Story,
+  StoryDay,
+} from '@wildflowerhealthio/synthetic-data-fundamentals/story'
+import { LifeLabs } from '@wildflowerhealthio/synthetic-data-lifelabs'
+import type { LabRequisition } from '@wildflowerhealthio/synthetic-data-lifelabs/story'
+import {
+  RexallHar,
+  rexallPatientReferenceOf,
+} from '@wildflowerhealthio/synthetic-data-rexall-be-well'
+import {
+  ShoppersHar,
+  shoppersPatientReferenceOf,
+} from '@wildflowerhealthio/synthetic-data-shoppers-drugmart'
 import { type DateTime, Effect, Either, Schema } from 'effect'
-import type { ReferenceType } from 'fhir-r4/data-types'
-import { Observation, type FhirResource } from 'fhir-r4/resources'
-import { defaultHarSettings, harImporter } from 'har-importer-core'
-import type { Snapshot } from 'synthetic-data-core'
-import { DicomImage } from 'synthetic-data-dicom'
-import { PebbleObservations, PebbleWatch } from 'synthetic-data-fhir-sync-pebble'
-import { type Person, type Story, StoryDay } from 'synthetic-data-fundamentals/story'
-import { LifeLabs } from 'synthetic-data-lifelabs'
-import type { LabRequisition } from 'synthetic-data-lifelabs/story'
-import { RexallHar, rexallPatientReferenceOf } from 'synthetic-data-rexall-be-well'
-import { ShoppersHar, shoppersPatientReferenceOf } from 'synthetic-data-shoppers-drugmart'
 
 import {
   AS_OF,

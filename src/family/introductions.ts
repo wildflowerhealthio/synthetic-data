@@ -1,4 +1,4 @@
-import type { Snapshot } from 'synthetic-data-core'
+import type { Snapshot } from '@wildflowerhealthio/synthetic-data-core-js'
 
 import { beau, fern, tyra, warren } from './people.ts'
 

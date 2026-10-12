@@ -1,4 +1,4 @@
-import type { ShoppersAccount } from 'synthetic-data-shoppers-drugmart'
+import type { ShoppersAccount } from '@wildflowerhealthio/synthetic-data-shoppers-drugmart'
 
 import { beauStory } from './beau.ts'
 import { fernStory } from './fern.ts'
