@@ -1,6 +1,11 @@
-import type { Night, Physiology, Span, Walk } from 'synthetic-data-fhir-sync-pebble'
-import * as Seeding from 'synthetic-data-fundamentals/seeding'
-import type { StoryDay } from 'synthetic-data-fundamentals/story'
+import type {
+  Night,
+  Physiology,
+  Span,
+  Walk,
+} from '@wildflowerhealthio/synthetic-data-fhir-sync-pebble'
+import * as Seeding from '@wildflowerhealthio/synthetic-data-fundamentals/seeding'
+import type { StoryDay } from '@wildflowerhealthio/synthetic-data-fundamentals/story'
 
 import { tyraStory } from './tyra.ts'
 

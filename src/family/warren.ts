@@ -3,9 +3,9 @@ import {
   Prescription,
   type Story,
   type StoryDay,
-} from 'synthetic-data-fundamentals/story'
-import type { LabRequisition } from 'synthetic-data-lifelabs/story'
-import type { RexallAccount } from 'synthetic-data-rexall-be-well'
+} from '@wildflowerhealthio/synthetic-data-fundamentals/story'
+import type { LabRequisition } from '@wildflowerhealthio/synthetic-data-lifelabs/story'
+import type { RexallAccount } from '@wildflowerhealthio/synthetic-data-rexall-be-well'
 
 import { warren } from './people.ts'
 import { catalogue } from './products.ts'

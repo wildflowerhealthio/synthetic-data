@@ -1,8 +1,8 @@
 import { execFileSync } from 'node:child_process'
 import { copyFile, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 
+import { Snapshot, type SnapshotFile } from '@wildflowerhealthio/synthetic-data-core-js'
 import { Effect, Either } from 'effect'
-import { Snapshot, type SnapshotFile } from 'synthetic-data-core'
 
 import { AS_OF } from './family/index.ts'
 import { generate, GenerateError, snapshotMembersOf } from './generate.ts'

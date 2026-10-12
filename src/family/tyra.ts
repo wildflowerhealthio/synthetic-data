@@ -3,8 +3,8 @@ import {
   Prescription,
   type Story,
   type StoryDay,
-} from 'synthetic-data-fundamentals/story'
-import type { LabRequisition } from 'synthetic-data-lifelabs/story'
+} from '@wildflowerhealthio/synthetic-data-fundamentals/story'
+import type { LabRequisition } from '@wildflowerhealthio/synthetic-data-lifelabs/story'
 
 import { tyra } from './people.ts'
 import { catalogue } from './products.ts'

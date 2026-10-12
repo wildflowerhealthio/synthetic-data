@@ -27,7 +27,7 @@ in the published data set)
   synthetic values — the patient's name, sex, birth date and ID, the study
   dates and times, and every instance UID are rewritten for the fictional
   Warren Ashford, and private tags are removed (see Wildflower's
-  synthetic-data-core `DicomImage.reidentify`). The source file itself is the
+  synthetic-data-core-js `DicomImage.reidentify`). The source file itself is the
   downsampled image with TCIA's de-identified header.
 
   Per TCIA's data usage policy, no attempt may be made to re-identify the

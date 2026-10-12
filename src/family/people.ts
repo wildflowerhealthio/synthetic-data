@@ -1,4 +1,4 @@
-import type { Person } from 'synthetic-data-fundamentals/story'
+import type { Person } from '@wildflowerhealthio/synthetic-data-fundamentals/story'
 
 /**
  * The Ashford family's demographics — three generations, named for their

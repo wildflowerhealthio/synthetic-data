@@ -1,4 +1,4 @@
-import type { DicomImage } from 'synthetic-data-dicom'
+import type { DicomImage } from '@wildflowerhealthio/synthetic-data-dicom'
 
 import { warren } from './people.ts'
 import { warrenStory } from './warren.ts'

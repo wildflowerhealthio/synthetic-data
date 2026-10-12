@@ -1,6 +1,6 @@
+import type { FhirResource } from '@wildflowerhealthio/fhir-r4/resources'
+import { StoryDay } from '@wildflowerhealthio/synthetic-data-fundamentals/story'
 import { DateTime } from 'effect'
-import type { FhirResource } from 'fhir-r4/resources'
-import { StoryDay } from 'synthetic-data-fundamentals/story'
 import { describe, expect, test } from 'vite-plus/test'
 
 import {
