@@ -31,9 +31,9 @@ import {
   fernLabRequisition,
   introductions,
   lifeLabsToronto,
+  shoppersAccounts,
   tyraLabRequisition,
   tyraPhysiology,
-  tyraShoppersAccount,
   warrenChestXRay,
   warrenLabRequisition,
   warrenRexallAccount,
@@ -60,12 +60,10 @@ import {
  * dispense — and the app submits every entry as a `PUT`, so the one kept is
  * the last, as the server stores it.
  *
- * **Shared account.** Tyra's Shoppers account HAR imports all three of its
- * people at once; {@link personResourcesOf} splits it: each person's Patient,
- * everything that points at it (their prescriptions, their dispenses via
- * those prescriptions), and everything those point at (the source-file
- * `DocumentReference` the HAR is kept as). The account Patient keyed by the
- * `pcid` is the account holder's, Tyra's.
+ * **Shoppers.** Tyra, Beau and Fern each hold a Shoppers account that
+ * manages them alone, so each account's HAR imports as one person's: their
+ * Patient, their prescriptions and every fill, the history feed's included,
+ * filed on that Patient.
  */
 
 /** A file the data set publishes as it is, beside the resources made from it. */
@@ -134,73 +132,6 @@ const lastWriteWins = (resources: readonly FhirResource[]): readonly FhirResourc
     const kept = last.get(key)
     return kept === undefined ? [] : [kept]
   })
-}
-
-/** Every `Type/id` a resource names: its `reference`s, and the `meta.source` its import stamped. */
-const referencesOf = (resource: FhirResource): ReadonlySet<string> => {
-  const found = new Set<string>()
-  const walk = (value: unknown, key: string | null): void => {
-    if (typeof value === 'string') {
-      if ((key === 'reference' || key === 'source') && /^[A-Z][A-Za-z]+\/[^/]+$/.test(value)) {
-        found.add(value)
-      }
-      return
-    }
-    if (value === null || typeof value !== 'object' || value instanceof URL) return
-    if (Array.isArray(value)) {
-      for (const item of value) walk(item, key)
-      return
-    }
-    for (const [childKey, child] of Object.entries(value)) walk(child, childKey)
-  }
-  walk(resource, null)
-  found.delete(keyOf(resource))
-  return found
-}
-
-/**
- * One person's share of a pharmacy import that may hold several people: their
- * own Patients, everything that refers to them (directly or through another of
- * theirs), then everything those refer to. A Patient joins only as one of
- * `patientIds` or `accountPatientIds`, never by reference — the Shoppers
- * account Patient links to the people it manages, and belongs to its holder
- * alone. Nothing joins through an account Patient: the Shoppers history feed
- * files every fill on the account, and a fill is the person's whose
- * prescription it fills.
- */
-const personResourcesOf = (
-  imported: readonly FhirResource[],
-  patientIds: readonly string[],
-  accountPatientIds: readonly string[] = []
-): readonly FhirResource[] => {
-  const byKey = new Map(imported.map((resource) => [keyOf(resource), resource]))
-  const owned = new Set(patientIds.map((id) => `Patient/${id}`))
-  for (let grew = true; grew;) {
-    grew = false
-    for (const resource of imported) {
-      const key = keyOf(resource)
-      if (owned.has(key) || resource.resourceType === 'Patient') continue
-      if ([...referencesOf(resource)].some((reference) => owned.has(reference))) {
-        owned.add(key)
-        grew = true
-      }
-    }
-  }
-  for (const id of accountPatientIds) owned.add(`Patient/${id}`)
-  const pending = [...owned]
-  while (pending.length > 0) {
-    const resource = byKey.get(pending.pop() ?? '')
-    if (resource === undefined) continue
-    for (const reference of referencesOf(resource)) {
-      const target = byKey.get(reference)
-      if (target === undefined || target.resourceType === 'Patient' || owned.has(reference)) {
-        continue
-      }
-      owned.add(reference)
-      pending.push(reference)
-    }
-  }
-  return imported.filter((resource) => owned.has(keyOf(resource)))
 }
 
 /** A HAR's text through the HAR importer: every resource, source file included, last write kept. */
@@ -318,56 +249,41 @@ const generate = (
       ],
     }
 
-    // Tyra, Beau and Fern: one Shoppers account HAR, split per person.
-    const shoppersFileName = 'tyra-ashford-shoppers.har'
-    const shoppersHar = yield* ShoppersHar.render(asOf, tyraShoppersAccount).pipe(
-      Effect.mapError((cause) => new GenerateError({ step: `render ${shoppersFileName}`, cause }))
-    )
-    const shoppers = yield* importHar(shoppersFileName, shoppersHar)
-    const shoppersFile: StaticFile = {
-      path: `har/${shoppersFileName}`,
-      mediaType: HAR_MEDIA_TYPE,
-      bytes: textEncoder.encode(shoppersHar),
-    }
-    const managedPatientIds = new Set(
-      tyraShoppersAccount.patients.map((patient) =>
-        patientIdOf(shoppersPatientReferenceOf(patient))
-      )
-    )
-    const accountPatientIds = shoppers.flatMap((resource) =>
-      resource.resourceType === 'Patient' && !managedPatientIds.has(resource.id ?? '')
-        ? [resource.id ?? '']
-        : []
-    )
+    // Tyra, Beau and Fern: a Shoppers account HAR each, and labs; Tyra's Pebble.
     const requisitions = new Map([
       ['tyra', tyraLabRequisition],
       ['beau', beauLabRequisition],
       ['fern', fernLabRequisition],
     ])
-    const [holder] = tyraShoppersAccount.patients
-    const shoppersPeople = yield* Effect.forEach(tyraShoppersAccount.patients, (patient) =>
+    const shoppersPeople = yield* Effect.forEach(shoppersAccounts, (account) =>
       Effect.gen(function* () {
+        const [patient] = account.patients
         const { story } = patient
+        const { person } = story
         const pharmacyPatient = shoppersPatientReferenceOf(patient)
-        const isHolder = patient === holder
-        const patientIds = [patientIdOf(pharmacyPatient)]
-        const requisition = requisitions.get(story.person.key)
+        const requisition = requisitions.get(person.key)
         if (requisition === undefined) {
           return yield* new GenerateError({
-            step: `labs for ${story.person.key}`,
+            step: `labs for ${person.key}`,
             cause: 'no lab requisition',
           })
         }
+        const fileName = `${person.givenName}-${person.familyName}-shoppers.har`.toLowerCase()
+        const har = yield* ShoppersHar.render(asOf, account).pipe(
+          Effect.mapError((cause) => new GenerateError({ step: `render ${fileName}`, cause }))
+        )
         const records: PersonRecords = {
-          person: story.person,
+          person,
           pharmacyPatient,
           resources: {
             ...NO_RESOURCES,
-            pharmacy: personResourcesOf(shoppers, patientIds, isHolder ? accountPatientIds : []),
+            pharmacy: yield* importHar(fileName, har),
             labs: yield* labsOf(asOf, story, requisition, pharmacyPatient),
-            pebble: isHolder ? yield* pebbleOf(asOf, pharmacyPatient) : [],
+            pebble: person.key === 'tyra' ? yield* pebbleOf(asOf, pharmacyPatient) : [],
           },
-          files: [shoppersFile],
+          files: [
+            { path: `har/${fileName}`, mediaType: HAR_MEDIA_TYPE, bytes: textEncoder.encode(har) },
+          ],
         }
         return records
       })
@@ -388,12 +304,5 @@ const snapshotMembersOf = (family: Family): readonly Snapshot.MemberRecords[] =>
     return { member, resources: [...pharmacy, ...labs, ...pebble, ...imaging] }
   })
 
-export {
-  generate,
-  GenerateError,
-  lastWriteWins,
-  personResourcesOf,
-  referencesOf,
-  snapshotMembersOf,
-}
+export { generate, GenerateError, lastWriteWins, snapshotMembersOf }
 export type { Family, PersonRecords, Source, Sources, StaticFile }

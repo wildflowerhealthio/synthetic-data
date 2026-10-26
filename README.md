@@ -22,12 +22,12 @@ output. See Wildflower epic #787 and ticket #794.
 
 ## The family
 
-| Gen | Person                                | Name cue                                      | Story                                                              | Sources                                               |
-| --- | ------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------- |
-| 1   | **Warren Ashford**, 78, Tyra's father | **War**ren → **war**farin                     | Atrial fibrillation on warfarin, and type 2 diabetes on metformin. | Rexall HAR, labs, chest X-ray (DICOM)                 |
-| 2   | **Tyra Ashford**, 46, the centre      | **Ty**ra → **thy**roid                        | Hypothyroidism, with a levothyroxine overshoot.                    | Shoppers HAR (account holder), labs, Pebble (28 days) |
-| 2   | **Beau Hartman**, 48, Tyra's spouse   | **Beau** → **b**eta blocker, **Hart** → heart | Hypertension and a high LDL.                                       | Shoppers HAR, labs                                    |
-| 3   | **Fern Ashford**, 16, their daughter  | **Fe**rn → Fe, iron                           | Iron-deficiency anemia.                                            | Shoppers HAR, labs                                    |
+| Gen | Person                                | Name cue                                      | Story                                                              | Sources                               |
+| --- | ------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------- |
+| 1   | **Warren Ashford**, 78, Tyra's father | **War**ren → **war**farin                     | Atrial fibrillation on warfarin, and type 2 diabetes on metformin. | Rexall HAR, labs, chest X-ray (DICOM) |
+| 2   | **Tyra Ashford**, 46, the centre      | **Ty**ra → **thy**roid                        | Hypothyroidism, with a levothyroxine overshoot.                    | Shoppers HAR, labs, Pebble (28 days)  |
+| 2   | **Beau Hartman**, 48, Tyra's spouse   | **Beau** → **b**eta blocker, **Hart** → heart | Hypertension and a high LDL.                                       | Shoppers HAR, labs                    |
+| 3   | **Fern Ashford**, 16, their daughter  | **Fe**rn → Fe, iron                           | Iron-deficiency anemia.                                            | Shoppers HAR, labs                    |
 
 Every date is a day counted back from one fixed as-of date,
 **2026-09-28** (`src/family/as-of.ts`). To move the data set forward in time,
@@ -65,8 +65,8 @@ change that date and regenerate: the intervals between events stay the same.
     (about 89 the first day, 73 by the last), and her nights consolidate.
   - The watch also records a lunchtime walk about every third day, and a
     charge each evening.
-- **Pharmacy.** Tyra holds the family's Shoppers Drug Mart account, and she
-  manages Beau's and Fern's prescriptions on it.
+- **Pharmacy.** Tyra is filled at Shoppers Drug Mart, on an account of her
+  own. Beau and Fern each have their own account at the same store.
 
 ### Beau
 
@@ -90,9 +90,10 @@ change that date and regenerate: the intervals between events stay the same.
 ### One Patient per person
 
 Each person has exactly one Patient: the one their pharmacy import makes.
-Every lab result, watch reading and image is filed on that Patient. The one
-exception is Tyra. The Shoppers importer always adds an account-holder Patient,
-keyed by the account's `pcid` and linked by `seealso`, so Tyra has two.
+Every lab result, watch reading and image is filed on that Patient, and so is
+every prescription and fill. Each Shoppers account manages one person, so the
+Shoppers importer files every fill on that person, the fills only its history
+feed lists included.
 
 ## What's here
 
@@ -102,7 +103,7 @@ keyed by the account's `pcid` and linked by `seealso`, so Tyra has two.
 | `src/family/as-of.ts`                                   | The as-of date.                                                                                             |
 | `src/family/people.ts`                                  | The four people's demographics.                                                                             |
 | `src/family/warren.ts`, `tyra.ts`, `beau.ts`, `fern.ts` | Each story: prescriptions, fills, lab draws and lab requisition. `warren.ts` also holds his Rexall account. |
-| `src/family/tyra-shoppers-account.ts`                   | The Shoppers family account Tyra holds.                                                                     |
+| `src/family/shoppers-accounts.ts`                       | Tyra's, Beau's and Fern's Shoppers accounts, one person each, at one store.                                 |
 | `src/family/products.ts`                                | The product catalogue: every DIN, with how it was verified.                                                 |
 | `src/family/lifelabs-toronto.ts`                        | The laboratory, and how it prints each test (names, ranges, sections).                                      |
 | `src/family/tyra-physiology.ts`                         | What Tyra's Pebble measured, day by day.                                                                    |
@@ -153,13 +154,12 @@ As of 2026-09-28:
 | Person | Pharmacy | Labs | Pebble | Imaging | Files                         |
 | ------ | -------- | ---- | ------ | ------- | ----------------------------- |
 | Warren | 18       | 57   | —      | 3       | Rexall HAR, chest X-ray DICOM |
-| Tyra   | 15       | 16   | 2,123  | —       | Shoppers HAR                  |
+| Tyra   | 14       | 16   | 2,123  | —       | Shoppers HAR                  |
 | Beau   | 17       | 41   | —      | —       | Shoppers HAR                  |
 | Fern   | 7        | 57   | —      | —       | Shoppers HAR                  |
 
-Two resources are shared between people. Tyra, Beau and Fern share the Shoppers
-HAR's source-file DocumentReference. They also share the Practitioner for Dr
-Bhatt, who orders or is copied on all three people's labs.
+One resource is shared between people: the Practitioner for Dr Bhatt, who
+orders or is copied on Tyra's, Beau's and Fern's labs.
 
 ## Setup
 
@@ -223,11 +223,13 @@ The content checks, in `test/`, are:
     wake-ups;
   - the data covers 28 days.
 - **Records** (`records`):
-  - each person has exactly one Patient, plus Tyra's account Patient;
+  - each person has exactly one Patient;
   - every lab, Pebble and DICOM subject is the person's pharmacy Patient;
-  - the Shoppers split gives each person exactly their own prescriptions and
-    fills (fills seen only in the history feed name the account Patient, and
-    go to the person whose prescription they fill);
+  - each person has exactly their own prescriptions and fills, and every one
+    is filed on that Patient;
+  - each Shoppers account manages one person, no Patient links to another or
+    carries an account identifier, and no two people share a pharmacy
+    resource;
   - the X-ray was taken on the day of the cough visit.
 - **Products** (`products`): the catalogue lists exactly what is dispensed,
   each DIN is unique, and each has a DPD drug code.

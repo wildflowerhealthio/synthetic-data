@@ -1,10 +1,10 @@
 {
-  "id": "wf-a188b66af46babed54205aac14725d5e",
+  "id": "wf-38fcace086b139d5541d189aaa680a46",
   "meta": {
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
   },
   "contained": [],
   "extension": [],
@@ -13,12 +13,12 @@
     {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "865cfac6-e59c-4f13-bee3-d444460a38ef"
+      "value": "9a8d9afb-7eee-472a-a792-8dce52495815"
     },
     {
       "extension": [],
       "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/dispense-id",
-      "value": "865cfac6-e59c-4f13-bee3-d444460a38ef"
+      "value": "9a8d9afb-7eee-472a-a792-8dce52495815"
     }
   ],
   "partOf": [],
@@ -28,12 +28,12 @@
     "coding": [
       {
         "extension": [],
-        "code": "02544253",
-        "display": "Bisoprolol 2.5mg",
+        "code": "02310902",
+        "display": "Atorvastatin 20mg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
-    "text": "Sandoz Bisoprolol"
+    "text": "Teva-Atorvastatin"
   },
   "subject": {
     "extension": [],
@@ -56,17 +56,17 @@
       "extension": [],
       "identifier": {
         "extension": [],
-        "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-        "value": "a197cb68-c3d1-404a-a773-f9342d0ef333"
+        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
+        "value": "4993525"
       },
-      "reference": "MedicationRequest/wf-8f9460ecb0e5543726e97bf953f1df0e"
+      "reference": "MedicationRequest/wf-8ecfdd8af2586aed93577aa155a62e84"
     }
   ],
   "quantity": {
     "extension": [],
     "value": 90
   },
-  "whenHandedOver": "2025-12-13T00:00:00.000Z",
+  "whenHandedOver": "2025-08-24T00:00:00.000Z",
   "receiver": [],
   "note": [],
   "dosageInstruction": [],

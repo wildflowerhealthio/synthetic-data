@@ -1,10 +1,10 @@
 {
-  "id": "wf-fbf0abd10d78614794b208650f41265e",
+  "id": "wf-61d540ee496c004f58e9fd11cad0f1de",
   "meta": {
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
   },
   "contained": [],
   "extension": [],
@@ -13,25 +13,25 @@
     {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "473d917b-59ee-43da-b376-1a12fd8ae5c7"
+      "value": "2e6bcf05-d29d-4653-9fbc-bf301ab75c30"
     },
     {
       "extension": [],
       "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-      "value": "8329426"
+      "value": "9983058"
     }
   ],
-  "status": "active",
+  "status": "stopped",
   "statusReason": {
     "extension": [],
     "coding": [
       {
         "extension": [],
-        "code": "READY_FOR_REFILL",
+        "code": "UNABLE_TO_RENEW_ONLINE",
         "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/CodeSystem/prescription-status-type"
       }
     ],
-    "text": "Ready for refill"
+    "text": "Unable to renew online"
   },
   "intent": "order",
   "category": [],
@@ -40,12 +40,12 @@
     "coding": [
       {
         "extension": [],
-        "code": "02256134",
-        "display": "Bisoprolol 5mg",
+        "code": "02544253",
+        "display": "Bisoprolol 2.5mg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
-    "text": "Apo-Bisoprolol"
+    "text": "Sandoz Bisoprolol"
   },
   "subject": {
     "extension": [],
@@ -57,7 +57,7 @@
     "reference": "Patient/wf-f60751b1dfbfc108147097e0994acceb"
   },
   "supportingInformation": [],
-  "authoredOn": "2026-09-13T00:00:00.000Z",
+  "authoredOn": "2025-12-13T00:00:00.000Z",
   "requester": {
     "extension": [],
     "display": "DR S BHATT"
@@ -71,14 +71,14 @@
   "note": [
     {
       "extension": [],
-      "text": "Request a refill and we will let you know when it is ready"
+      "text": "Contact your Pharmacy Team for more details"
     }
   ],
   "dosageInstruction": [
     {
       "extension": [],
       "modifierExtension": [],
-      "text": "TAKE 1 TABLET (=5MG) BY MOUTH ONCE DAILY",
+      "text": "TAKE 1 TABLET (=2.5MG) BY MOUTH ONCE DAILY",
       "additionalInstruction": [],
       "doseAndRate": []
     }
@@ -88,33 +88,18 @@
     "modifierExtension": [],
     "validityPeriod": {
       "extension": [],
-      "end": "2026-12-12T00:00:00.000Z",
-      "start": "2026-09-13T00:00:00.000Z"
+      "end": "2026-09-13T00:00:00.000Z",
+      "start": "2025-12-13T00:00:00.000Z"
     },
-    "numberOfRepeatsAllowed": 3,
+    "numberOfRepeatsAllowed": 0,
     "quantity": {
       "extension": [],
-      "value": 90
-    },
-    "expectedSupplyDuration": {
-      "extension": [],
-      "code": "d",
-      "system": "http://unitsofmeasure.org",
-      "unit": "day",
       "value": 90
     },
     "performer": {
       "extension": [],
       "display": "Shoppers Drug Mart (store 1238)",
       "reference": "https://www.shoppersdrugmart.ca/store-locator/store/1238"
-    }
-  },
-  "priorPrescription": {
-    "extension": [],
-    "identifier": {
-      "extension": [],
-      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-      "value": "2849911"
     }
   },
   "detectedIssue": [],

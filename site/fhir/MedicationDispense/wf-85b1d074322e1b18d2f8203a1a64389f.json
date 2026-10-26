@@ -1,10 +1,10 @@
 {
-  "id": "wf-99beb177e944bc0489c04cb5d88d2c43",
+  "id": "wf-85b1d074322e1b18d2f8203a1a64389f",
   "meta": {
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-f40dff88ce73492eb417a5a8862804d7"
   },
   "contained": [],
   "extension": [],
@@ -13,12 +13,12 @@
     {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "11a440fb-41fa-4bae-a310-736e0454bffa"
+      "value": "efaaf70d-bdee-4cc0-96d5-858669650ad1"
     },
     {
       "extension": [],
       "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/dispense-id",
-      "value": "11a440fb-41fa-4bae-a310-736e0454bffa"
+      "value": "efaaf70d-bdee-4cc0-96d5-858669650ad1"
     }
   ],
   "partOf": [],
@@ -28,21 +28,21 @@
     "coding": [
       {
         "extension": [],
-        "code": "02544253",
-        "display": "Bisoprolol 2.5mg",
+        "code": "01987135",
+        "display": "Ferrous Sulfate 300mg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
-    "text": "Sandoz Bisoprolol"
+    "text": "Ferrous Sulfate"
   },
   "subject": {
     "extension": [],
     "identifier": {
       "extension": [],
-      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/pc-id",
-      "value": "6f1c2a9e-4b7d-4e38-9a15-d2c8e0b37f64"
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
     },
-    "reference": "Patient/wf-3c46d0e1a578f858716965f59eea683b"
+    "reference": "Patient/wf-a35baf43239c45d87318bd8be5271153"
   },
   "supportingInformation": [],
   "performer": [],
@@ -57,16 +57,16 @@
       "identifier": {
         "extension": [],
         "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-        "value": "2120594"
+        "value": "6353062"
       },
-      "reference": "MedicationRequest/wf-8f9460ecb0e5543726e97bf953f1df0e"
+      "reference": "MedicationRequest/wf-10c1913980ef9745838db7d45a93dc4c"
     }
   ],
   "quantity": {
     "extension": [],
-    "value": 90
+    "value": 30
   },
-  "whenHandedOver": "2025-09-13T00:00:00.000Z",
+  "whenHandedOver": "2026-07-25T00:00:00.000Z",
   "receiver": [],
   "note": [],
   "dosageInstruction": [],

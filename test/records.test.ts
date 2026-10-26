@@ -6,17 +6,17 @@ import { describe, expect, test } from 'vite-plus/test'
 import {
   AS_OF,
   CHEST_X_RAY_FILE_NAME,
-  tyraShoppersAccount,
+  shoppersAccounts,
   warrenChestXRay,
   warrenStory,
 } from '../src/family/index.ts'
 import { allResourcesOf, family, recordsOf } from './family.test-helpers.ts'
 
 /**
- * Who each resource `generate` makes belongs to: one Patient per person (Tyra
- * also has the Shoppers account's), every lab result, watch reading and image
- * filed on the person's pharmacy Patient, and the shared Shoppers import split
- * so that each person has exactly their own prescriptions and fills.
+ * Who each resource `generate` makes belongs to: one Patient per person, every
+ * lab result, watch reading and image filed on the person's pharmacy Patient,
+ * and each Shoppers account's import holding exactly its person's
+ * prescriptions and fills, every one filed on them.
  */
 
 const subjectReferenceOf = (resource: FhirResource): string | undefined =>
@@ -27,12 +27,6 @@ const namesOf = (resource: FhirResource): readonly string[] =>
   resource.resourceType === 'Patient'
     ? resource.name.map((name) => [...name.given, name.family ?? ''].join(' '))
     : []
-
-/** Whether a resource carries an identifier with value `value`. */
-const hasIdentifierValue = (resource: FhirResource, value: string): boolean =>
-  'identifier' in resource &&
-  Array.isArray(resource.identifier) &&
-  resource.identifier.some((identifier) => identifier.value === value)
 
 const ofType = (
   resources: readonly FhirResource[],
@@ -45,9 +39,8 @@ describe.each(family.people.map((records) => [records.person.givenName, records]
     const patientReference = records.pharmacyPatient.reference
     const patients = ofType(allResourcesOf(records), 'Patient')
 
-    test('hold one Patient — Tyra also the Shoppers account holder’s', () => {
-      const expected = records.person.key === 'tyra' ? 2 : 1
-      expect(new Set(patients.map((patient) => patient.id)).size).toBe(expected)
+    test('hold one Patient', () => {
+      expect(new Set(patients.map((patient) => patient.id)).size).toBe(1)
       const own = patients.find((patient) => `Patient/${patient.id}` === patientReference)
       expect(own === undefined ? [] : namesOf(own)).toEqual([
         `${records.person.givenName} ${records.person.familyName}`,
@@ -64,17 +57,16 @@ describe.each(family.people.map((records) => [records.person.givenName, records]
       for (const resource of filed) expect(subjectReferenceOf(resource)).toBe(patientReference)
     })
 
-    test('hold exactly their own prescriptions and fills', () => {
-      const story =
-        records.person.key === 'warren'
-          ? null
-          : tyraShoppersAccount.patients.find(
-              (patient) => patient.story.person.key === records.person.key
-            )?.story
+    test('hold exactly their own prescriptions and fills, each filed on them', () => {
+      const story = shoppersAccounts.find(
+        (account) => account.patients[0].story.person.key === records.person.key
+      )?.patients[0].story
       const requests = ofType(records.resources.pharmacy, 'MedicationRequest')
       const dispenses = ofType(records.resources.pharmacy, 'MedicationDispense')
-      for (const request of requests) expect(subjectReferenceOf(request)).toBe(patientReference)
-      if (story !== null && story !== undefined) {
+      for (const resource of [...requests, ...dispenses]) {
+        expect(subjectReferenceOf(resource)).toBe(patientReference)
+      }
+      if (story !== undefined) {
         expect(requests).toHaveLength(story.prescriptions.length)
         expect(dispenses).toHaveLength(
           story.prescriptions.reduce(
@@ -87,27 +79,30 @@ describe.each(family.people.map((records) => [records.person.givenName, records]
   }
 )
 
-describe("Tyra's Shoppers account Patient", () => {
-  test('is keyed by the pcid and filed with Tyra alone', () => {
-    const accountPatients = family.people.flatMap((records) =>
-      ofType(records.resources.pharmacy, 'Patient')
-        .filter((patient) => hasIdentifierValue(patient, tyraShoppersAccount.pcid))
-        .map(() => records.person.key)
-    )
-    expect(accountPatients).toEqual(['tyra'])
+describe('the Shoppers accounts', () => {
+  test('each manage one person', () => {
+    expect(shoppersAccounts.map((account) => account.patients.length)).toEqual([1, 1, 1])
   })
-})
 
-describe('the Shoppers import split', () => {
-  test('shares nothing between people but the HAR it came from', () => {
-    const [tyra, beau, fern] = ['tyra', 'beau', 'fern'].map((key) =>
+  test('import as Patients that link to no other and carry no account identifier', () => {
+    const pcids = new Set(shoppersAccounts.map((account) => account.pcid))
+    const patients = family.people
+      .flatMap((records) => allResourcesOf(records))
+      .flatMap((resource) => (resource.resourceType === 'Patient' ? [resource] : []))
+    const identifiers = patients.flatMap((patient) => patient.identifier)
+    expect(patients).toHaveLength(family.people.length)
+    expect(patients.flatMap((patient) => patient.link)).toEqual([])
+    expect(identifiers.filter((identifier) => /pc-?id/i.test(String(identifier.system)))).toEqual(
+      []
+    )
+    expect(identifiers.filter((identifier) => pcids.has(identifier.value ?? ''))).toEqual([])
+  })
+
+  test('share nothing between people', () => {
+    const keys = ['tyra', 'beau', 'fern'].flatMap((key) =>
       recordsOf(key).resources.pharmacy.map((resource) => `${resource.resourceType}/${resource.id}`)
     )
-    const shared = (tyra ?? []).filter(
-      (key) => (beau ?? []).includes(key) || (fern ?? []).includes(key)
-    )
-    expect(shared).toHaveLength(1)
-    expect(shared[0]).toMatch(/^DocumentReference\//)
+    expect(new Set(keys).size).toBe(keys.length)
   })
 })
 
