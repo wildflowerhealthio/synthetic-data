@@ -1,10 +1,10 @@
 {
-  "id": "wf-6c0a26a8a464a7aa57487d23c0337205",
+  "id": "wf-86e55acf28a3b10eae02b5319cd46b05",
   "meta": {
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-f40dff88ce73492eb417a5a8862804d7"
   },
   "contained": [],
   "extension": [],
@@ -13,12 +13,12 @@
     {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "c7d0ebb2-93b8-4b1b-b0da-a7d2884b0d73"
+      "value": "f2e77d87-500f-4682-937d-ba601fa06d73"
     },
     {
       "extension": [],
       "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/dispense-id",
-      "value": "c7d0ebb2-93b8-4b1b-b0da-a7d2884b0d73"
+      "value": "f2e77d87-500f-4682-937d-ba601fa06d73"
     }
   ],
   "partOf": [],
@@ -28,21 +28,21 @@
     "coding": [
       {
         "extension": [],
-        "code": "02256134",
-        "display": "Bisoprolol 5mg",
+        "code": "01987135",
+        "display": "Ferrous Sulfate 300mg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
-    "text": "Apo-Bisoprolol"
+    "text": "Ferrous Sulfate"
   },
   "subject": {
     "extension": [],
     "identifier": {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
     },
-    "reference": "Patient/wf-f60751b1dfbfc108147097e0994acceb"
+    "reference": "Patient/wf-a35baf43239c45d87318bd8be5271153"
   },
   "supportingInformation": [],
   "performer": [],
@@ -56,17 +56,17 @@
       "extension": [],
       "identifier": {
         "extension": [],
-        "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-        "value": "473d917b-59ee-43da-b376-1a12fd8ae5c7"
+        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
+        "value": "6353062"
       },
-      "reference": "MedicationRequest/wf-fbf0abd10d78614794b208650f41265e"
+      "reference": "MedicationRequest/wf-10c1913980ef9745838db7d45a93dc4c"
     }
   ],
   "quantity": {
     "extension": [],
-    "value": 90
+    "value": 30
   },
-  "whenHandedOver": "2026-09-13T00:00:00.000Z",
+  "whenHandedOver": "2026-06-25T00:00:00.000Z",
   "receiver": [],
   "note": [],
   "dosageInstruction": [],

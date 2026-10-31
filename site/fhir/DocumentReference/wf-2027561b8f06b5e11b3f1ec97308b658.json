@@ -1,0 +1,60 @@
+{
+  "id": "wf-2027561b8f06b5e11b3f1ec97308b658",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [],
+  "status": "current",
+  "type": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "har-archive",
+        "system": "https://wildflowerhealth.io/fhir/CodeSystem/web-trace"
+      }
+    ]
+  },
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "har-archive",
+          "system": "https://wildflowerhealth.io/fhir/CodeSystem/web-trace"
+        }
+      ]
+    }
+  ],
+  "author": [],
+  "relatesTo": [],
+  "description": "HAR archive: tyra-ashford-shoppers.har",
+  "securityLabel": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "raw",
+          "system": "https://wildflowerhealth.io/fhir/CodeSystem/web-trace-redaction"
+        }
+      ]
+    }
+  ],
+  "content": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "attachment": {
+        "extension": [],
+        "contentType": "application/json",
+        "url": "har/tyra-ashford-shoppers.har",
+        "hash": "TkqouUXM9HDnLwCMJtWpJX4JgpnwdlfYeL9DGJ/QQqc=",
+        "size": 27703,
+        "title": "tyra-ashford-shoppers.har"
+      }
+    }
+  ],
+  "resourceType": "DocumentReference"
+}

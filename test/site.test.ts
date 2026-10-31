@@ -56,10 +56,10 @@ describe('the emitted data set', () => {
     expect(assembled.size).toBe(header.totals.resources + header.totals.staticFiles + 1)
   })
 
-  test('lists the family, Tyra with her account Patient', () => {
+  test('lists the family, each with one Patient', () => {
     expect(header.people.map((person) => [person.key, person.patientIds.length])).toEqual([
       ['warren', 1],
-      ['tyra', 2],
+      ['tyra', 1],
       ['beau', 1],
       ['fern', 1],
     ])

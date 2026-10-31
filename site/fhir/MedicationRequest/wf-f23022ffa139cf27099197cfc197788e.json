@@ -1,10 +1,10 @@
 {
-  "id": "wf-d8c76f0e26585a1bd86be61ee8c71b62",
+  "id": "wf-f23022ffa139cf27099197cfc197788e",
   "meta": {
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
   },
   "contained": [],
   "extension": [],
@@ -13,12 +13,12 @@
     {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "614056fe-7091-4051-8c16-c2dfa86540ee"
+      "value": "1fee8e4e-6503-4861-a762-6a252147a3cf"
     },
     {
       "extension": [],
       "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-      "value": "9873136"
+      "value": "1713925"
     }
   ],
   "status": "active",
@@ -40,27 +40,27 @@
     "coding": [
       {
         "extension": [],
-        "code": "01987135",
-        "display": "Ferrous Sulfate 300mg",
+        "code": "02310910",
+        "display": "Atorvastatin 40mg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
-    "text": "Ferrous Sulfate"
+    "text": "Teva-Atorvastatin"
   },
   "subject": {
     "extension": [],
     "identifier": {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
     },
-    "reference": "Patient/wf-a35baf43239c45d87318bd8be5271153"
+    "reference": "Patient/wf-f60751b1dfbfc108147097e0994acceb"
   },
   "supportingInformation": [],
-  "authoredOn": "2026-09-07T00:00:00.000Z",
+  "authoredOn": "2026-08-17T00:00:00.000Z",
   "requester": {
     "extension": [],
-    "display": "DR L MORIN"
+    "display": "DR S BHATT"
   },
   "reasonCode": [],
   "reasonReference": [],
@@ -78,7 +78,7 @@
     {
       "extension": [],
       "modifierExtension": [],
-      "text": "TAKE 1 TABLET (=300MG) BY MOUTH ONCE DAILY WITH FOOD",
+      "text": "TAKE 1 TABLET (=40MG) BY MOUTH ONCE DAILY AT BEDTIME",
       "additionalInstruction": [],
       "doseAndRate": []
     }
@@ -88,25 +88,33 @@
     "modifierExtension": [],
     "validityPeriod": {
       "extension": [],
-      "end": "2026-10-07T00:00:00.000Z",
-      "start": "2026-09-07T00:00:00.000Z"
+      "end": "2026-11-15T00:00:00.000Z",
+      "start": "2026-08-17T00:00:00.000Z"
     },
-    "numberOfRepeatsAllowed": 2,
+    "numberOfRepeatsAllowed": 1,
     "quantity": {
       "extension": [],
-      "value": 30
+      "value": 90
     },
     "expectedSupplyDuration": {
       "extension": [],
       "code": "d",
       "system": "http://unitsofmeasure.org",
       "unit": "day",
-      "value": 30
+      "value": 90
     },
     "performer": {
       "extension": [],
       "display": "Shoppers Drug Mart (store 1238)",
       "reference": "https://www.shoppersdrugmart.ca/store-locator/store/1238"
+    }
+  },
+  "priorPrescription": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
+      "value": "4993525"
     }
   },
   "detectedIssue": [],

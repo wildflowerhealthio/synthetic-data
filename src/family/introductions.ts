@@ -20,15 +20,15 @@ const introductions: readonly Snapshot.Header.Member[] = [
   ),
   introductionOf(
     tyra,
-    "The centre of the family, 46, with hypothyroidism; she holds the family's Shoppers Drug Mart account. Levothyroxine goes from 50 to 75 to 112 mcg and her TSH falls from 8.9 to 0.08, an overshoot her Pebble shows as a resting heart rate climbing toward 92 and broken sleep. Twelve days before the as-of date the dose is cut to 88 mcg: over the following days her heart rate and sleep recover and her free T4 settles back into range, while her TSH is still climbing back."
+    'The centre of the family, 46, with hypothyroidism, filled at Shoppers Drug Mart. Levothyroxine goes from 50 to 75 to 112 mcg and her TSH falls from 8.9 to 0.08, an overshoot her Pebble shows as a resting heart rate climbing toward 92 and broken sleep. Twelve days before the as-of date the dose is cut to 88 mcg: over the following days her heart rate and sleep recover and her free T4 settles back into range, while her TSH is still climbing back.'
   ),
   introductionOf(
     beau,
-    "Tyra's spouse, 48, with hypertension and a high LDL, filled on Tyra's Shoppers account. Atorvastatin goes from 20 to 40 mg and his LDL falls from 4.1 to 2.2 mmol/L. Bisoprolol goes from 2.5 to 5 mg, with his potassium, creatinine and eGFR checked alongside each lipid panel."
+    "Tyra's spouse, 48, with hypertension and a high LDL, filled at Shoppers Drug Mart. Atorvastatin goes from 20 to 40 mg and his LDL falls from 4.1 to 2.2 mmol/L. Bisoprolol goes from 2.5 to 5 mg, with his potassium, creatinine and eGFR checked alongside each lipid panel."
   ),
   introductionOf(
     fern,
-    "Tyra and Beau's daughter, 16, with iron-deficiency anemia, filled on Tyra's Shoppers account. On ferrous sulfate 300 mg daily her hemoglobin rises from 98 to 128 g/L and her ferritin from 6 to 45 µg/L over about four months, with a plateau while a refill is two weeks late."
+    "Tyra and Beau's daughter, 16, with iron-deficiency anemia, filled at Shoppers Drug Mart. On ferrous sulfate 300 mg daily her hemoglobin rises from 98 to 128 g/L and her ferritin from 6 to 45 µg/L over about four months, with a plateau while a refill is two weeks late."
   ),
 ]
 

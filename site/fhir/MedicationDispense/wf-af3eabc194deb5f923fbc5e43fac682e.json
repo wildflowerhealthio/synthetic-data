@@ -1,10 +1,10 @@
 {
-  "id": "wf-bedab8638a16b9ad579ab677b8c69346",
+  "id": "wf-af3eabc194deb5f923fbc5e43fac682e",
   "meta": {
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-f40dff88ce73492eb417a5a8862804d7"
   },
   "contained": [],
   "extension": [],
@@ -13,12 +13,12 @@
     {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "2fef928c-9c90-470d-b302-fbf61bd0afd8"
+      "value": "ae8c8a5f-8fee-47f5-a19e-c7b259839fb9"
     },
     {
       "extension": [],
       "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/dispense-id",
-      "value": "2fef928c-9c90-470d-b302-fbf61bd0afd8"
+      "value": "ae8c8a5f-8fee-47f5-a19e-c7b259839fb9"
     }
   ],
   "partOf": [],
@@ -28,21 +28,21 @@
     "coding": [
       {
         "extension": [],
-        "code": "02310910",
-        "display": "Atorvastatin 40mg",
+        "code": "01987135",
+        "display": "Ferrous Sulfate 300mg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
-    "text": "Teva-Atorvastatin"
+    "text": "Ferrous Sulfate"
   },
   "subject": {
     "extension": [],
     "identifier": {
       "extension": [],
-      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/pc-id",
-      "value": "6f1c2a9e-4b7d-4e38-9a15-d2c8e0b37f64"
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
     },
-    "reference": "Patient/wf-3c46d0e1a578f858716965f59eea683b"
+    "reference": "Patient/wf-a35baf43239c45d87318bd8be5271153"
   },
   "supportingInformation": [],
   "performer": [],
@@ -56,17 +56,17 @@
       "extension": [],
       "identifier": {
         "extension": [],
-        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-        "value": "6426017"
+        "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+        "value": "c150c506-5b2f-48d8-9a3e-2e1a5c4af160"
       },
-      "reference": "MedicationRequest/wf-3d9285ddfcd3a5343bd03348218a258d"
+      "reference": "MedicationRequest/wf-10c1913980ef9745838db7d45a93dc4c"
     }
   ],
   "quantity": {
     "extension": [],
-    "value": 90
+    "value": 30
   },
-  "whenHandedOver": "2026-02-14T00:00:00.000Z",
+  "whenHandedOver": "2026-09-07T00:00:00.000Z",
   "receiver": [],
   "note": [],
   "dosageInstruction": [],

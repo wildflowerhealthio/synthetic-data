@@ -4,7 +4,7 @@
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
   },
   "contained": [],
   "extension": [],
@@ -54,6 +54,11 @@
       "extension": [],
       "system": "phone",
       "value": "6135550143"
+    },
+    {
+      "extension": [],
+      "system": "email",
+      "value": "beau.hartman@example.com"
     }
   ],
   "resourceType": "Patient"

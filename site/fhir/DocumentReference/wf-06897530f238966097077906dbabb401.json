@@ -1,5 +1,5 @@
 {
-  "id": "wf-a21c0968ed761027e32327891d2f23d2",
+  "id": "wf-06897530f238966097077906dbabb401",
   "contained": [],
   "extension": [],
   "modifierExtension": [],
@@ -29,7 +29,7 @@
   ],
   "author": [],
   "relatesTo": [],
-  "description": "HAR archive: tyra-ashford-shoppers.har",
+  "description": "HAR archive: beau-hartman-shoppers.har",
   "securityLabel": [
     {
       "extension": [],
@@ -49,10 +49,10 @@
       "attachment": {
         "extension": [],
         "contentType": "application/json",
-        "url": "har/tyra-ashford-shoppers.har",
-        "hash": "9mQfo1pdeLZyBL0ILdDm85SijMtvnBMuIMVMrR2Zrh8=",
-        "size": 52196,
-        "title": "tyra-ashford-shoppers.har"
+        "url": "har/beau-hartman-shoppers.har",
+        "hash": "+FVt8h5XdJnFMwpmI5ERaaePOr9IBhjsznJTxi4Thqc=",
+        "size": 31416,
+        "title": "beau-hartman-shoppers.har"
       }
     }
   ],

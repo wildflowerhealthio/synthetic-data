@@ -1,10 +1,10 @@
 {
-  "id": "wf-d822683adee059b7c537d16e40ae32be",
+  "id": "wf-10c1913980ef9745838db7d45a93dc4c",
   "meta": {
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-f40dff88ce73492eb417a5a8862804d7"
   },
   "contained": [],
   "extension": [],
@@ -13,25 +13,25 @@
     {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "b5a93513-578d-40ff-9f80-5f58b0f22111"
+      "value": "c150c506-5b2f-48d8-9a3e-2e1a5c4af160"
     },
     {
       "extension": [],
       "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-      "value": "2849911"
+      "value": "6353062"
     }
   ],
-  "status": "stopped",
+  "status": "active",
   "statusReason": {
     "extension": [],
     "coding": [
       {
         "extension": [],
-        "code": "UNABLE_TO_RENEW_ONLINE",
+        "code": "READY_FOR_REFILL",
         "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/CodeSystem/prescription-status-type"
       }
     ],
-    "text": "Unable to renew online"
+    "text": "Ready for refill"
   },
   "intent": "order",
   "category": [],
@@ -40,27 +40,27 @@
     "coding": [
       {
         "extension": [],
-        "code": "02256134",
-        "display": "Bisoprolol 5mg",
+        "code": "01987135",
+        "display": "Ferrous Sulfate 300mg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
-    "text": "Apo-Bisoprolol"
+    "text": "Ferrous Sulfate"
   },
   "subject": {
     "extension": [],
     "identifier": {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
     },
-    "reference": "Patient/wf-f60751b1dfbfc108147097e0994acceb"
+    "reference": "Patient/wf-a35baf43239c45d87318bd8be5271153"
   },
   "supportingInformation": [],
-  "authoredOn": "2026-06-14T00:00:00.000Z",
+  "authoredOn": "2026-09-07T00:00:00.000Z",
   "requester": {
     "extension": [],
-    "display": "DR S BHATT"
+    "display": "DR L MORIN"
   },
   "reasonCode": [],
   "reasonReference": [],
@@ -71,14 +71,14 @@
   "note": [
     {
       "extension": [],
-      "text": "Contact your Pharmacy Team for more details"
+      "text": "Request a refill and we will let you know when it is ready"
     }
   ],
   "dosageInstruction": [
     {
       "extension": [],
       "modifierExtension": [],
-      "text": "TAKE 1 TABLET (=5MG) BY MOUTH ONCE DAILY",
+      "text": "TAKE 1 TABLET (=300MG) BY MOUTH ONCE DAILY WITH FOOD",
       "additionalInstruction": [],
       "doseAndRate": []
     }
@@ -88,26 +88,25 @@
     "modifierExtension": [],
     "validityPeriod": {
       "extension": [],
-      "end": "2027-03-14T00:00:00.000Z",
-      "start": "2026-06-14T00:00:00.000Z"
+      "end": "2026-10-07T00:00:00.000Z",
+      "start": "2026-09-07T00:00:00.000Z"
     },
-    "numberOfRepeatsAllowed": 0,
+    "numberOfRepeatsAllowed": 2,
     "quantity": {
       "extension": [],
-      "value": 90
+      "value": 30
+    },
+    "expectedSupplyDuration": {
+      "extension": [],
+      "code": "d",
+      "system": "http://unitsofmeasure.org",
+      "unit": "day",
+      "value": 30
     },
     "performer": {
       "extension": [],
       "display": "Shoppers Drug Mart (store 1238)",
       "reference": "https://www.shoppersdrugmart.ca/store-locator/store/1238"
-    }
-  },
-  "priorPrescription": {
-    "extension": [],
-    "identifier": {
-      "extension": [],
-      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-      "value": "2120594"
     }
   },
   "detectedIssue": [],

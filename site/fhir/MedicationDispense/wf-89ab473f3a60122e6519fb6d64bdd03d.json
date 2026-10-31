@@ -1,10 +1,10 @@
 {
-  "id": "wf-3d5fbcba664d847c0d0b4d9c2a216c13",
+  "id": "wf-89ab473f3a60122e6519fb6d64bdd03d",
   "meta": {
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
   },
   "contained": [],
   "extension": [],
@@ -13,12 +13,12 @@
     {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "aa9fc461-33ff-4820-ac6e-da474b13cd5a"
+      "value": "692e5004-2178-4a5c-9fe8-8a6b345d0d04"
     },
     {
       "extension": [],
       "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/dispense-id",
-      "value": "aa9fc461-33ff-4820-ac6e-da474b13cd5a"
+      "value": "692e5004-2178-4a5c-9fe8-8a6b345d0d04"
     }
   ],
   "partOf": [],
@@ -39,10 +39,10 @@
     "extension": [],
     "identifier": {
       "extension": [],
-      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/pc-id",
-      "value": "6f1c2a9e-4b7d-4e38-9a15-d2c8e0b37f64"
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
     },
-    "reference": "Patient/wf-3c46d0e1a578f858716965f59eea683b"
+    "reference": "Patient/wf-f60751b1dfbfc108147097e0994acceb"
   },
   "supportingInformation": [],
   "performer": [],
@@ -56,17 +56,17 @@
       "extension": [],
       "identifier": {
         "extension": [],
-        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-        "value": "2849911"
+        "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+        "value": "926ce46e-6a92-4a70-b5ae-1f10c32e825e"
       },
-      "reference": "MedicationRequest/wf-d822683adee059b7c537d16e40ae32be"
+      "reference": "MedicationRequest/wf-2918f8c93566357861814847e1243fb5"
     }
   ],
   "quantity": {
     "extension": [],
     "value": 90
   },
-  "whenHandedOver": "2026-03-14T00:00:00.000Z",
+  "whenHandedOver": "2026-09-13T00:00:00.000Z",
   "receiver": [],
   "note": [],
   "dosageInstruction": [],

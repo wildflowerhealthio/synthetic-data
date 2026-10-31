@@ -1,10 +1,10 @@
 {
-  "id": "wf-e7b8c33423d4813dc4328fedac9c71fa",
+  "id": "wf-16ec1fc5e5d56418799df2fb5a6b5b1b",
   "meta": {
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
   },
   "contained": [],
   "extension": [],
@@ -13,12 +13,12 @@
     {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "5f43791c-e43f-484b-a00a-90e196dda456"
+      "value": "3c4f30d9-2eff-4149-90ba-c19186a9f095"
     },
     {
       "extension": [],
       "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/dispense-id",
-      "value": "5f43791c-e43f-484b-a00a-90e196dda456"
+      "value": "3c4f30d9-2eff-4149-90ba-c19186a9f095"
     }
   ],
   "partOf": [],
@@ -28,21 +28,21 @@
     "coding": [
       {
         "extension": [],
-        "code": "02310910",
-        "display": "Atorvastatin 40mg",
+        "code": "02544253",
+        "display": "Bisoprolol 2.5mg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
-    "text": "Teva-Atorvastatin"
+    "text": "Sandoz Bisoprolol"
   },
   "subject": {
     "extension": [],
     "identifier": {
       "extension": [],
-      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/pc-id",
-      "value": "6f1c2a9e-4b7d-4e38-9a15-d2c8e0b37f64"
+      "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
     },
-    "reference": "Patient/wf-3c46d0e1a578f858716965f59eea683b"
+    "reference": "Patient/wf-f60751b1dfbfc108147097e0994acceb"
   },
   "supportingInformation": [],
   "performer": [],
@@ -57,16 +57,16 @@
       "identifier": {
         "extension": [],
         "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-        "value": "6426017"
+        "value": "9983058"
       },
-      "reference": "MedicationRequest/wf-3d9285ddfcd3a5343bd03348218a258d"
+      "reference": "MedicationRequest/wf-61d540ee496c004f58e9fd11cad0f1de"
     }
   ],
   "quantity": {
     "extension": [],
     "value": 90
   },
-  "whenHandedOver": "2026-05-15T00:00:00.000Z",
+  "whenHandedOver": "2025-09-13T00:00:00.000Z",
   "receiver": [],
   "note": [],
   "dosageInstruction": [],

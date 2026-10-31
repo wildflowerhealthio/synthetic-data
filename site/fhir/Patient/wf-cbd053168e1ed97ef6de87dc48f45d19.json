@@ -4,7 +4,7 @@
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-2027561b8f06b5e11b3f1ec97308b658"
   },
   "contained": [],
   "extension": [],
@@ -54,6 +54,11 @@
       "extension": [],
       "system": "phone",
       "value": "6135550142"
+    },
+    {
+      "extension": [],
+      "system": "email",
+      "value": "tyra.ashford@example.com"
     }
   ],
   "resourceType": "Patient"

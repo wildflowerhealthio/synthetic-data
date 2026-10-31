@@ -1,10 +1,10 @@
 {
-  "id": "wf-5d869c1bb361d8d9aeb326cd4a856a8e",
+  "id": "wf-3085474d1550dec0ad11faf2879374b3",
   "meta": {
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
   },
   "contained": [],
   "extension": [],
@@ -13,12 +13,12 @@
     {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "252b6cb1-2e87-4cd7-9378-e7c8cc913ac6"
+      "value": "87354eac-2496-40e0-84a3-94a4c99bebc6"
     },
     {
       "extension": [],
       "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/dispense-id",
-      "value": "252b6cb1-2e87-4cd7-9378-e7c8cc913ac6"
+      "value": "87354eac-2496-40e0-84a3-94a4c99bebc6"
     }
   ],
   "partOf": [],
@@ -56,17 +56,17 @@
       "extension": [],
       "identifier": {
         "extension": [],
-        "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-        "value": "3627f03d-1e91-4265-8924-4d24a61c70a6"
+        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
+        "value": "1713925"
       },
-      "reference": "MedicationRequest/wf-3d9285ddfcd3a5343bd03348218a258d"
+      "reference": "MedicationRequest/wf-f23022ffa139cf27099197cfc197788e"
     }
   ],
   "quantity": {
     "extension": [],
     "value": 90
   },
-  "whenHandedOver": "2026-08-17T00:00:00.000Z",
+  "whenHandedOver": "2026-05-15T00:00:00.000Z",
   "receiver": [],
   "note": [],
   "dosageInstruction": [],

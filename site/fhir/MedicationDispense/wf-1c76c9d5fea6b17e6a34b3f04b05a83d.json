@@ -1,10 +1,10 @@
 {
-  "id": "wf-8e8ad0b662193c179ef10669ed969ea4",
+  "id": "wf-1c76c9d5fea6b17e6a34b3f04b05a83d",
   "meta": {
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
   },
   "contained": [],
   "extension": [],
@@ -13,12 +13,12 @@
     {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "fc13358a-0039-4057-ada8-7aba5b60d644"
+      "value": "9463e248-fc67-4151-9ec2-27ba7cc14a76"
     },
     {
       "extension": [],
       "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/dispense-id",
-      "value": "fc13358a-0039-4057-ada8-7aba5b60d644"
+      "value": "9463e248-fc67-4151-9ec2-27ba7cc14a76"
     }
   ],
   "partOf": [],
@@ -28,21 +28,21 @@
     "coding": [
       {
         "extension": [],
-        "code": "01987135",
-        "display": "Ferrous Sulfate 300mg",
+        "code": "02310902",
+        "display": "Atorvastatin 20mg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
-    "text": "Ferrous Sulfate"
+    "text": "Teva-Atorvastatin"
   },
   "subject": {
     "extension": [],
     "identifier": {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
     },
-    "reference": "Patient/wf-a35baf43239c45d87318bd8be5271153"
+    "reference": "Patient/wf-f60751b1dfbfc108147097e0994acceb"
   },
   "supportingInformation": [],
   "performer": [],
@@ -57,16 +57,16 @@
       "identifier": {
         "extension": [],
         "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-        "value": "614056fe-7091-4051-8c16-c2dfa86540ee"
+        "value": "07f530c0-af25-4544-aab9-025072ccfc80"
       },
-      "reference": "MedicationRequest/wf-d8c76f0e26585a1bd86be61ee8c71b62"
+      "reference": "MedicationRequest/wf-8ecfdd8af2586aed93577aa155a62e84"
     }
   ],
   "quantity": {
     "extension": [],
-    "value": 30
+    "value": 90
   },
-  "whenHandedOver": "2026-09-07T00:00:00.000Z",
+  "whenHandedOver": "2025-11-22T00:00:00.000Z",
   "receiver": [],
   "note": [],
   "dosageInstruction": [],

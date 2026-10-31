@@ -1,0 +1,60 @@
+{
+  "id": "wf-f40dff88ce73492eb417a5a8862804d7",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [],
+  "status": "current",
+  "type": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "har-archive",
+        "system": "https://wildflowerhealth.io/fhir/CodeSystem/web-trace"
+      }
+    ]
+  },
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "har-archive",
+          "system": "https://wildflowerhealth.io/fhir/CodeSystem/web-trace"
+        }
+      ]
+    }
+  ],
+  "author": [],
+  "relatesTo": [],
+  "description": "HAR archive: fern-ashford-shoppers.har",
+  "securityLabel": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "raw",
+          "system": "https://wildflowerhealth.io/fhir/CodeSystem/web-trace-redaction"
+        }
+      ]
+    }
+  ],
+  "content": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "attachment": {
+        "extension": [],
+        "contentType": "application/json",
+        "url": "har/fern-ashford-shoppers.har",
+        "hash": "qpgXN8gLgCXtJjSWLHhRrs/qxT8Bip0rhiVEsqaNp5I=",
+        "size": 17573,
+        "title": "fern-ashford-shoppers.har"
+      }
+    }
+  ],
+  "resourceType": "DocumentReference"
+}

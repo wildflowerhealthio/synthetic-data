@@ -1,10 +1,10 @@
 {
-  "id": "wf-a8f24dc5cffdd048eb5aef663c9de1f1",
+  "id": "wf-8ecfdd8af2586aed93577aa155a62e84",
   "meta": {
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
   },
   "contained": [],
   "extension": [],
@@ -13,12 +13,12 @@
     {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "57dc6a75-ccb5-4efb-be6d-2cfe1be36688"
+      "value": "07f530c0-af25-4544-aab9-025072ccfc80"
     },
     {
       "extension": [],
       "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
-      "value": "8154414"
+      "value": "4993525"
     }
   ],
   "status": "stopped",

@@ -1,10 +1,10 @@
 {
-  "id": "wf-2f113b67b8a99499fd110aa62d82ce02",
+  "id": "wf-6f4c8f8c0523f4e5fee8c622124ccaea",
   "meta": {
     "profile": [],
     "security": [],
     "tag": [],
-    "source": "DocumentReference/wf-a21c0968ed761027e32327891d2f23d2"
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
   },
   "contained": [],
   "extension": [],
@@ -13,12 +13,12 @@
     {
       "extension": [],
       "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-      "value": "261a729b-c362-41a7-ac00-ae94ade78867"
+      "value": "40abc117-3ba5-4c7d-a6e0-d42b09b3aa2b"
     },
     {
       "extension": [],
       "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/dispense-id",
-      "value": "261a729b-c362-41a7-ac00-ae94ade78867"
+      "value": "40abc117-3ba5-4c7d-a6e0-d42b09b3aa2b"
     }
   ],
   "partOf": [],
@@ -28,8 +28,8 @@
     "coding": [
       {
         "extension": [],
-        "code": "02310902",
-        "display": "Atorvastatin 20mg",
+        "code": "02310910",
+        "display": "Atorvastatin 40mg",
         "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
       }
     ],
@@ -57,16 +57,16 @@
       "identifier": {
         "extension": [],
         "system": "https://wildflowerhealth.io/fhir/sid/shoppers-drugmart",
-        "value": "57dc6a75-ccb5-4efb-be6d-2cfe1be36688"
+        "value": "1fee8e4e-6503-4861-a762-6a252147a3cf"
       },
-      "reference": "MedicationRequest/wf-a8f24dc5cffdd048eb5aef663c9de1f1"
+      "reference": "MedicationRequest/wf-f23022ffa139cf27099197cfc197788e"
     }
   ],
   "quantity": {
     "extension": [],
     "value": 90
   },
-  "whenHandedOver": "2025-11-22T00:00:00.000Z",
+  "whenHandedOver": "2026-08-17T00:00:00.000Z",
   "receiver": [],
   "note": [],
   "dosageInstruction": [],
