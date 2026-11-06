@@ -1,0 +1,108 @@
+{
+  "id": "wf-11b6bfd2a4eab4ee4c86af09d92ba705",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/lab-number",
+      "value": "2025-TB4827057"
+    }
+  ],
+  "basedOn": [],
+  "status": "final",
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "LAB",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "11502-2",
+        "display": "Laboratory report",
+        "system": "http://loinc.org/"
+      }
+    ],
+    "text": "Hematology, Chemistry"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://rexall-prd-tunnel.letsbewell.ca/enduser/health/v1/fhir/stu3/Patient",
+      "value": "3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816"
+    },
+    "reference": "Patient/wf-a6782d6c4dd5bfda9523844d69a75e57",
+    "type": "Patient"
+  },
+  "effectiveDateTime": "2025-12-02T14:50:00.000Z",
+  "issued": "2025-12-02T21:35:00.000Z",
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "resultsInterpreter": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/practitioner-name",
+        "value": "OKAFOR DR. NKECHI"
+      },
+      "reference": "Practitioner/wf-ca64e6ac92a549826c3b253b496cd7b5",
+      "type": "Practitioner"
+    }
+  ],
+  "specimen": [],
+  "result": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2025-TB4827057/Hematology/INR/0"
+      },
+      "reference": "Observation/wf-b91609335a0bdc4815ee675e167829a5",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2025-TB4827057/Chemistry/Glucose Fasting/1"
+      },
+      "reference": "Observation/wf-a52047f8f1cd791f746720b9e394bcbc",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2025-TB4827057/Chemistry/Hemoglobin A1C/2"
+      },
+      "reference": "Observation/wf-15728b8937a623265ee48a44f368d21b",
+      "type": "Observation"
+    }
+  ],
+  "imagingStudy": [],
+  "media": [],
+  "conclusionCode": [],
+  "presentedForm": [],
+  "resourceType": "DiagnosticReport"
+}

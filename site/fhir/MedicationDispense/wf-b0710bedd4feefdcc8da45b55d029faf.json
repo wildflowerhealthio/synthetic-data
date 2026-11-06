@@ -1,0 +1,73 @@
+{
+  "id": "wf-b0710bedd4feefdcc8da45b55d029faf",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/dispense-id",
+      "value": "aa6bd675-f658-487b-9e16-02454196b6cd"
+    }
+  ],
+  "partOf": [],
+  "status": "completed",
+  "medicationCodeableConcept": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "02256134",
+        "display": "Bisoprolol 5mg",
+        "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
+      }
+    ],
+    "text": "Apo-Bisoprolol"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+    },
+    "reference": "Patient/wf-4ef29cda5e75dd2dbd7683dead05550c",
+    "type": "Patient"
+  },
+  "supportingInformation": [],
+  "performer": [],
+  "location": {
+    "extension": [],
+    "display": "Shoppers Drug Mart #1238",
+    "reference": "https://www.shoppersdrugmart.ca/store-locator/store/1238"
+  },
+  "authorizingPrescription": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-id",
+        "value": "e9916984-d966-459a-bb1e-57d0be2bda5a"
+      },
+      "reference": "MedicationRequest/wf-f9842c3f844bc4f3d033e032c1856e42",
+      "type": "MedicationRequest"
+    }
+  ],
+  "quantity": {
+    "extension": [],
+    "value": 90
+  },
+  "whenHandedOver": "2026-03-14T00:00:00.000Z",
+  "receiver": [],
+  "note": [],
+  "dosageInstruction": [],
+  "detectedIssue": [],
+  "eventHistory": [],
+  "resourceType": "MedicationDispense"
+}

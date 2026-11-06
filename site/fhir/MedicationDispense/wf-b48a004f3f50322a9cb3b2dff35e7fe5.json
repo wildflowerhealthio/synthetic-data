@@ -1,0 +1,73 @@
+{
+  "id": "wf-b48a004f3f50322a9cb3b2dff35e7fe5",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/dispense-id",
+      "value": "3c4f30d9-2eff-4149-90ba-c19186a9f095"
+    }
+  ],
+  "partOf": [],
+  "status": "completed",
+  "medicationCodeableConcept": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "02544253",
+        "display": "Bisoprolol 2.5mg",
+        "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
+      }
+    ],
+    "text": "Sandoz Bisoprolol"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+    },
+    "reference": "Patient/wf-4ef29cda5e75dd2dbd7683dead05550c",
+    "type": "Patient"
+  },
+  "supportingInformation": [],
+  "performer": [],
+  "location": {
+    "extension": [],
+    "display": "Shoppers Drug Mart #1238",
+    "reference": "https://www.shoppersdrugmart.ca/store-locator/store/1238"
+  },
+  "authorizingPrescription": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-id",
+        "value": "2e6bcf05-d29d-4653-9fbc-bf301ab75c30"
+      },
+      "reference": "MedicationRequest/wf-a5c21eff9983ec656e8b35a3a454304c",
+      "type": "MedicationRequest"
+    }
+  ],
+  "quantity": {
+    "extension": [],
+    "value": 90
+  },
+  "whenHandedOver": "2025-09-13T00:00:00.000Z",
+  "receiver": [],
+  "note": [],
+  "dosageInstruction": [],
+  "detectedIssue": [],
+  "eventHistory": [],
+  "resourceType": "MedicationDispense"
+}

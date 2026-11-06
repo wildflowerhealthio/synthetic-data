@@ -1,0 +1,73 @@
+{
+  "id": "wf-4d90dc6f2c4497da9ae094ee9f9af465",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/dispense-id",
+      "value": "87354eac-2496-40e0-84a3-94a4c99bebc6"
+    }
+  ],
+  "partOf": [],
+  "status": "completed",
+  "medicationCodeableConcept": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "02310910",
+        "display": "Atorvastatin 40mg",
+        "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
+      }
+    ],
+    "text": "Teva-Atorvastatin"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+    },
+    "reference": "Patient/wf-4ef29cda5e75dd2dbd7683dead05550c",
+    "type": "Patient"
+  },
+  "supportingInformation": [],
+  "performer": [],
+  "location": {
+    "extension": [],
+    "display": "Shoppers Drug Mart #1238",
+    "reference": "https://www.shoppersdrugmart.ca/store-locator/store/1238"
+  },
+  "authorizingPrescription": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-id",
+        "value": "1fee8e4e-6503-4861-a762-6a252147a3cf"
+      },
+      "reference": "MedicationRequest/wf-beca00bed9f496c591f1c1196557d6c4",
+      "type": "MedicationRequest"
+    }
+  ],
+  "quantity": {
+    "extension": [],
+    "value": 90
+  },
+  "whenHandedOver": "2026-05-15T00:00:00.000Z",
+  "receiver": [],
+  "note": [],
+  "dosageInstruction": [],
+  "detectedIssue": [],
+  "eventHistory": [],
+  "resourceType": "MedicationDispense"
+}

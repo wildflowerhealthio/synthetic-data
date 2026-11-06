@@ -1,0 +1,28 @@
+{
+  "id": "wf-ca64e6ac92a549826c3b253b496cd7b5",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/practitioner-name",
+      "value": "OKAFOR DR. NKECHI"
+    }
+  ],
+  "name": [
+    {
+      "extension": [],
+      "given": [],
+      "prefix": [],
+      "suffix": [],
+      "text": "OKAFOR DR. NKECHI"
+    }
+  ],
+  "telecom": [],
+  "address": [],
+  "photo": [],
+  "qualification": [],
+  "communication": [],
+  "resourceType": "Practitioner"
+}

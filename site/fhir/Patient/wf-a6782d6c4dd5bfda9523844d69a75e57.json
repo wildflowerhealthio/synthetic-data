@@ -1,0 +1,51 @@
+{
+  "id": "wf-a6782d6c4dd5bfda9523844d69a75e57",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-63eba50b0c99aaf3418df93e48de1f6e"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "address": [
+    {
+      "extension": [],
+      "line": [],
+      "postalCode": "K7L 2V4"
+    }
+  ],
+  "birthDate": "1948-05-08",
+  "communication": [],
+  "contact": [],
+  "generalPractitioner": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://rexall-prd-tunnel.letsbewell.ca/enduser/health/v1/fhir/stu3/Patient",
+      "value": "3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816"
+    }
+  ],
+  "link": [],
+  "name": [
+    {
+      "extension": [],
+      "family": "Ashford",
+      "given": [
+        "Warren"
+      ],
+      "prefix": [],
+      "suffix": []
+    }
+  ],
+  "photo": [],
+  "telecom": [
+    {
+      "extension": [],
+      "system": "email",
+      "value": "warren.ashford@example.com"
+    }
+  ],
+  "resourceType": "Patient"
+}

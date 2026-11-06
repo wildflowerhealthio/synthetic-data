@@ -1,0 +1,60 @@
+{
+  "id": "wf-81f66c17277a52a17c4abf130839435c",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-f40dff88ce73492eb417a5a8862804d7"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "address": [
+    {
+      "extension": [],
+      "city": "Kingston",
+      "line": [
+        "48 Sydenham St"
+      ],
+      "postalCode": "K7M 5B1",
+      "state": "ON"
+    }
+  ],
+  "communication": [],
+  "contact": [],
+  "generalPractitioner": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
+    }
+  ],
+  "link": [],
+  "name": [
+    {
+      "extension": [],
+      "family": "Ashford",
+      "given": [
+        "Fern"
+      ],
+      "prefix": [],
+      "suffix": [],
+      "text": "Fern Ashford"
+    }
+  ],
+  "photo": [],
+  "telecom": [
+    {
+      "extension": [],
+      "system": "phone",
+      "value": "6135550142"
+    },
+    {
+      "extension": [],
+      "system": "email",
+      "value": "fern.ashford@example.com"
+    }
+  ],
+  "resourceType": "Patient"
+}
