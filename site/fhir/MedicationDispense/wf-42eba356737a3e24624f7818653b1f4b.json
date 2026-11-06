@@ -1,0 +1,73 @@
+{
+  "id": "wf-42eba356737a3e24624f7818653b1f4b",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-f40dff88ce73492eb417a5a8862804d7"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/dispense-id",
+      "value": "f2e77d87-500f-4682-937d-ba601fa06d73"
+    }
+  ],
+  "partOf": [],
+  "status": "completed",
+  "medicationCodeableConcept": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "01987135",
+        "display": "Ferrous Sulfate 300mg",
+        "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
+      }
+    ],
+    "text": "Ferrous Sulfate"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
+    },
+    "reference": "Patient/wf-81f66c17277a52a17c4abf130839435c",
+    "type": "Patient"
+  },
+  "supportingInformation": [],
+  "performer": [],
+  "location": {
+    "extension": [],
+    "display": "Shoppers Drug Mart #1238",
+    "reference": "https://www.shoppersdrugmart.ca/store-locator/store/1238"
+  },
+  "authorizingPrescription": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-id",
+        "value": "c150c506-5b2f-48d8-9a3e-2e1a5c4af160"
+      },
+      "reference": "MedicationRequest/wf-25f6d5c45ff513875aebdd95dcae16ee",
+      "type": "MedicationRequest"
+    }
+  ],
+  "quantity": {
+    "extension": [],
+    "value": 30
+  },
+  "whenHandedOver": "2026-06-25T00:00:00.000Z",
+  "receiver": [],
+  "note": [],
+  "dosageInstruction": [],
+  "detectedIssue": [],
+  "eventHistory": [],
+  "resourceType": "MedicationDispense"
+}

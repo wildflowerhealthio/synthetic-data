@@ -1,0 +1,98 @@
+{
+  "id": "wf-dfc43a0b67c1279b4ae98c86605068b0",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/lab-number",
+      "value": "2026-VZ6941133"
+    }
+  ],
+  "basedOn": [],
+  "status": "final",
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "LAB",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "11502-2",
+        "display": "Laboratory report",
+        "system": "http://loinc.org/"
+      }
+    ],
+    "text": "Chemistry"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "a3e8d1f0-7c52-4b96-8e0d-5f14c9a72b38"
+    },
+    "reference": "Patient/wf-5e2a9156e992514367f250eb3207554a",
+    "type": "Patient"
+  },
+  "effectiveDateTime": "2026-08-07T14:01:00.000Z",
+  "issued": "2026-08-07T23:26:00.000Z",
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "resultsInterpreter": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/practitioner-name",
+        "value": "BHATT DR. SUNITA"
+      },
+      "reference": "Practitioner/wf-a88e7ab13257db5a7a42dcb2ea77622f",
+      "type": "Practitioner"
+    }
+  ],
+  "specimen": [],
+  "result": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2026-VZ6941133/Chemistry/TSH/0"
+      },
+      "reference": "Observation/wf-1f7660599376f09bf38f4bb250f8abe0",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2026-VZ6941133/Chemistry/Free T4/1"
+      },
+      "reference": "Observation/wf-755fa91a77bcc5311f8e90bdd47ef7ce",
+      "type": "Observation"
+    }
+  ],
+  "imagingStudy": [],
+  "media": [],
+  "conclusionCode": [],
+  "presentedForm": [],
+  "resourceType": "DiagnosticReport"
+}

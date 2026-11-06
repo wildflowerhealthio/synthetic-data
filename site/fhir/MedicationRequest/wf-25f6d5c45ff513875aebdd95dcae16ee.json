@@ -1,0 +1,122 @@
+{
+  "id": "wf-25f6d5c45ff513875aebdd95dcae16ee",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-f40dff88ce73492eb417a5a8862804d7"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-id",
+      "value": "c150c506-5b2f-48d8-9a3e-2e1a5c4af160"
+    },
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
+      "value": "6353062"
+    }
+  ],
+  "status": "active",
+  "statusReason": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "READY_FOR_REFILL",
+        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/CodeSystem/prescription-status-type"
+      }
+    ],
+    "text": "Ready for refill"
+  },
+  "intent": "order",
+  "category": [],
+  "medicationCodeableConcept": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "01987135",
+        "display": "Ferrous Sulfate 300mg",
+        "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
+      }
+    ],
+    "text": "Ferrous Sulfate"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
+    },
+    "reference": "Patient/wf-81f66c17277a52a17c4abf130839435c",
+    "type": "Patient"
+  },
+  "supportingInformation": [],
+  "authoredOn": "2026-09-07T00:00:00.000Z",
+  "requester": {
+    "extension": [],
+    "display": "DR L MORIN",
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/identifier/practitioner-name",
+      "value": "DR L MORIN"
+    },
+    "type": "Practitioner"
+  },
+  "reasonCode": [],
+  "reasonReference": [],
+  "instantiatesCanonical": [],
+  "instantiatesUri": [],
+  "basedOn": [],
+  "insurance": [],
+  "note": [
+    {
+      "extension": [],
+      "text": "Request a refill and we will let you know when it is ready"
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "text": "TAKE 1 TABLET (=300MG) BY MOUTH ONCE DAILY WITH FOOD",
+      "additionalInstruction": [],
+      "doseAndRate": []
+    }
+  ],
+  "dispenseRequest": {
+    "extension": [],
+    "modifierExtension": [],
+    "validityPeriod": {
+      "extension": [],
+      "end": "2026-10-07T00:00:00.000Z",
+      "start": "2026-09-07T00:00:00.000Z"
+    },
+    "numberOfRepeatsAllowed": 2,
+    "quantity": {
+      "extension": [],
+      "value": 30
+    },
+    "expectedSupplyDuration": {
+      "extension": [],
+      "code": "d",
+      "system": "http://unitsofmeasure.org",
+      "unit": "day",
+      "value": 30
+    },
+    "performer": {
+      "extension": [],
+      "display": "Shoppers Drug Mart (store 1238)",
+      "reference": "https://www.shoppersdrugmart.ca/store-locator/store/1238"
+    }
+  },
+  "detectedIssue": [],
+  "eventHistory": [],
+  "resourceType": "MedicationRequest"
+}

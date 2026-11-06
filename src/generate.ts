@@ -1,6 +1,7 @@
 import type { ReferenceType } from '@wildflowerhealthio/fhir-r4/data-types'
 import { Observation, type FhirResource } from '@wildflowerhealthio/fhir-r4/resources'
 import { defaultHarSettings, harImporter } from '@wildflowerhealthio/har-importer-core'
+import { importDecoded } from '@wildflowerhealthio/importer-core'
 import type { Snapshot } from '@wildflowerhealthio/synthetic-data-core-js'
 import { DicomImage } from '@wildflowerhealthio/synthetic-data-dicom'
 import {
@@ -54,8 +55,9 @@ import {
  * (`scripts/emit.ts`).
  *
  * **Pharmacy.** Each HAR is rendered by its source's `synthetic-data-*`
- * generator and decoded by `har-importer-core` exactly as the importer app decodes a picked file,
- * source-file `DocumentReference` included. A decode can list one resource
+ * generator, decoded by `har-importer-core` and imported by `importer-core`'s
+ * import stage (`importDecoded`) exactly as the importer app reads a picked
+ * file, source-file `DocumentReference` included. A decode can list one resource
  * twice — the Shoppers status feed and history feed both write each
  * dispense — and the app submits every entry as a `PUT`, so the one kept is
  * the last, as the server stores it.
@@ -142,6 +144,7 @@ const importHar = (
   harImporter
     .decode([{ id: `0:${fileName}`, fileName, bytes: textEncoder.encode(har) }], defaultHarSettings)
     .pipe(
+      Effect.flatMap((decoded) => importDecoded(harImporter, decoded)),
       Effect.map((result) =>
         lastWriteWins(
           result.decoded.sections.flatMap((section) =>

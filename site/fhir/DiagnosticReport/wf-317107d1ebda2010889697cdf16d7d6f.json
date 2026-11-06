@@ -1,0 +1,188 @@
+{
+  "id": "wf-317107d1ebda2010889697cdf16d7d6f",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/lab-number",
+      "value": "2026-JZ5345384"
+    }
+  ],
+  "basedOn": [],
+  "status": "final",
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "LAB",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "11502-2",
+        "display": "Laboratory report",
+        "system": "http://loinc.org/"
+      }
+    ],
+    "text": "Hematology, Chemistry"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "1d7f4a86-e0b3-4c25-9f71-b3c2d8e6a015"
+    },
+    "reference": "Patient/wf-81f66c17277a52a17c4abf130839435c",
+    "type": "Patient"
+  },
+  "effectiveDateTime": "2026-05-23T11:24:00.000Z",
+  "issued": "2026-05-23T20:40:00.000Z",
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "resultsInterpreter": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/practitioner-name",
+        "value": "MORIN DR. LUCIE"
+      },
+      "reference": "Practitioner/wf-0ba42494b0f0707bd70f7fb601fabf8c",
+      "type": "Practitioner"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/practitioner-name",
+        "value": "BHATT DR. SUNITA"
+      },
+      "reference": "Practitioner/wf-a88e7ab13257db5a7a42dcb2ea77622f",
+      "type": "Practitioner"
+    }
+  ],
+  "specimen": [],
+  "result": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2026-JZ5345384/Hematology/WBC/0"
+      },
+      "reference": "Observation/wf-35f29ba08c0e486f23a62500f94cc7c2",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2026-JZ5345384/Hematology/RBC/1"
+      },
+      "reference": "Observation/wf-ed5f084166c08edf7c5bf1f44667fe52",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2026-JZ5345384/Hematology/Hemoglobin/2"
+      },
+      "reference": "Observation/wf-26b4e42e13baeee87cd222d666e92b2b",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2026-JZ5345384/Hematology/Hematocrit/3"
+      },
+      "reference": "Observation/wf-512baa24bc91618ddd350e3c19c62732",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2026-JZ5345384/Hematology/MCV/4"
+      },
+      "reference": "Observation/wf-c50d95157e5cce0368a75e821fec2a2e",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2026-JZ5345384/Hematology/MCH/5"
+      },
+      "reference": "Observation/wf-287236152576bff6ef3a1d81db1a055b",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2026-JZ5345384/Hematology/MCHC/6"
+      },
+      "reference": "Observation/wf-541dc71e54fea969677001d50f8e0c86",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2026-JZ5345384/Hematology/RDW/7"
+      },
+      "reference": "Observation/wf-3ce2ca11ae31800b9c6687c50423b1fa",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2026-JZ5345384/Hematology/Platelet Count/8"
+      },
+      "reference": "Observation/wf-9e90e2d1a1594425007dc9490c22ede6",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2026-JZ5345384/Chemistry/Ferritin/9"
+      },
+      "reference": "Observation/wf-08763a9c5edf692c2551476098849cd5",
+      "type": "Observation"
+    }
+  ],
+  "imagingStudy": [],
+  "media": [],
+  "conclusionCode": [],
+  "presentedForm": [],
+  "resourceType": "DiagnosticReport"
+}

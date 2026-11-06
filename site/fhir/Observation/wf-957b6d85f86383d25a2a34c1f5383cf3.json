@@ -1,0 +1,98 @@
+{
+  "id": "wf-957b6d85f86383d25a2a34c1f5383cf3",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "laboratory",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ],
+      "text": "Hematology · Coagulation"
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [],
+    "text": "INR"
+  },
+  "component": [],
+  "derivedFrom": [],
+  "focus": [],
+  "hasMember": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+      "value": "2025-JH9098629/Hematology/INR/0"
+    }
+  ],
+  "interpretation": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "H",
+          "display": "High",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+        }
+      ],
+      "text": "HI"
+    }
+  ],
+  "issued": "2025-06-19T19:41:00.000Z",
+  "note": [
+    {
+      "extension": [],
+      "text": "Therapeutic range for most indications\non warfarin: 2.0 - 3.0"
+    }
+  ],
+  "partOf": [],
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "referenceRange": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "appliesTo": [],
+      "high": {
+        "extension": [],
+        "value": 1.2
+      },
+      "low": {
+        "extension": [],
+        "value": 0.8
+      },
+      "text": "0.8 - 1.2"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://rexall-prd-tunnel.letsbewell.ca/enduser/health/v1/fhir/stu3/Patient",
+      "value": "3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816"
+    },
+    "reference": "Patient/wf-a6782d6c4dd5bfda9523844d69a75e57",
+    "type": "Patient"
+  },
+  "valueQuantity": {
+    "extension": [],
+    "value": 2.3
+  },
+  "effectiveDateTime": "2025-06-19T13:39:00.000Z",
+  "resourceType": "Observation"
+}

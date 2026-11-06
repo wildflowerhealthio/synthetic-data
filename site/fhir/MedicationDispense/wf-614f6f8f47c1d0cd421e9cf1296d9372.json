@@ -1,0 +1,142 @@
+{
+  "id": "wf-614f6f8f47c1d0cd421e9cf1296d9372",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "lastUpdated": "2026-09-12T19:29:35.000Z",
+    "source": "DocumentReference/wf-63eba50b0c99aaf3418df93e48de1f6e",
+    "versionId": "4"
+  },
+  "contained": [],
+  "extension": [
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationdispense/extension/when-requested",
+      "valueDateTime": "2026-09-12T18:15:19.000Z"
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationdispense/extension/estimated-pick-up",
+      "valueDateTime": "2026-09-12T19:29:35.000Z"
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationdispense/extension/dispensed-in-app",
+      "valueBoolean": true
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationdispense/extension/medication-processor-timezone",
+      "valueString": "America/Toronto"
+    },
+    {
+      "extension": [],
+      "url": "http://schemas.carebook.com/v1/fhir/medicationdispense/extension/medicationrecord-processor",
+      "valueReference": {
+        "extension": [],
+        "identifier": {
+          "extension": [],
+          "value": "pharmacy-7128"
+        },
+        "reference": "rexall-pharmacy-location/pharmacy-7128"
+      }
+    }
+  ],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://rexall-prd-tunnel.letsbewell.ca/enduser/health/v1/fhir/stu3/MedicationDispense",
+      "value": "7857c64e-11ef-4401-8872-9e9876563beb"
+    },
+    {
+      "extension": [],
+      "system": "http://schema.carebook.com/v1/fhir/identifier/medicationrequest-external-id",
+      "value": "7102960"
+    },
+    {
+      "extension": [],
+      "system": "http://schema.carebook.com/v1/fhir/identifier/medicationrequest-external-authorizing-id",
+      "value": "591810622"
+    }
+  ],
+  "partOf": [],
+  "status": "completed",
+  "medicationCodeableConcept": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "02242684",
+        "system": "http://schema.carebook.com/v1/fhir/coding/medication-din-code"
+      },
+      {
+        "extension": [],
+        "code": "02242684",
+        "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
+      }
+    ],
+    "text": "Warfarin 4 mg tablet"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://rexall-prd-tunnel.letsbewell.ca/enduser/health/v1/fhir/stu3/Patient",
+      "value": "3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816"
+    },
+    "reference": "Patient/wf-a6782d6c4dd5bfda9523844d69a75e57",
+    "type": "Patient"
+  },
+  "supportingInformation": [],
+  "performer": [],
+  "location": {
+    "extension": [],
+    "display": "Rexall (store 7128)",
+    "identifier": {
+      "extension": [],
+      "value": "pharmacy-7128"
+    },
+    "reference": "https://www.rexall.ca/storelocator/store/7128"
+  },
+  "authorizingPrescription": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "http://schema.carebook.com/v1/fhir/identifier/medication-request-type-order",
+        "value": "7857c64e-11ef-4401-8872-9e9876563beb"
+      },
+      "reference": "PrescriptionOrder/c6d51cca-7af7-4937-b8b1-b984ad39174d"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "http://schema.carebook.com/v1/fhir/identifier/medication-request-type-refill",
+        "value": "7857c64e-11ef-4401-8872-9e9876563beb"
+      },
+      "reference": "PrescriptionOrder/c6d51cca-7af7-4937-b8b1-b984ad39174d"
+    }
+  ],
+  "quantity": {
+    "extension": [],
+    "value": 30
+  },
+  "daysSupply": {
+    "extension": [],
+    "code": "d",
+    "system": "http://unitsofmeasure.org",
+    "unit": "day",
+    "value": 30
+  },
+  "whenPrepared": "2026-09-12T18:15:19.000Z",
+  "whenHandedOver": "2026-09-12T19:29:35.000Z",
+  "receiver": [],
+  "note": [],
+  "dosageInstruction": [],
+  "detectedIssue": [],
+  "eventHistory": [],
+  "resourceType": "MedicationDispense"
+}

@@ -1,0 +1,130 @@
+{
+  "id": "wf-beca00bed9f496c591f1c1196557d6c4",
+  "meta": {
+    "profile": [],
+    "security": [],
+    "tag": [],
+    "source": "DocumentReference/wf-06897530f238966097077906dbabb401"
+  },
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-id",
+      "value": "1fee8e4e-6503-4861-a762-6a252147a3cf"
+    },
+    {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
+      "value": "1713925"
+    }
+  ],
+  "status": "active",
+  "statusReason": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "READY_FOR_REFILL",
+        "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/CodeSystem/prescription-status-type"
+      }
+    ],
+    "text": "Ready for refill"
+  },
+  "intent": "order",
+  "category": [],
+  "medicationCodeableConcept": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "02310910",
+        "display": "Atorvastatin 40mg",
+        "system": "http://hl7.org/fhir/NamingSystem/ca-hc-din"
+      }
+    ],
+    "text": "Teva-Atorvastatin"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+    },
+    "reference": "Patient/wf-4ef29cda5e75dd2dbd7683dead05550c",
+    "type": "Patient"
+  },
+  "supportingInformation": [],
+  "authoredOn": "2026-08-17T00:00:00.000Z",
+  "requester": {
+    "extension": [],
+    "display": "DR S BHATT",
+    "identifier": {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/identifier/practitioner-name",
+      "value": "DR S BHATT"
+    },
+    "type": "Practitioner"
+  },
+  "reasonCode": [],
+  "reasonReference": [],
+  "instantiatesCanonical": [],
+  "instantiatesUri": [],
+  "basedOn": [],
+  "insurance": [],
+  "note": [
+    {
+      "extension": [],
+      "text": "Request a refill and we will let you know when it is ready"
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "text": "TAKE 1 TABLET (=40MG) BY MOUTH ONCE DAILY AT BEDTIME",
+      "additionalInstruction": [],
+      "doseAndRate": []
+    }
+  ],
+  "dispenseRequest": {
+    "extension": [],
+    "modifierExtension": [],
+    "validityPeriod": {
+      "extension": [],
+      "end": "2026-11-15T00:00:00.000Z",
+      "start": "2026-08-17T00:00:00.000Z"
+    },
+    "numberOfRepeatsAllowed": 1,
+    "quantity": {
+      "extension": [],
+      "value": 90
+    },
+    "expectedSupplyDuration": {
+      "extension": [],
+      "code": "d",
+      "system": "http://unitsofmeasure.org",
+      "unit": "day",
+      "value": 90
+    },
+    "performer": {
+      "extension": [],
+      "display": "Shoppers Drug Mart (store 1238)",
+      "reference": "https://www.shoppersdrugmart.ca/store-locator/store/1238"
+    }
+  },
+  "priorPrescription": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/prescription-number",
+      "value": "4993525"
+    }
+  },
+  "detectedIssue": [],
+  "eventHistory": [],
+  "resourceType": "MedicationRequest"
+}

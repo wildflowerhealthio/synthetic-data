@@ -3,6 +3,11 @@
   "contained": [],
   "extension": [],
   "modifierExtension": [],
+  "masterIdentifier": {
+    "extension": [],
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:2.25.136257321533522887283482111752379978059.694842700602863"
+  },
   "identifier": [],
   "status": "current",
   "type": {
@@ -31,10 +36,11 @@
     "extension": [],
     "identifier": {
       "extension": [],
-      "system": "https://wildflowerhealth.io/fhir/sid/rexall-carebook",
+      "system": "https://rexall-prd-tunnel.letsbewell.ca/enduser/health/v1/fhir/stu3/Patient",
       "value": "3d9f6b2e-8c41-4a57-b0e2-71c5a9d4f816"
     },
-    "reference": "Patient/wf-b712d81c664593dea9cb10a6275aad79"
+    "reference": "Patient/wf-a6782d6c4dd5bfda9523844d69a75e57",
+    "type": "Patient"
   },
   "author": [],
   "relatesTo": [],

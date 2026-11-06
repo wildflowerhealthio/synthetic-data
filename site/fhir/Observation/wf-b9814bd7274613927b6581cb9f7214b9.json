@@ -1,0 +1,100 @@
+{
+  "id": "wf-b9814bd7274613927b6581cb9f7214b9",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "basedOn": [],
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "laboratory",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ],
+      "text": "Chemistry · Lipid Assessment"
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [],
+    "text": "LDL Cholesterol"
+  },
+  "component": [],
+  "derivedFrom": [],
+  "focus": [],
+  "hasMember": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+      "value": "2025-EM4004122/Chemistry/LDL Cholesterol/6"
+    }
+  ],
+  "interpretation": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "H",
+          "display": "High",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+        }
+      ],
+      "text": "HI"
+    }
+  ],
+  "issued": "2025-08-19T21:40:00.000Z",
+  "note": [
+    {
+      "extension": [],
+      "text": "Calculated (Friedewald)."
+    }
+  ],
+  "partOf": [],
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "referenceRange": [
+    {
+      "extension": [],
+      "modifierExtension": [],
+      "appliesTo": [],
+      "high": {
+        "extension": [],
+        "code": "mmol/L",
+        "system": "http://unitsofmeasure.org",
+        "unit": "mmol/L",
+        "value": 3.5
+      },
+      "text": "<3.50"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+    },
+    "reference": "Patient/wf-4ef29cda5e75dd2dbd7683dead05550c",
+    "type": "Patient"
+  },
+  "valueQuantity": {
+    "extension": [],
+    "code": "mmol/L",
+    "system": "http://unitsofmeasure.org",
+    "unit": "mmol/L",
+    "value": 4.1
+  },
+  "effectiveDateTime": "2025-08-19T12:08:00.000Z",
+  "resourceType": "Observation"
+}

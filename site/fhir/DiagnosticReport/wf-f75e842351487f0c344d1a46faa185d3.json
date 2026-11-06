@@ -1,0 +1,168 @@
+{
+  "id": "wf-f75e842351487f0c344d1a46faa185d3",
+  "contained": [],
+  "extension": [],
+  "modifierExtension": [],
+  "identifier": [
+    {
+      "extension": [],
+      "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/lab-number",
+      "value": "2025-EM4004122"
+    }
+  ],
+  "basedOn": [],
+  "status": "final",
+  "category": [
+    {
+      "extension": [],
+      "coding": [
+        {
+          "extension": [],
+          "code": "LAB",
+          "display": "Laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "extension": [],
+    "coding": [
+      {
+        "extension": [],
+        "code": "11502-2",
+        "display": "Laboratory report",
+        "system": "http://loinc.org/"
+      }
+    ],
+    "text": "Chemistry"
+  },
+  "subject": {
+    "extension": [],
+    "identifier": {
+      "extension": [],
+      "system": "https://mypharmacy.shoppersdrugmart.ca/fhir/identifier/patient-id",
+      "value": "c95b0e27-1d4a-4f83-b6e2-08a7f3d15c49"
+    },
+    "reference": "Patient/wf-4ef29cda5e75dd2dbd7683dead05550c",
+    "type": "Patient"
+  },
+  "effectiveDateTime": "2025-08-19T12:08:00.000Z",
+  "issued": "2025-08-19T21:40:00.000Z",
+  "performer": [
+    {
+      "extension": [],
+      "display": "Lab Lic. #5687 · 100 International Blvd., Toronto, Ontario, Canada M9W 6J6"
+    }
+  ],
+  "resultsInterpreter": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/practitioner-name",
+        "value": "BHATT DR. SUNITA"
+      },
+      "reference": "Practitioner/wf-a88e7ab13257db5a7a42dcb2ea77622f",
+      "type": "Practitioner"
+    }
+  ],
+  "specimen": [],
+  "result": [
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2025-EM4004122/Chemistry/Creatinine/0"
+      },
+      "reference": "Observation/wf-db8213b59bde66fe87a09e3006a06bef",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2025-EM4004122/Chemistry/eGFR/1"
+      },
+      "reference": "Observation/wf-7465774735d0ced3011d5924b41f0162",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2025-EM4004122/Chemistry/Potassium/2"
+      },
+      "reference": "Observation/wf-3664a17c6cfb232a3be42d3e9c50482d",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2025-EM4004122/Chemistry/Cholesterol/3"
+      },
+      "reference": "Observation/wf-c76eaa133d8facfa22cbdb739747b32d",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2025-EM4004122/Chemistry/Triglycerides/4"
+      },
+      "reference": "Observation/wf-53fb07c0f09f6c1e6fb1092b8e8cc359",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2025-EM4004122/Chemistry/HDL Cholesterol/5"
+      },
+      "reference": "Observation/wf-06bcdc39e3f1221b7374d7f60210f5dc",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2025-EM4004122/Chemistry/LDL Cholesterol/6"
+      },
+      "reference": "Observation/wf-b9814bd7274613927b6581cb9f7214b9",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2025-EM4004122/Chemistry/Non-HDL Cholesterol/7"
+      },
+      "reference": "Observation/wf-d8d0039c9e5d031bbf3bf573ac5d6a50",
+      "type": "Observation"
+    },
+    {
+      "extension": [],
+      "identifier": {
+        "extension": [],
+        "system": "https://wildflowerhealth.io/fhir/sid/lifelabs/observation",
+        "value": "2025-EM4004122/Chemistry/Chol/HDL Ratio/8"
+      },
+      "reference": "Observation/wf-cb908402a172c3a7285594e204c1bf4a",
+      "type": "Observation"
+    }
+  ],
+  "imagingStudy": [],
+  "media": [],
+  "conclusionCode": [],
+  "presentedForm": [],
+  "resourceType": "DiagnosticReport"
+}
