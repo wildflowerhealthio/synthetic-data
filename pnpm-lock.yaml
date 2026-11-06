@@ -23,6 +23,9 @@ importers:
       '@wildflowerhealthio/har-importer-core':
         specifier: link:wildflower/slices/importer/har-importer-core
         version: link:wildflower/slices/importer/har-importer-core
+      '@wildflowerhealthio/importer-core':
+        specifier: link:wildflower/slices/importer/importer-core
+        version: link:wildflower/slices/importer/importer-core
       '@wildflowerhealthio/importer-fundamentals':
         specifier: link:wildflower/slices/importer/importer-fundamentals
         version: link:wildflower/slices/importer/importer-fundamentals

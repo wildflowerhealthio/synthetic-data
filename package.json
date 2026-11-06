@@ -16,6 +16,7 @@
     "@wildflowerhealthio/fhir-r4": "link:wildflower/slices/fhir/fhir-r4",
     "@wildflowerhealthio/fhir-sync-pebble-core": "link:wildflower/slices/fhir-sync-pebble-core",
     "@wildflowerhealthio/har-importer-core": "link:wildflower/slices/importer/har-importer-core",
+    "@wildflowerhealthio/importer-core": "link:wildflower/slices/importer/importer-core",
     "@wildflowerhealthio/importer-fundamentals": "link:wildflower/slices/importer/importer-fundamentals",
     "@wildflowerhealthio/synthetic-data-core-js": "link:wildflower/apps/synthetic-data/synthetic-data-core-js",
     "@wildflowerhealthio/synthetic-data-dicom": "link:wildflower/apps/synthetic-data/synthetic-data-dicom",
